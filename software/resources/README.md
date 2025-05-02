@@ -147,7 +147,6 @@ Works with:
 ## Downloads
 
 - [Schematic PDF](docs/schematic.pdf)
-- [MAX1704X Library](https://github.com/UNIT-Electronics/MAX1704X_lib)
 
 
 ## Purchase
