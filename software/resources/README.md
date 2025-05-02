@@ -1,8 +1,8 @@
 ---
-title: "Cocket Nova Programmer"
+title: "CH552 USB Multi-Protocol Programmer "
 version: "1.0"
 modified: "2025-04-30"
-output: "Cocket_Nova_Programmer"
+output: " usb_multi_protocol_Programmer"
 subtitle: "Universal Programmer for AVR, ARM (CMSIS-DAP), and CPLD (MAX II)
 "
 ---
@@ -14,13 +14,13 @@ Edita las secciones respetando el orden, sin eliminar los encabezados.
 -->
  <!-- logo -->
 
-# Cocket Nova Programmer
+# CH552 USB Multi-Protocol Programmer 
 
 ![product](./images/product.png)
 
 ## Introduction
 
-The Cocket Nova Programmer is a compact and versatile USB programming tool powered by the WCH CH552 microcontroller. Designed for developers, educators, and hobbyists, it supports programming and debugging across three key domains: AVR microcontrollers, ARM Cortex-M processors, and Intel/Altera CPLDs.
+The CH552 USB Multi-Protocol Programmer is a compact and versatile USB programming tool powered by the WCH CH552 microcontroller. Designed for developers, educators, and hobbyists, it supports programming and debugging across three key domains: AVR microcontrollers, ARM Cortex-M processors, and Intel/Altera CPLDs.
 
 With multiple firmware profiles, this device can seamlessly switch between USBasp, CMSIS-DAP, and USB-Blaster compatible JTAG modes. Its hardware voltage selector ensures compatibility with target boards operating at 3.3V or 5V. The built-in USB bootloader simplifies firmware flashing, and compatibility with tools like `avrdude`, `OpenOCD`, and Quartus Programmer makes it an ideal choice for embedded development in diverse environments.
 
@@ -113,7 +113,7 @@ With multiple firmware profiles, this device can seamlessly switch between USBas
 | Targets         | ARM Cortex-M (STM32, nRF52, SAMD, etc.) |
 | Tools Supported | OpenOCD, PyOCD, Keil µVision, SEGGER    |
 | USB Mode        | HID + optional CDC UART                 |
-| Drivers         | Native (Linux/macOS), Zadig (Windows)   |
+| Drivers         | Native (Linux/macOS)                    |
 
 ### Firmware Modes: CPLD Programmer
 
