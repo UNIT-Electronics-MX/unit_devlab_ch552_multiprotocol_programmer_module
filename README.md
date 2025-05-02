@@ -54,7 +54,6 @@ This project provides firmware for a USB-based programmer built on the **CH552 m
   - CDC UART (optional, for logging or VCP)
 - **Drivers:**
   - Linux/macOS: Native
-  - Windows: `libusbK` (via Zadig) for CDC if needed
 
 > *Device appears as HID with optional serial COM port.*
 
