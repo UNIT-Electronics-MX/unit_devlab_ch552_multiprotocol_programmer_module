@@ -13,5 +13,23 @@
 | **SWD**          | ARM’s two-wire serial debug and programming interface    | SWCLK, SWDIO                          | Cortex-M programming & step-through debugging      |
 | **JST Header**   | Compact connector for power + single-wire debug signals  | SWC (SWCLK), SWD (SWDIO), VCC, GND    | Quick-connect to target board for SWD and power    |
 
+---
+
+| PIN            | GPIO  |
+|----------------|-------|
+| **MOSI**       | 1.5   | 
+| **MISO**       | 1.6   | 
+| **SCK**        | 1.7   |
+| **CS**         | 1.4   |
+| **TCK**        | 1.7   |
+| **TMS**        | 3.2   |
+| **TDI**        | 1.5   |
+| **TDO**        | 1.6   |
+| **SWCLK**      | 1.7   |
+| **SWDIO**      | 1.6   |
+
+
+
+
 
 # Board Topology
