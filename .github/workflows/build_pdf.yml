@@ -31,88 +31,50 @@ jobs:
         pip install -r software/getting_started/requirements.txt
 
     #################################################
-    # Sección 1: PDF del Product Brief en LaTeX
+    # Generar PDF del Product Brief
     #################################################
-    - name: Validate README content
-      run: python test_readme.py
+    - name: Build LaTeX PDF from README
       working-directory: software/documentation
-
-    - name: Generate LaTeX PDF
-      run: python generate_pdf.py
-      working-directory: software/documentation
-
-    - name: Compress PDF with Ghostscript (balanced)
       run: |
-        original_pdf=$(ls build/*.pdf | head -n1)
+        python test_readme.py
+        python generate_pdf.py
         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer \
            -dNOPAUSE -dQUIET -dBATCH \
-           -sOutputFile=build/compressed.pdf "$original_pdf"
-        mv build/compressed.pdf build/unit_product_brief.pdf
-      working-directory: software/documentation
+           -sOutputFile=build/unit_product_brief.pdf build/*.pdf
 
     #################################################
-    # Sección 2: Documentación Sphinx (HTML + PDF)
+    # Generar Documentación Sphinx (HTML + PDF)
     #################################################
-    - name: Build Sphinx HTML and PDF (manually copy before cleanup)
+    - name: Build Sphinx Documentation
       working-directory: software/getting_started
       run: |
         make clean
         make pdfx
 
-        # Buscar PDF generado
-        PDF_NAME=$(find pdf/latex -name '*.pdf' | head -n1)
-        if [ -f "$PDF_NAME" ]; then
-          cp "$PDF_NAME" ../../docs/unit_getting_started.pdf
-        else
-          echo "⚠️ No Sphinx PDF found to copy"
-        fi
-
-        # Buscar HTML generado
-        if [ -d src/build/html ]; then
-          cp -r src/build/html/* ../../docs/
-        else
-          echo "⚠️ No Sphinx HTML found to copy"
-        fi
-
-        # Permitir archivos .html y .pdf en GitHub Pages
-        touch ../../docs/.nojekyll
-
-
     #################################################
-    # Copiar todo a docs/ para GitHub Pages
+    # Preparar contenido para docs/
     #################################################
     - name: Prepare docs/ directory
       run: |
         rm -rf docs
         mkdir -p docs
 
-        # Copiar PDF generado desde LaTeX
+        # PDF generado desde LaTeX
         cp software/documentation/build/unit_product_brief.pdf docs/
 
-        # Intentar encontrar el PDF generado por Sphinx
-        sphinx_pdf=$(find software/getting_started/pdf/latex -type f -name "*.pdf" | head -n1)
-        if [ -f "$sphinx_pdf" ]; then
-          cp "$sphinx_pdf" docs/unit_getting_started.pdf
-        else
-          echo "⚠️ Sphinx PDF not found, skipping."
-        fi
+        # PDF generado por Sphinx
+        cp software/getting_started/pdf/ch552multi-protocolprogrammergettingstarted.pdf docs/unit_getting_started.pdf
 
-        # Copiar HTML de Sphinx (ruta corregida)
-        if [ -d software/getting_started/build/html ]; then
-          cp -r software/getting_started/build/html/* docs/
-        else
-          echo "⚠️ Sphinx HTML not found, skipping."
-        fi
+        # HTML generado por Sphinx
+        cp -r software/getting_started/docs/* docs/
 
-        # Permitir archivos con extensión .pdf, .html, etc. en GitHub Pages
+        # Permitir archivos especiales en GitHub Pages
         touch docs/.nojekyll
 
-
-
     #################################################
-    # Publicar en rama main
+    # Publicar cambios a la rama main
     #################################################
-    - name: Commit and push docs/ to main (only on main)
+    - name: Commit and push docs/ to main
       if: github.ref == 'refs/heads/main'
       run: |
         git config --global user.name "GitHub Actions"
