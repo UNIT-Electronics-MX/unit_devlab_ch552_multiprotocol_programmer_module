@@ -53,11 +53,30 @@ jobs:
     #################################################
     # Sección 2: Documentación Sphinx (HTML + PDF)
     #################################################
-    - name: Build Sphinx HTML and PDF
+    - name: Build Sphinx HTML and PDF (manually copy before cleanup)
       working-directory: software/getting_started
       run: |
         make clean
         make pdfx
+
+        # Buscar PDF generado
+        PDF_NAME=$(find pdf/latex -name '*.pdf' | head -n1)
+        if [ -f "$PDF_NAME" ]; then
+          cp "$PDF_NAME" ../../docs/unit_getting_started.pdf
+        else
+          echo "⚠️ No Sphinx PDF found to copy"
+        fi
+
+        # Buscar HTML generado
+        if [ -d src/build/html ]; then
+          cp -r src/build/html/* ../../docs/
+        else
+          echo "⚠️ No Sphinx HTML found to copy"
+        fi
+
+        # Permitir archivos .html y .pdf en GitHub Pages
+        touch ../../docs/.nojekyll
+
 
     #################################################
     # Copiar todo a docs/ para GitHub Pages
