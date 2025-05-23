@@ -66,10 +66,28 @@ jobs:
       run: |
         rm -rf docs
         mkdir -p docs
+
+        # Copiar PDF generado desde LaTeX (README)
         cp software/documentation/build/unit_product_brief.pdf docs/
-        cp software/getting_started/pdf/latex/*.pdf docs/unit_getting_started.pdf
-        cp -r software/getting_started/src/build/html/* docs/
+
+        # Intentar encontrar el PDF generado por Sphinx y copiarlo con nombre fijo
+        sphinx_pdf=$(find software/getting_started/pdf/latex -type f -name "*.pdf" | head -n1)
+        if [ -f "$sphinx_pdf" ]; then
+          cp "$sphinx_pdf" docs/unit_getting_started.pdf
+        else
+          echo "⚠️ Sphinx PDF not found, skipping."
+        fi
+
+        # Copiar documentación HTML de Sphinx
+        if [ -d software/getting_started/src/build/html ]; then
+          cp -r software/getting_started/src/build/html/* docs/
+        else
+          echo "⚠️ Sphinx HTML not found, skipping."
+        fi
+
+        # Desactiva procesamiento Jekyll para servir archivos .html y .pdf sin problemas
         touch docs/.nojekyll
+
 
     #################################################
     # Publicar en rama main
