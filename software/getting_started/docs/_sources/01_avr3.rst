@@ -1,0 +1,141 @@
+AVR: Arduino IDE Bootloader
+===========================
+
+Installing the Bootloader on ATMEGA328P
+---------------------------------------
+
+This guide explains how to flash the Arduino-compatible bootloader onto an **ATMEGA328** microcontroller using the **UNIT USB Multi-Protocol Programmer**. By following these steps, your ATMEGA328 can function as an **ATMEGA328P**, fully compatible with the Arduino IDE.
+
+Required Materials
+------------------
+
+1. **UNIT Multi-Protocol Programmer**
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/programmer.png" alt="Multi-Protocol Programmer" style="width: 50%;">
+      <p>UNIT Multi-Protocol Programmer</p>
+    </div>
+
+2. **ATMEGA328P Microcontroller**
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/uno_rev3.jpg" alt="ATMEGA328P" style="width: 40%;">
+      <p>ATMEGA328P Microcontroller</p>
+    </div>
+
+Hardware Connection
+-------------------
+
+1. Use the FC cable to connect one end to the UNIT Multi-Protocol Programmer and the other to the ICSP interface of the ATMEGA328P.
+
+2. Make sure the **MISO** pin of the programmer is aligned with **pin 1** of the ICSP header on the ATMEGA328P.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/conexion_1.png" alt="ISP Connection" style="width: 50%;">
+      <p>ICSP Connection Overview</p>
+    </div>
+
+Driver Setup with Zadig
+------------------------
+
+To allow USB communication between your PC and the programmer, install the required drivers using **Zadig**.
+
+Step 1: Identify the COM Port
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Connect the programmer to your PC and open the **Device Manager**. Under **Ports (COM & LPT)**, identify the COM port assigned to the device.
+
+Step 2: Open Zadig
+~~~~~~~~~~~~~~~~~~
+
+Launch Zadig. You should see a window like the following:
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/interfaz.png" alt="Zadig Interface" />
+    </div>
+
+Click **Options** → **List All Devices** to display all USB interfaces:
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/options.png" alt="Zadig List All Devices" />
+    </div>
+
+Step 3: Install Drivers
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Install the following two drivers:
+
+- **picoASP Interface 0**: Install the **libusbK** driver by clicking **Replace Driver**.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/interfaz_0.png" alt="picoASP Interface 0" />
+    </div>
+
+- **SerialUPDI Interface 1**: Install the **USB Serial (CDC)** driver by clicking **Upgrade Driver**.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+      <img src="./_static/duino/inferfaz_1.png" alt="SerialUPDI Interface 1" style="display: block; margin-left: auto; margin-right: auto;" />
+    </div>
+
+Once both drivers are installed, your UNIT Multi-Protocol Programmer is ready to flash the bootloader.
+
+Bootloader Installation Using Arduino IDE
+-----------------------------------------
+
+Open the **Arduino IDE** and follow these steps to burn the bootloader onto your ATMEGA328P.
+
+1. **Select the Target Board**
+
+   Navigate to **Tools → Board** and choose **ATMEGA328P**.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <img src="./_static/duino/tools_board.png" alt="Select Board" />
+    </div>
+
+2. **Choose the Correct Port**
+
+   Under **Tools → Port**, select the COM port corresponding to your programmer.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+       <img src="./_static/duino/Port.png" alt="Select COM Port" />
+    </div>
+
+3. **Select the Programmer**
+
+   Under **Tools → Programmer**, select the programmer (e.g., **USBasp** or your custom driver name).
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <img src="./_static/duino/program_usbasp.png" alt="Select Programmer" />
+    </div>
+
+4. **Burn the Bootloader**
+
+   Finally, go to **Tools → Burn Bootloader**.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <img src="./_static/duino/burn_bootloader.png" alt="Burn Bootloader" />
+    </div>
+
+Success! Your ATMEGA328P now has a compatible Arduino bootloader installed and is ready for development.
