@@ -49,10 +49,10 @@ This example demonstrates how to compile a basic blink program for two common AV
 
 The program toggles an LED connected to **pin PB0** every second.
 
-Source File (``blink.c``)
+Source File 
 -------------------------
 
-.. code-block:: techni
+.. code-block:: c
 
     #define F_CPU 16000000UL
     #include <avr/io.h>
@@ -71,7 +71,7 @@ Compilation Commands
 
 Use the following commands to compile and generate the HEX file:
 
-.. code-block:: techni
+.. code-block:: c
 
     # For ATtiny88
     avr-gcc -mmcu=attiny88 -Os -o blink.elf blink.c
@@ -95,7 +95,7 @@ Once the ``.hex`` file is generated, you can upload it to the AVR microcontrolle
 Upload Command
 --------------
 
-.. code-block:: techni
+.. code-block:: c
 
     avrdude -p m328p -c usbasp -U flash:w:blink.hex
 

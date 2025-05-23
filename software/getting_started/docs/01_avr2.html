@@ -399,7 +399,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file-blink-c">Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
@@ -454,32 +454,32 @@ document.write(`
 <li><p><strong>ATmega328P</strong></p></li>
 </ul>
 <p>The program toggles an LED connected to <strong>pin PB0</strong> every second.</p>
-<section id="source-file-blink-c">
-<h2>Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)<a class="headerlink" href="#source-file-blink-c" title="Link to this heading">#</a></h2>
-<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span>#define F_CPU 16000000UL
-#include &lt;avr/io.h&gt;
-#include &lt;util/delay.h&gt;
+<section id="source-file">
+<h2>Source File<a class="headerlink" href="#source-file" title="Link to this heading">#</a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define F_CPU 16000000UL</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avr/io.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;util/delay.h&gt;</span>
 
-int main(void) {
-    DDRB |= (1 &lt;&lt; PB0); // Set PB0 as output
-    while (1) {
-        PORTB ^= (1 &lt;&lt; PB0); // Toggle PB0
-        _delay_ms(1000);
-    }
-}
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DDRB</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">PB0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set PB0 as output</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">PORTB</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">PB0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Toggle PB0</span>
+<span class="w">        </span><span class="n">_delay_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="compilation-commands">
 <h2>Compilation Commands<a class="headerlink" href="#compilation-commands" title="Link to this heading">#</a></h2>
 <p>Use the following commands to compile and generate the HEX file:</p>
-<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span># For ATtiny88
-avr-gcc -mmcu=attiny88 -Os -o blink.elf blink.c
-avr-objcopy -O ihex blink.elf blink.hex
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp"># For ATtiny88</span>
+<span class="n">avr</span><span class="o">-</span><span class="n">gcc</span><span class="w"> </span><span class="o">-</span><span class="n">mmcu</span><span class="o">=</span><span class="n">attiny88</span><span class="w"> </span><span class="o">-</span><span class="n">Os</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">elf</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">c</span>
+<span class="n">avr</span><span class="o">-</span><span class="n">objcopy</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">ihex</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">elf</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">hex</span>
 
-# For ATmega328P
-avr-gcc -mmcu=atmega328p -DF_CPU=16000000UL -Os -o blink.elf blink.c
-avr-objcopy -O ihex blink.elf blink.hex
+<span class="cp"># For ATmega328P</span>
+<span class="n">avr</span><span class="o">-</span><span class="n">gcc</span><span class="w"> </span><span class="o">-</span><span class="n">mmcu</span><span class="o">=</span><span class="n">atmega328p</span><span class="w"> </span><span class="o">-</span><span class="n">DF_CPU</span><span class="o">=</span><span class="mi">16000000UL</span><span class="w"> </span><span class="o">-</span><span class="n">Os</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">elf</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">c</span>
+<span class="n">avr</span><span class="o">-</span><span class="n">objcopy</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">ihex</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">elf</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">hex</span>
 </pre></div>
 </div>
 <p>Explanation of flags:</p>
@@ -495,7 +495,7 @@ avr-objcopy -O ihex blink.elf blink.hex
 <p>Once the <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file is generated, you can upload it to the AVR microcontroller using <strong>AVRDUDE</strong>.</p>
 <section id="upload-command">
 <h2>Upload Command<a class="headerlink" href="#upload-command" title="Link to this heading">#</a></h2>
-<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span>avrdude -p m328p -c usbasp -U flash:w:blink.hex
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">avrdude</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">m328p</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">usbasp</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">flash</span><span class="o">:</span><span class="n">w</span><span class="o">:</span><span class="n">blink</span><span class="p">.</span><span class="n">hex</span>
 </pre></div>
 </div>
 <p>Explanation:</p>
@@ -559,7 +559,7 @@ avr-objcopy -O ihex blink.elf blink.hex
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file-blink-c">Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
