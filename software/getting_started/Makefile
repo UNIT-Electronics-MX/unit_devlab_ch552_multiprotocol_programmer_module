@@ -55,7 +55,7 @@ build:
 pdfx:
 	@$(RM) pdf 2>/dev/null || true
 	@$(MKDIR) pdf
-	@cd src && make clean && sphinx-build -M latexpdf source ../pdf
+	@cd src && make clean && make html && sphinx-build -M latexpdf source ../pdf
 	@echo "PDF built and copied to docs"
 	@$(MAKE) build
 
