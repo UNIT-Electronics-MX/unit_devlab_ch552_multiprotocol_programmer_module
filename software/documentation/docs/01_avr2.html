@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OpenOCD and PyOCD Overview &#8212; CH552 Multi-Protocol Programmer Getting Started 0.0.1 documentation</title>
+    <title>AVR: Compile and Upload Code &#8212; CH552 Multi-Protocol Programmer Getting Started 0.0.1 documentation</title>
   
   
   
@@ -49,14 +49,15 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00_openocd';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_avr2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using OpenOCD" href="01_example.html" />
-    <link rel="prev" title="AVR: Arduino IDE Bootloader" href="01_avr3.html" />
+    <link rel="next" title="AVR: Arduino IDE Bootloader" href="01_avr3.html" />
+    <link rel="prev" title="AVR Guide" href="01_avr.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
 
@@ -171,11 +172,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_avr2.html">AVR: Compile and Upload Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR: Compile and Upload Code</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">OpenOCD and PyOCD Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_openocd.html">OpenOCD and PyOCD Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_example.html">Using OpenOCD</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="02_stm32.html">STM32 microcontrollers</a></li>
@@ -251,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/Cesarbautista10/STM32/edit/main/docs/00_openocd.rst" target="_blank"
+      <li><a href="https://github.com/Cesarbautista10/STM32/edit/main/docs/01_avr2.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/Cesarbautista10/STM32/issues/new?title=Issue%20on%20page%20%2F00_openocd.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Cesarbautista10/STM32/issues/new?title=Issue%20on%20page%20%2F01_avr2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +299,7 @@
       
       
       
-      <li><a href="_sources/00_openocd.rst" target="_blank"
+      <li><a href="_sources/01_avr2.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>OpenOCD and PyOCD Overview</h1>
+    <h1>AVR: Compile and Upload Code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,26 +393,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openocd-open-on-chip-debugger">OpenOCD (Open On-Chip Debugger)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd-a-python-interface-to-openocd">PyOCD: A Python Interface to OpenOCD</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AVR: Compile and Upload Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toolchain-overview">Toolchain Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-cortex-m-debug-capabilities">ARM Cortex-M Debug Capabilities</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-interface-of-arm-cortex-m">Debugging Interface of ARM Cortex-M</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-through-debug-pins">Connection Through Debug Pins</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file-blink-c">Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cmsis-dap-a-standardized-debug-adapter">CMSIS-DAP: A Standardized Debug Adapter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-cmsis-dap">Overview of CMSIS-DAP</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swd-communication-protocols">SWD Communication Protocols</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signals-and-operations">Signals and Operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-swd-over-jtag">Advantages of SWD Over JTAG</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -422,68 +419,92 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="openocd-and-pyocd-overview">
-<h1>OpenOCD and PyOCD Overview<a class="headerlink" href="#openocd-and-pyocd-overview" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<section id="openocd-open-on-chip-debugger">
-<h3>OpenOCD (Open On-Chip Debugger)<a class="headerlink" href="#openocd-open-on-chip-debugger" title="Link to this heading">#</a></h3>
-<p>OpenOCD is an open-source software tool that facilitates debugging, in-system programming, and boundary-scan testing of embedded devices. It supports a diverse range of microcontrollers including STM32, RP2040, and PY32. Through interfaces such as JTAG or SWD, OpenOCD provides a command-line interface for effective interaction with the target devices.</p>
+  <section id="avr-compile-and-upload-code">
+<h1>AVR: Compile and Upload Code<a class="headerlink" href="#avr-compile-and-upload-code" title="Link to this heading">#</a></h1>
+<section id="toolchain-overview">
+<h2>Toolchain Overview<a class="headerlink" href="#toolchain-overview" title="Link to this heading">#</a></h2>
+<p>To compile and upload code to an AVR microcontroller, you’ll need the <strong>AVR-GCC</strong> toolchain. This includes essential components such as the compiler, assembler, linker, and utilities like <code class="docutils literal notranslate"><span class="pre">avr-objcopy</span></code>.</p>
 </section>
-<section id="pyocd-a-python-interface-to-openocd">
-<h3>PyOCD: A Python Interface to OpenOCD<a class="headerlink" href="#pyocd-a-python-interface-to-openocd" title="Link to this heading">#</a></h3>
-<p>PyOCD simplifies the use of OpenOCD by providing a Python-based high-level interface. It offers a Python API that abstracts the complexities of the OpenOCD command-line interface, making it easier to program and debug microcontrollers. PyOCD is user-friendly, flexible, and designed to be extensible for various microcontroller interactions.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 30.0%" />
-<col style="width: 70.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Tool</strong></p></th>
-<th class="head"><p><strong>Functionality</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>OpenOCD</p></td>
-<td><p>Provides a command-line interface for debugging and programming microcontrollers.</p></td>
-</tr>
-<tr class="row-odd"><td><p>PyOCD</p></td>
-<td><p>Offers a Python API for seamless interaction with microcontrollers via OpenOCD.</p></td>
-</tr>
-</tbody>
-</table>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>You can download and install the AVR-GCC toolchain from the official Microchip website:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">macOS</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the installer from the Microchip website and follow the installation instructions.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers">AVR-GCC Compiler for Microchip Studio</a></p></li>
+</ul>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>You can install the AVR-GCC toolchain using your package manager. For example, on Ubuntu:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install avr-gcc avr-binutils avr-libc</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>You can use Homebrew to install the AVR-GCC toolchain:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew tap osx-cross/avr</span>
+<span class="go">brew install avr-gcc</span>
+</pre></div>
+</div>
+</div></div>
+<p>Ensure the toolchain is added to your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable for global access.</p>
+</section>
+</section>
+<section id="example-compiling-a-blink-program">
+<h1>Example: Compiling a Blink Program<a class="headerlink" href="#example-compiling-a-blink-program" title="Link to this heading">#</a></h1>
+<p>This example demonstrates how to compile a basic blink program for two common AVR microcontrollers:</p>
+<ul class="simple">
+<li><p><strong>ATtiny88</strong></p></li>
+<li><p><strong>ATmega328P</strong></p></li>
+</ul>
+<p>The program toggles an LED connected to <strong>pin PB0</strong> every second.</p>
+<section id="source-file-blink-c">
+<h2>Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)<a class="headerlink" href="#source-file-blink-c" title="Link to this heading">#</a></h2>
+<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span>#define F_CPU 16000000UL
+#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+
+int main(void) {
+    DDRB |= (1 &lt;&lt; PB0); // Set PB0 as output
+    while (1) {
+        PORTB ^= (1 &lt;&lt; PB0); // Toggle PB0
+        _delay_ms(1000);
+    }
+}
+</pre></div>
 </div>
 </section>
+<section id="compilation-commands">
+<h2>Compilation Commands<a class="headerlink" href="#compilation-commands" title="Link to this heading">#</a></h2>
+<p>Use the following commands to compile and generate the HEX file:</p>
+<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span># For ATtiny88
+avr-gcc -mmcu=attiny88 -Os -o blink.elf blink.c
+avr-objcopy -O ihex blink.elf blink.hex
+
+# For ATmega328P
+avr-gcc -mmcu=atmega328p -DF_CPU=16000000UL -Os -o blink.elf blink.c
+avr-objcopy -O ihex blink.elf blink.hex
+</pre></div>
+</div>
+<p>Explanation of flags:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-mmcu=</span></code> specifies the target microcontroller.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Os</span></code> enables size optimization.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DF_CPU</span></code> sets the clock frequency used for timing functions.</p></li>
+</ul>
 </section>
-<section id="arm-cortex-m-debug-capabilities">
-<h2>ARM Cortex-M Debug Capabilities<a class="headerlink" href="#arm-cortex-m-debug-capabilities" title="Link to this heading">#</a></h2>
-<section id="debugging-interface-of-arm-cortex-m">
-<h3>Debugging Interface of ARM Cortex-M<a class="headerlink" href="#debugging-interface-of-arm-cortex-m" title="Link to this heading">#</a></h3>
-<p>The ARM Cortex-M architecture includes a comprehensive debug interface that allows external tools to access the microcontroller core for debugging and programming tasks. This interface includes a suite of registers and commands that empower debuggers to halt the core, access memory, and manage the execution of programs.</p>
 </section>
-<section id="connection-through-debug-pins">
-<h3>Connection Through Debug Pins<a class="headerlink" href="#connection-through-debug-pins" title="Link to this heading">#</a></h3>
-<p>Access to the debug interface is facilitated through specific pins on the microcontroller, such as SWDIO, SWCLK, and nRESET. These are linked to a debug adapter like the ST-Link or CMSIS-DAP, which forms the physical bridge between the host computer and the target device.</p>
-</section>
-</section>
-<section id="cmsis-dap-a-standardized-debug-adapter">
-<h2>CMSIS-DAP: A Standardized Debug Adapter<a class="headerlink" href="#cmsis-dap-a-standardized-debug-adapter" title="Link to this heading">#</a></h2>
-<section id="overview-of-cmsis-dap">
-<h3>Overview of CMSIS-DAP<a class="headerlink" href="#overview-of-cmsis-dap" title="Link to this heading">#</a></h3>
-<p>CMSIS-DAP (Cortex Microcontroller Software Interface Standard - Debug Access Port) serves as a standardized debug adapter for ARM Cortex-M devices. It is endorsed by OpenOCD and provides a cost-effective solution compared to proprietary debug adapters.</p>
-<img alt="CMSIS-DAP Debug Adapter" class="align-center" src="https://raw.githubusercontent.com/ARM-software/CMSIS-DAP/main/Documentation/Doxygen/src/images/CMSIS_DAP_INTERFACE.png" />
-</section>
-</section>
-<section id="swd-communication-protocols">
-<h2>SWD Communication Protocols<a class="headerlink" href="#swd-communication-protocols" title="Link to this heading">#</a></h2>
-<section id="signals-and-operations">
-<h3>Signals and Operations<a class="headerlink" href="#signals-and-operations" title="Link to this heading">#</a></h3>
-<p>The SWDIO (Serial Wire Debug Input/Output) and SWCLK (Serial Wire Clock) signals are integral for communication over the SWD interface. SWDIO is a bidirectional line used for transmitting debug commands and data, while SWCLK is a clock signal that ensures synchronized data transfer between the host and the target.</p>
-</section>
-<section id="advantages-of-swd-over-jtag">
-<h3>Advantages of SWD Over JTAG<a class="headerlink" href="#advantages-of-swd-over-jtag" title="Link to this heading">#</a></h3>
-<p>Utilizing a two-wire connection, the SWD interface minimizes the pin count required compared to the traditional JTAG interface. This reduction is particularly beneficial for microcontrollers where pin availability is limited.</p>
-</section>
+<section id="uploading-with-avrdude">
+<h1>Uploading with AVRDUDE<a class="headerlink" href="#uploading-with-avrdude" title="Link to this heading">#</a></h1>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file is generated, you can upload it to the AVR microcontroller using <strong>AVRDUDE</strong>.</p>
+<section id="upload-command">
+<h2>Upload Command<a class="headerlink" href="#upload-command" title="Link to this heading">#</a></h2>
+<div class="highlight-techni notranslate"><div class="highlight"><pre><span></span>avrdude -p m328p -c usbasp -U flash:w:blink.hex
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">m328p</span></code> specifies the target device (ATmega328P).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">usbasp</span></code> sets the programmer to the CH552 USB Multi-Protocol Programmer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-U</span> <span class="pre">flash:w:blink.hex</span></code> uploads the hex file to flash memory.</p></li>
+</ul>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">m328p</span></code> with the appropriate identifier for your specific AVR device (e.g., <code class="docutils literal notranslate"><span class="pre">t88</span></code> for ATtiny88). A full list of supported devices is available in the <a class="reference external" href="http://www.nongnu.org/avrdude/user-manual/avrdude.html#Device-Options">AVRDUDE user manual</a>.</p>
 </section>
 </section>
 
@@ -499,20 +520,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="01_avr3.html"
+       href="01_avr.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AVR: Arduino IDE Bootloader</p>
+        <p class="prev-next-title">AVR Guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="01_example.html"
+       href="01_avr3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using OpenOCD</p>
+        <p class="prev-next-title">AVR: Arduino IDE Bootloader</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -532,26 +553,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openocd-open-on-chip-debugger">OpenOCD (Open On-Chip Debugger)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd-a-python-interface-to-openocd">PyOCD: A Python Interface to OpenOCD</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AVR: Compile and Upload Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toolchain-overview">Toolchain Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-cortex-m-debug-capabilities">ARM Cortex-M Debug Capabilities</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-interface-of-arm-cortex-m">Debugging Interface of ARM Cortex-M</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-through-debug-pins">Connection Through Debug Pins</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file-blink-c">Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cmsis-dap-a-standardized-debug-adapter">CMSIS-DAP: A Standardized Debug Adapter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-cmsis-dap">Overview of CMSIS-DAP</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swd-communication-protocols">SWD Communication Protocols</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signals-and-operations">Signals and Operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-swd-over-jtag">Advantages of SWD Over JTAG</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>

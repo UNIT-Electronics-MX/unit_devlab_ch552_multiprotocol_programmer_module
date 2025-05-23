@@ -171,6 +171,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr2.html">AVR: Compile and Upload Code</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="00_openocd.html">OpenOCD and PyOCD Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_example.html">Using OpenOCD</a></li>
 
@@ -417,7 +422,38 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="001_about.html#supported-architectures">Supported Architectures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="001_about.html#supported-interfaces">Supported Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="001_about.html#gpio-pins">GPIO Pins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="001_about.html#protocol-jtag">Protocol JTAG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="001_about.html#protocol-swd">Protocol SWD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="001_about.html#schematic-diagram">Schematic Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_avr.html#introduction-to-avr-microcontrollers">Introduction to AVR Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr.html#architecture-overview">Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr.html#programming-with-the-ch552-multi-protocol-programmer">Programming with the CH552 Multi-Protocol Programmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr.html#getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr2.html">AVR: Compile and Upload Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#toolchain-overview">Toolchain Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr2.html#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#source-file-blink-c">Source File (<code class="docutils literal notranslate"><span class="pre">blink.c</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#compilation-commands">Compilation Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr2.html#uploading-with-avrdude">Uploading with AVRDUDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#upload-command">Upload Command</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#installing-the-bootloader-on-atmega328p">Installing the Bootloader on ATMEGA328P</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#required-materials">Required Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#hardware-connection">Hardware Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#driver-setup-with-zadig">Driver Setup with Zadig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#bootloader-installation-using-arduino-ide">Bootloader Installation Using Arduino IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="00_openocd.html">OpenOCD and PyOCD Overview</a><ul>

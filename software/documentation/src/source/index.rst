@@ -22,6 +22,9 @@ This documentation provides comprehensive technical guidance for effectively dep
    :caption: Contents
    
    001_about
+   01_avr
+   01_avr2
+   01_avr3
    00_openocd
    01_example
    02_stm32
