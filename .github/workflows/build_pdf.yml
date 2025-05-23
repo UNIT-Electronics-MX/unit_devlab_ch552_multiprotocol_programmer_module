@@ -26,8 +26,7 @@ jobs:
     - name: Install dependencies (Python + LaTeX + Ghostscript)
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended \
-          texlive-lang-english ghostscript
+        sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-lang-english ghostscript latexmk
         pip install -r software/documentation/requirements.txt
         pip install -r software/getting_started/requirements.txt
 
