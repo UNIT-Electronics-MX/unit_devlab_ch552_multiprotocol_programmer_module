@@ -11,7 +11,7 @@ This project provides firmware for a USB-based programmer built on the **CH552 m
 
 ## 🔌 Hardware Overview
 
-- Microcontroller: **CH552G / CH552E**
+- Microcontroller: **CH552G / CH552E / CH552P**
 - USB Full-Speed Interface (CDC / HID depending on firmware)
 - Voltage Selector: **3.3V / 5V** target supply switch
 - Programmable firmware profiles:
