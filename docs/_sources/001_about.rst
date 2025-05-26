@@ -15,23 +15,16 @@ Supported Architectures
 
 * **AVR** — via ISP (SPI configuration)
 * **ARM Cortex-M** — via CMSIS-DAP and SWD
+
+  - **RP2040** 
+  - **PY32**
+  - **STM32** 
+
 * **CPLD/FPGA (MAX II)** — via JTAG
-* **RP2040** — via SWD and UF2 bootloader
-* **PY32** — via CMSIS-DAP
+
 
 All protocols are exposed via labeled headers or JST connectors, allowing fast, solderless prototyping.
 
-.. note::
-   GPIO numbers refer to the CH552 internal ports. Ensure correct firmware pin mapping before connecting external devices.
-
-.. raw:: html
-
-   <div style="text-align: center;">
-     <button style="background-color:rgb(226, 142, 15); color: white; border: none; padding: 10px 20px;"
-             onclick="window.open('./_static/programmer_pinout.jpg', '_blank')">View in new window</button>
-     <br><br>
-     <img src="./_static/programmer_pinout.jpg" alt="USB Programmer Universal" style="width: 700px; height: auto;">
-   </div>
 
 This device connects to a host system via USB and allows the user to program and debug various microcontrollers and programmable logic devices.
 
@@ -69,20 +62,35 @@ Supported Interfaces
      - SWC (SWCLK), SWD (SWDIO), VCC, GND
      - Quick-connect to target board for SWD and power
 
-GPIO Pins
----------
+Sections GPIO Pin Distribution
+------------------------------
+
+The CH552 USB Multi-Protocol Programmer features a set of GPIO pins that can be configured for various protocols, including JTAG, SWD, and ISP. These GPIOs are mapped to specific functions in the firmware, allowing users to adapt the programmer for different applications.
+
+
+The GPIO pin distribution is defined within the CH552 firmware, supporting flexible assignment for various protocols. The firmware configures the specific mapping of GPIOs to protocols, such as SPI, JTAG, or SWD, based on the loaded configuration. Users can alter the pin distribution by modifying the firmware source code to suit their application requirements.
 
 Protocol ISP – In-System Programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Compatible with **AVR** microcontrollers, this protocol allows programming and debugging via the SPI interface. The programmer can be used to flash firmware directly into the target device's memory.
 
-.. raw:: html
+.. only:: html
 
-   <div style="text-align: center;">
-     <img src="./_static/hardware/swdio_avr.png" alt="ISP Pinout" style="width: 50%;">
-     <p>ISP Pinout</p>
-   </div>
+   .. figure:: _static/hardware/swdio_avr.png
+      :align: center
+      :width: 60%
+
+      Pinout diagram for CH552 Programmer
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \begin{center}
+      \includegraphics[width=\linewidth,keepaspectratio]{swdio_avr.png}
+      \end{center}
+
 
 .. list-table:: Pinout
    :widths: 33 33 33
@@ -97,24 +105,38 @@ Compatible with **AVR** microcontrollers, this protocol allows programming and d
    * - **MISO**
      - 1.6
      - I/O
+   * - **CS**
+     - 3.0
+     - I/O
    * - **SCK**
      - 1.7
      - I/O
-   * - **CS**
-     - 1.4
-     - I/O
+
 
 Protocol JTAG
 -------------
 
 Compatible with **CPLD** and **FPGA** devices, this protocol allows programming and debugging via the JTAG interface. The programmer can be used to flash firmware directly into the target device's memory.
 
-.. raw:: html
 
-   <div style="text-align: center;">
-     <img src="./_static/hardware/jtag.png" alt="JTAG Pinout" style="width: 60%;">
-     <p>JTAG Pinout</p>
-   </div>
+.. only:: html
+
+   .. figure:: _static/hardware/jtag.png
+      :align: center
+      :width: 60%
+
+      Pinout diagram for CH552 Programmer
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth,keepaspectratio]{jtag.png}
+      \caption{Pinout diagram for CH552 Programmer (JTAG interface)}
+      \end{figure}
+
 
 .. list-table:: Pinout
    :widths: 33 33 33
@@ -136,17 +158,48 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - 1.6
      - I/O
 
+.. list-table:: Pinout NC - Not Connected
+   :widths: 33 33 33
+   :header-rows: 1
+
+   * - PIN
+     - GPIO
+     - I/O
+   * - **NC 6**
+     - 3.4
+     - I/O
+   * - **NC 7**
+     - 3.3
+     - I/O
+   * - **NC 8**
+     - 1.4
+     - I/O
 Protocol SWD
 ------------
 
 Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programming and debugging via the SWD interface. The programmer can be used to flash firmware directly into the target device's memory.
 
-.. raw:: html
 
-   <div style="text-align: center;">
-     <img src="./_static/hardware/swdio_jst.png" alt="SWD Pinout" style="width: 20%;">
-     <p>SWD Pinout</p>
-   </div>
+
+.. only:: html
+
+   .. figure:: _static/hardware/swdio_jst.png
+      :align: center
+      :width: 60%
+
+      SWD Pinout
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth,keepaspectratio]{swdio_jst.png}
+      \caption{SWD Pinout(JTAG interface)}
+      \end{figure}
+
+
 
 .. list-table:: Pinout
    :widths: 33 33 33
@@ -162,17 +215,52 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
      - 1.6
      - I/O
 
-Schematic Diagram
------------------
+.. note::
+   GPIO numbers refer to the CH552 internal ports. Ensure correct firmware pin mapping before connecting external devices.
 
-.. raw:: html
+.. only:: html
 
-   <div style="text-align: center;">
-     <button style="background-color: rgb(226, 142, 15); color: white; border: none; padding: 10px 20px;"
-             onclick="window.open('./_static/hardware/Schematics_CH552_USB_Multi-Protocol_Programmer_V1.pdf', '_blank')">
-       Download Schematics (PDF)
-     </button>
-   </div>
-   <br>
-   <iframe src="./_static/hardware/Schematics_CH552_USB_Multi-Protocol_Programmer_V1.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
-   <br>
+   .. figure:: _static/programmer_pinout.jpg
+      :align: center
+      :width: 60%
+
+      Pinout diagram for CH552 Programmer
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \clearpage
+      \thispagestyle{empty}
+      \onecolumn
+      \begin{center}
+      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{programmer_pinout.jpg}
+      \end{center}
+      \twocolumn
+
+
+.. only:: html
+
+    .. rubric:: Schematic Diagram
+
+    .. raw:: html
+
+      <div style="text-align: center;">
+      <button style="background-color: rgb(226, 142, 15); color: white; border: none; padding: 10px 20px;"
+      onclick="window.open('./_static/hardware/Schematics_CH552_USB_Multi-Protocol_Programmer_V1.pdf', '_blank')">
+      Download Schematics (PDF)
+      </button>
+      </div>
+      <br>
+      <iframe src="./_static/hardware/Schematics_CH552_USB_Multi-Protocol_Programmer_V1.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \clearpage
+      \chapter*{Appendix A: Schematics}
+      \addcontentsline{toc}{chapter}{Appendix A: Schematics}
+      \includepdf[pages=-,landscape=true]{Schematics_CH552_USB_Multi-Protocol_Programmer_V1.pdf}
+    
+

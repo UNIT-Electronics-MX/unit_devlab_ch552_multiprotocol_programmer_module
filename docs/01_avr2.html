@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AVR: Compile and Upload Code &#8212; CH552 Multi-Protocol Programmer Getting Started 0.0.1 documentation</title>
+    <title>AVR: Compile and Upload Code &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
   
   
   
@@ -150,8 +150,8 @@
       
     
     
-    <img src="_static/programmer.png" class="logo__image only-light" alt="CH552 Multi-Protocol Programmer Getting Started 0.0.1 documentation - Home"/>
-    <script>document.write(`<img src="_static/programmer.png" class="logo__image only-dark" alt="CH552 Multi-Protocol Programmer Getting Started 0.0.1 documentation - Home"/>`);</script>
+    <img src="_static/programmer.png" class="logo__image only-light" alt="CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation - Home"/>
+    <script>document.write(`<img src="_static/programmer.png" class="logo__image only-dark" alt="CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -173,12 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR: Compile and Upload Code</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00_openocd.html">OpenOCD and PyOCD Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_example.html">Using OpenOCD</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="02_stm32.html">STM32 microcontrollers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a></li>
 </ul>
@@ -235,7 +230,7 @@
       
       
       
-      <li><a href="https://github.com/Cesarbautista10/STM32" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +247,7 @@
       
       
       
-      <li><a href="https://github.com/Cesarbautista10/STM32/edit/main/docs/01_avr2.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/edit/main/docs/01_avr2.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +264,7 @@
       
       
       
-      <li><a href="https://github.com/Cesarbautista10/STM32/issues/new?title=Issue%20on%20page%20%2F01_avr2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/issues/new?title=Issue%20on%20page%20%2F01_avr2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,22 +388,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AVR: Compile and Upload Code</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toolchain-overview">Toolchain Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -445,9 +436,8 @@ document.write(`
 </div></div>
 <p>Ensure the toolchain is added to your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable for global access.</p>
 </section>
-</section>
 <section id="example-compiling-a-blink-program">
-<h1>Example: Compiling a Blink Program<a class="headerlink" href="#example-compiling-a-blink-program" title="Link to this heading">#</a></h1>
+<h2>Example: Compiling a Blink Program<a class="headerlink" href="#example-compiling-a-blink-program" title="Link to this heading">#</a></h2>
 <p>This example demonstrates how to compile a basic blink program for two common AVR microcontrollers:</p>
 <ul class="simple">
 <li><p><strong>ATtiny88</strong></p></li>
@@ -455,7 +445,7 @@ document.write(`
 </ul>
 <p>The program toggles an LED connected to <strong>pin PB0</strong> every second.</p>
 <section id="source-file">
-<h2>Source File<a class="headerlink" href="#source-file" title="Link to this heading">#</a></h2>
+<h3>Source File<a class="headerlink" href="#source-file" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define F_CPU 16000000UL</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avr/io.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;util/delay.h&gt;</span>
@@ -471,7 +461,7 @@ document.write(`
 </div>
 </section>
 <section id="compilation-commands">
-<h2>Compilation Commands<a class="headerlink" href="#compilation-commands" title="Link to this heading">#</a></h2>
+<h3>Compilation Commands<a class="headerlink" href="#compilation-commands" title="Link to this heading">#</a></h3>
 <p>Use the following commands to compile and generate the HEX file:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp"># For ATtiny88</span>
 <span class="n">avr</span><span class="o">-</span><span class="n">gcc</span><span class="w"> </span><span class="o">-</span><span class="n">mmcu</span><span class="o">=</span><span class="n">attiny88</span><span class="w"> </span><span class="o">-</span><span class="n">Os</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">elf</span><span class="w"> </span><span class="n">blink</span><span class="p">.</span><span class="n">c</span>
@@ -491,10 +481,10 @@ document.write(`
 </section>
 </section>
 <section id="uploading-with-avrdude">
-<h1>Uploading with AVRDUDE<a class="headerlink" href="#uploading-with-avrdude" title="Link to this heading">#</a></h1>
+<h2>Uploading with AVRDUDE<a class="headerlink" href="#uploading-with-avrdude" title="Link to this heading">#</a></h2>
 <p>Once the <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file is generated, you can upload it to the AVR microcontroller using <strong>AVRDUDE</strong>.</p>
 <section id="upload-command">
-<h2>Upload Command<a class="headerlink" href="#upload-command" title="Link to this heading">#</a></h2>
+<h3>Upload Command<a class="headerlink" href="#upload-command" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">avrdude</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">m328p</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">usbasp</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">flash</span><span class="o">:</span><span class="n">w</span><span class="o">:</span><span class="n">blink</span><span class="p">.</span><span class="n">hex</span>
 </pre></div>
 </div>
@@ -505,6 +495,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">-U</span> <span class="pre">flash:w:blink.hex</span></code> uploads the hex file to flash memory.</p></li>
 </ul>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">m328p</span></code> with the appropriate identifier for your specific AVR device (e.g., <code class="docutils literal notranslate"><span class="pre">t88</span></code> for ATtiny88). A full list of supported devices is available in the <a class="reference external" href="http://www.nongnu.org/avrdude/user-manual/avrdude.html#Device-Options">AVRDUDE user manual</a>.</p>
+</section>
 </section>
 </section>
 
@@ -553,22 +544,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AVR: Compile and Upload Code</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toolchain-overview">Toolchain Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compiling-a-blink-program">Example: Compiling a Blink Program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-file">Source File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
