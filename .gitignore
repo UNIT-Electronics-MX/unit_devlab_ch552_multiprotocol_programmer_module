@@ -1,4 +1,7 @@
 venv
-software/documentation
-software/getting_started
+software/documentation/build
+software/documentation/docs
+software/getting_started/docs
+software/getting_started/pdf
+
 software/firmware
