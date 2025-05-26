@@ -65,7 +65,7 @@ def setup(app):
 
 project = 'CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference'
 copyright = '2025, Unit Electronics'
-author = 'Cesar Bautista'
+author = 'Department of Engineering, Innovation and Development'
 release = '0.0.1'
 extensions = [
     'sphinx.ext.autodoc',
@@ -100,7 +100,7 @@ html_theme_options = {
 }
 latex_documents = [
     ('index', 'programmer.tex', 'CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference',
-     'Cesar Bautista', 'manual'),
+     'Department of Engineering, Innovation and Development', 'manual'),
 ]
 
 latex_elements = {
