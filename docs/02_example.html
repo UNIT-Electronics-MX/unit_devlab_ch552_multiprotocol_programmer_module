@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CH552 USB Multi-Protocol Programmer &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
+    <title>Using OpenOCD &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
   
   
   
@@ -52,10 +52,11 @@
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_example';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Terms, Acknowledgments, and Licenses" href="00_terms.html" />
+    <link rel="next" title="How to Generate an Error Report" href="report.html" />
+    <link rel="prev" title="OpenOCD and PyOCD Overview" href="02_openocd.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
 
@@ -119,8 +120,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -139,7 +138,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -169,7 +168,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_terms.html">Terms, Acknowledgments, and Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a></li>
@@ -177,7 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_stm32.html">STM32 microcontrollers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_openocd.html">OpenOCD and PyOCD Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_example.html">Using OpenOCD</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using OpenOCD</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a></li>
 </ul>
@@ -251,7 +250,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/edit/main/docs/index.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/edit/main/docs/02_example.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/issues/new?title=Issue%20on%20page%20%2F02_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +297,7 @@
       
       
       
-      <li><a href="_sources/index.rst" target="_blank"
+      <li><a href="_sources/02_example.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +368,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -380,11 +381,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CH552 USB Multi-Protocol Programmer</h1>
+    <h1>Using OpenOCD</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Using OpenOCD</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-microcontrollers">Supported Microcontrollers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-your-microcontroller-target">Selecting Your Microcontroller Target</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd">PyOCD</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -394,169 +411,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ch552-usb-multi-protocol-programmer">
-<h1>CH552 USB Multi-Protocol Programmer<a class="headerlink" href="#ch552-usb-multi-protocol-programmer" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This documentation is actively evolving. For the latest updates and revisions,
-please visit the project’s GitHub repository.</p>
+  <section id="using-openocd">
+<h1>Using OpenOCD<a class="headerlink" href="#using-openocd" title="Link to this heading">#</a></h1>
+<p>To program your microcontroller using OpenOCD, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openocd<span class="w"> </span>-f<span class="w"> </span>interface/cmsis-dap.cfg<span class="w"> </span>-f<span class="w"> </span>target/rp2040.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-c<span class="w"> </span><span class="s2">&quot;init&quot;</span><span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;reset init&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-c<span class="w"> </span><span class="s2">&quot;flash write_image erase blink.bin 0x10000000&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-c<span class="w"> </span><span class="s2">&quot;reset run&quot;</span><span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;shutdown&quot;</span>
+</pre></div>
 </div>
-<p><strong>CH552 USB Multi-Protocol Programmer</strong></p>
-<p>The <strong>CH552 USB Multi-Protocol Programmer</strong> is a compact and cost-effective device designed for embedded systems development, testing, and debugging. It supports multiple hardware architectures including <strong>AVR</strong>, <strong>ARM Cortex-M (CMSIS-DAP)</strong>, and <strong>CPLD (MAX II)</strong>, making it ideal for a wide range of applications such as firmware development, educational labs, and low-volume production environments.</p>
-<p>This programmer is built around the <strong>CH552 microcontroller</strong>, which is based on the enhanced <strong>8051 architecture</strong>. It offers native USB support and a range of digital interfaces (GPIO, SPI, I2C, UART), enabling seamless communication between the host system and the target hardware.</p>
-<p><strong>Microcontroller Core</strong></p>
-<p>The programmer integrates a <strong>CH552 microcontroller</strong> with the following characteristics:</p>
-<ul class="simple">
-<li><p>8051-based enhanced core, up to 24 MHz.</p></li>
-<li><p>Native USB 2.0 Full-Speed device.</p></li>
-<li><p>Multiple GPIO pins for signal control and mapping.</p></li>
-<li><p>SPI, I2C, and UART interfaces for protocol bridging.</p></li>
-<li><p>Low power consumption and small form factor.</p></li>
-</ul>
-<p><strong>Features</strong></p>
-<ul class="simple">
-<li><p><strong>Multi-architecture support</strong>: Compatible with AVR (ISP), ARM Cortex-M (CMSIS-DAP), and CPLD (JTAG).</p></li>
-<li><p><strong>In-System Programming (ISP)</strong>: Flash microcontrollers without desoldering.</p></li>
-<li><p><strong>Real-time debugging</strong>: Step-through and breakpoint debugging with OpenOCD and PyOCD.</p></li>
-<li><p><strong>JTAG boundary-scan</strong>: For CPLD configuration and board testing.</p></li>
-<li><p><strong>Configurable GPIOs</strong>: Adaptable for use as JTAG, SWD, or ISP lines.</p></li>
-<li><p><strong>USB 2.0 interface</strong>: Direct connection to host PC using USB CDC or HID.</p></li>
-<li><p><strong>Toolchain compatibility</strong>: Works with avrdude, OpenOCD, PyOCD, urJTAG, and others.</p></li>
-<li><p><strong>Cross-platform support</strong>: Compatible with Linux and partially supported on Windows.</p></li>
-</ul>
-<p><strong>Advantages</strong></p>
-<ul class="simple">
-<li><p><strong>Compact design</strong>: Suitable for breadboards and embedded setups.</p></li>
-<li><p><strong>Versatility</strong>: One device for multiple programming and debugging protocols.</p></li>
-<li><p><strong>Open-source firmware</strong>: Fully customizable and community-supported.</p></li>
-<li><p><strong>Cost-effective</strong>: Inexpensive alternative to commercial debuggers and programmers.</p></li>
-<li><p><strong>Linux-friendly</strong>: No need for proprietary drivers on Linux systems.</p></li>
-<li><p><strong>Ideal for education</strong>: Can be used in microcontroller courses and workshops.</p></li>
-</ul>
-<p><strong>Limitations</strong></p>
-<ul class="simple">
-<li><p><strong>External power required</strong>: Cannot supply power to high-current target boards.</p></li>
-<li><p><strong>Learning curve</strong>: Requires knowledge of protocols like CMSIS-DAP, JTAG, or AVR ISP.</p></li>
-<li><p><strong>Firmware updates</strong>: May require reflashing to support new features or targets.</p></li>
-<li><p><strong>Partial Windows support</strong>: Some tools may require manual setup or driver adjustments.</p></li>
-</ul>
-<p><strong>Compatibility</strong></p>
-<p><strong>CMSIS-DAP (ARM Cortex-M)</strong></p>
-<ul class="simple">
-<li><p>Fully compatible with CMSIS-DAP v2.0 protocol.</p></li>
-<li><p>Supported by OpenOCD and PyOCD.</p></li>
-<li><p>Tested with:</p>
-<ul>
-<li><p>STM32F0</p></li>
-<li><p>RP2040 (Raspberry Pi Pico)</p></li>
-<li><p>PY32 series</p></li>
-<li><p>Other Cortex-M0/M3/M4 devices</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>AVR ISP</strong></p>
-<ul class="simple">
-<li><p>Works with avrdude using USBasp-like interface.</p></li>
-<li><p>Supports:</p>
-<ul>
-<li><p>ATmega328P</p></li>
-<li><p>ATtiny85</p></li>
-<li><p>ATmega2560</p></li>
-<li><p>Other classic 8-bit AVR microcontrollers</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>CPLD JTAG</strong></p>
-<ul class="simple">
-<li><p>Supports Intel (formerly Altera) MAX II series.</p></li>
-<li><p>Compatible with JTAG tools like urJTAG or openFPGALoader.</p></li>
-<li><p>JTAG signals exposed via GPIO (TDI, TDO, TCK, TMS).</p></li>
-</ul>
-<p><strong>Use Cases</strong></p>
-<ul class="simple">
-<li><p>Firmware flashing and in-system programming.</p></li>
-<li><p>Debugging embedded applications with CMSIS-DAP.</p></li>
-<li><p>Educational labs and training environments.</p></li>
-<li><p>Low-cost production line programming.</p></li>
-<li><p>Boundary-scan tests for hardware bring-up.</p></li>
-<li><p>CPLD configuration and prototyping.</p></li>
-</ul>
-<p><strong>Resources</strong></p>
-<ul class="simple">
-<li><p>Firmware: [<a class="github reference external" href="https://github.com/wagiminator/CH552-DAPLink](https://github.com/wagiminator/CH552-DAPLink">wagiminator/CH552-DAPLink](https:</a>)</p></li>
-<li><p>CH552 Datasheet: Available from WCH official website.</p></li>
-<li><p>Tools:</p>
-<ul>
-<li><p>OpenOCD, PyOCD</p></li>
-<li><p>avrdude</p></li>
-<li><p>urJTAG, openFPGALoader</p></li>
-</ul>
-</li>
-<li><p>Community support: GitHub issues, Reddit, Hackaday, forums.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="00_terms.html">Terms, Acknowledgments, and Licenses</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="00_terms.html#terms-and-conditions">Terms and Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_terms.html#acknowledgments-and-contributors">Acknowledgments and Contributors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_terms.html#hardware-license">Hardware License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_terms.html#resources-and-references">Resources and References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00_terms.html#licenses">Licenses</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="001_about.html">General Information</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="001_about.html#supported-architectures">Supported Architectures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="001_about.html#supported-interfaces">Supported Interfaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="001_about.html#sections-gpio-pin-distribution">Sections GPIO Pin Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="001_about.html#protocol-jtag">Protocol JTAG</a></li>
-<li class="toctree-l2"><a class="reference internal" href="001_about.html#protocol-swd">Protocol SWD</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="01_avr.html">AVR Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_avr.html#introduction-to-avr-microcontrollers">Introduction to AVR Microcontrollers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr.html#architecture-overview">Architecture Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr.html#programming-with-the-ch552-multi-protocol-programmer">Programming with the CH552 Multi-Protocol Programmer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr.html#getting-started">Getting Started</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="01_avr2.html">AVR: Compile and Upload Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#toolchain-overview">Toolchain Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#example-compiling-a-blink-program">Example: Compiling a Blink Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr2.html#uploading-with-avrdude">Uploading with AVRDUDE</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="01_avr3.html">AVR: Arduino IDE Bootloader</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#installing-the-bootloader-on-atmega328p">Installing the Bootloader on ATMEGA328P</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#required-materials">Required Materials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#hardware-connection">Hardware Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#driver-setup-with-zadig">Driver Setup with Zadig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_avr3.html#bootloader-installation-using-arduino-ide">Bootloader Installation Using Arduino IDE</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="02_stm32.html">STM32 microcontrollers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_stm32.html#getting-started-with-stm32">Getting Started with STM32</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="02_openocd.html">OpenOCD and PyOCD Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_openocd.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_openocd.html#arm-cortex-m-debug-capabilities">ARM Cortex-M Debug Capabilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_openocd.html#cmsis-dap-a-standardized-debug-adapter">CMSIS-DAP: A Standardized Debug Adapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_openocd.html#swd-communication-protocols">SWD Communication Protocols</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="02_example.html">Using OpenOCD</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_example.html#supported-microcontrollers">Supported Microcontrollers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="02_example.html#pyocd">PyOCD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="report.html#steps-to-create-an-error-report">Steps to Create an Error Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="report.html#review-and-follow-up">Review and Follow-Up</a></li>
-</ul>
-</li>
-</ul>
+<section id="supported-microcontrollers">
+<h2>Supported Microcontrollers<a class="headerlink" href="#supported-microcontrollers" title="Link to this heading">#</a></h2>
+<p>This guide supports the following microcontrollers:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Microcontroller</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RP2040</p></td>
+<td><p>Low-cost microcontroller with a dual-core ARM Cortex-M0+ processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>STM32F103C8T6</p></td>
+<td><p>Budget-friendly microcontroller with an ARM Cortex-M3 processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>STM32F411</p></td>
+<td><p>Cost-effective microcontroller with an ARM Cortex-M4 processor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="selecting-your-microcontroller-target">
+<h3>Selecting Your Microcontroller Target<a class="headerlink" href="#selecting-your-microcontroller-target" title="Link to this heading">#</a></h3>
+<p>Each microcontroller requires a specific configuration file. This file is a script that instructs OpenOCD on how to communicate with the microcontroller. The configuration file is tailored to the microcontroller and the debugger interface.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Microcontroller</p></th>
+<th class="head"><p>Configuration File</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RP2040</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rp2040.cfg</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>STM32F103C8T6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stm32f103c8t6.cfg</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>STM32F411</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stm32f411.cfg</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="pyocd">
+<h1>PyOCD<a class="headerlink" href="#pyocd" title="Link to this heading">#</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>erase<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span>--chip<span class="w"> </span>--config<span class="w"> </span>./Misc/pyocd.yaml
+</pre></div>
 </div>
 </section>
 
@@ -571,12 +493,21 @@ please visit the project’s GitHub repository.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02_openocd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OpenOCD and PyOCD Overview</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="00_terms.html"
+       href="report.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Terms, Acknowledgments, and Licenses</p>
+        <p class="prev-next-title">How to Generate an Error Report</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -586,6 +517,29 @@ please visit the project’s GitHub repository.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Using OpenOCD</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-microcontrollers">Supported Microcontrollers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-your-microcontroller-target">Selecting Your Microcontroller Target</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd">PyOCD</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
