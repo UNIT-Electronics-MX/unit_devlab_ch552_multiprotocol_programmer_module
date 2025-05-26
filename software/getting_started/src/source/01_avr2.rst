@@ -40,7 +40,7 @@ You can download and install the AVR-GCC toolchain from the official Microchip w
 Ensure the toolchain is added to your system’s ``PATH`` environment variable for global access.
 
 Example: Compiling a Blink Program
-==================================
+-----------------------------------
 
 This example demonstrates how to compile a basic blink program for two common AVR microcontrollers:
 
@@ -50,7 +50,7 @@ This example demonstrates how to compile a basic blink program for two common AV
 The program toggles an LED connected to **pin PB0** every second.
 
 Source File 
--------------------------
+~~~~~~~~~~~~
 
 .. code-block:: c
 
@@ -67,7 +67,7 @@ Source File
     }
 
 Compilation Commands
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Use the following commands to compile and generate the HEX file:
 
@@ -88,13 +88,12 @@ Explanation of flags:
 * ``-DF_CPU`` sets the clock frequency used for timing functions.
 
 Uploading with AVRDUDE
-======================
+-----------------------
 
 Once the ``.hex`` file is generated, you can upload it to the AVR microcontroller using **AVRDUDE**.
 
 Upload Command
---------------
-
+~~~~~~~~~~~~~~~
 .. code-block:: c
 
     avrdude -p m328p -c usbasp -U flash:w:blink.hex

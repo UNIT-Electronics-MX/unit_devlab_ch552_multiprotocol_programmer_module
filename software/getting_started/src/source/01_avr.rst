@@ -59,3 +59,12 @@ To program AVR microcontrollers using the CH552 programmer:
 .. code-block:: console
 
     avrdude -p m328p -c ch552 -U flash:w:firmware.hex
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \clearpage
+      \onecolumn
+      \blanknotepage
+      \twocolumn
