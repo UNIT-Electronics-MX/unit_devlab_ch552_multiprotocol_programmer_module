@@ -63,7 +63,7 @@ jobs:
         cp software/documentation/build/unit_product_brief.pdf docs/
 
         # PDF generado por Sphinx
-        cp software/getting_started/pdf/ch552multi-protocolprogrammergettingstarted.pdf docs/unit_getting_started.pdf
+        cp software/getting_started/pdf/programmer.pdf docs/unit_getting_started.pdf
 
         # HTML generado por Sphinx
         cp -r software/getting_started/docs/* docs/
