@@ -9,15 +9,17 @@
     <br>
 </div>
 
+<div align="center">
+    <p href="./docs/unit_product_brief.pdf">  <img src="hardware/resources/programmer.png?raw=false" width="500px"></p>
+
+    <br/>   
+    </div>
+
 
 **Supports AVR, ARM (CMSIS-DAP), and CPLD (MAX II)**
 
 This project provides firmware for a USB-based programmer built on the **CH552 microcontroller**, supporting multiple programming targets and protocols, including **AVR**, **ARM Cortex-M**, and **CPLD** devices. The device includes **target voltage selection (3.3V / 5V)** and can be configured with different firmware to suit specific microcontroller families.
 
-<div align="center">
-  <img src="hardware/resources/programmer.png?raw=false" width="500px">
-    <br/>   
-    </div>
 
 ## 🔌 Hardware Overview
 
