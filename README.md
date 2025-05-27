@@ -11,9 +11,8 @@
 
 <div align="center">
     <p href="./docs/unit_product_brief.pdf">  <img src="hardware/resources/programmer.png?raw=false" width="500px"></p>
-
-    <br/>   
-    </div>
+  <br/>   
+  </div>
 
 
 **Supports AVR, ARM (CMSIS-DAP), and CPLD (MAX II)**
