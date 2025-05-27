@@ -1,5 +1,15 @@
 
 # CH552 USB Multi-Protocol Programmer  
+
+<div align="center">
+    <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
+    <a href="#"><img src="https://img.shields.io/badge/language-Python-lightgrey.svg" alt="Language"></a>
+    <a href="#"><img src="https://img.shields.io/badge/language-C-lightgrey.svg" alt="Language"></a>
+    <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
+    <br>
+</div>
+
+
 **Supports AVR, ARM (CMSIS-DAP), and CPLD (MAX II)**
 
 This project provides firmware for a USB-based programmer built on the **CH552 microcontroller**, supporting multiple programming targets and protocols, including **AVR**, **ARM Cortex-M**, and **CPLD** devices. The device includes **target voltage selection (3.3V / 5V)** and can be configured with different firmware to suit specific microcontroller families.
