@@ -56,11 +56,13 @@ Supported Interfaces
    * - **SWD**
      - ARM’s two-wire serial debug and programming interface
      - SWCLK, SWDIO
-     - Cortex-M programming & step-through debugging
+     - Cortex-M programming and step-through debugging
    * - **JST Header**
-     - Compact connector for power + single-wire debug signals
+     - Compact connector for power and single-wire debug signals
      - SWC (SWCLK), SWD (SWDIO), VCC, GND
      - Quick-connect to target board for SWD and power
+
+
 
 Sections GPIO Pin Distribution
 ------------------------------
@@ -137,7 +139,6 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
       \caption{Pinout diagram for CH552 Programmer (JTAG interface)}
       \end{figure}
 
-
 .. list-table:: Pinout
    :widths: 33 33 33
    :header-rows: 1
@@ -174,6 +175,8 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
    * - **NC 8**
      - 1.4
      - I/O
+
+
 Protocol SWD
 ------------
 
@@ -214,6 +217,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
    * - **SWDIO**
      - 1.6
      - I/O
+
 
 .. note::
    GPIO numbers refer to the CH552 internal ports. Ensure correct firmware pin mapping before connecting external devices.
