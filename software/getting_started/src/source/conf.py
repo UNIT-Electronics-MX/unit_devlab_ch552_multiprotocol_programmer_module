@@ -100,7 +100,7 @@ html_theme_options = {
 }
 latex_documents = [
     ('index', 'programmer.tex', 'CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference',
-     'R&D and Innovation Department', 'manual'),
+     'Department of Research, Innovation, and Development', 'manual'),
 ]
 
 latex_elements = {
