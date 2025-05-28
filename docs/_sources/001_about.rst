@@ -224,7 +224,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
 
 .. only:: html
 
-   .. figure:: _static/programmer_pinout.jpg
+   .. figure:: _static/function-diagram.jpg
       :align: center
       :width: 60%
 
@@ -238,7 +238,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
       \thispagestyle{empty}
       \onecolumn
       \begin{center}
-      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{programmer_pinout.jpg}
+      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{function-diagram.jpg}
       \end{center}
       \twocolumn
 
