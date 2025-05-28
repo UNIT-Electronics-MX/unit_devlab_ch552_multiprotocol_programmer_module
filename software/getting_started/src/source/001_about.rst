@@ -238,7 +238,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
       \thispagestyle{empty}
       \onecolumn
       \begin{center}
-      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{programmer_pinout.jpg}
+      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{function-diagram.jpg}
       \end{center}
       \twocolumn
 
