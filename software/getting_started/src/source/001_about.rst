@@ -224,7 +224,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
 
 .. only:: html
 
-   .. figure:: _static/programmer_pinout.jpg
+   .. figure:: _static/function-diagram.jpg
       :align: center
       :width: 60%
 
