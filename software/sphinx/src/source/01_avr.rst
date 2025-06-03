@@ -1,5 +1,5 @@
-AVR Guide
-============
+AVR: Getting Started
+====================
 
 Introduction to AVR Microcontrollers
 --------------------------------------

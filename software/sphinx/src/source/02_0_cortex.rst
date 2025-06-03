@@ -1,8 +1,22 @@
-OpenOCD and PyOCD Overview
-==========================
+================
+ARM Cortex-M
+================
 
-Introduction
-------------
+ARM Cortex-M microcontrollers—such as those found in the STM32, RP2040, PY32, and similar families—are built on ARMv6-M, ARMv7-M, or ARMv8-M architectures. These cores target low-power, high-performance embedded applications.
+
+Core Families
+-------------
+
+* Cortex-M0 / M0+ (ARMv6-M): Ultra-low power, suitable for simple tasks.
+* Cortex-M3 / M4 / M7 (ARMv7-M): Higher performance; some models (like M4 and M7) support floating-point operations.
+* Cortex-M23 / M33 (ARMv8-M): Introduce enhanced security features, such as TrustZone.
+
+Additional Notes
+----------------
+
+- The RP2040 uses dual Cortex-M0+ cores (ARMv6-M).
+- The PY32 series (e.g., PY32F003) typically uses a Cortex-M0+ core (ARMv6-M).
+- The STM32 family spans a wide range—from Cortex-M0 to M7 and even M33 in newer models.
 
 OpenOCD (Open On-Chip Debugger)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,6 +72,7 @@ The SWDIO (Serial Wire Debug Input/Output) and SWCLK (Serial Wire Clock) signals
 Advantages of SWD Over JTAG
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Utilizing a two-wire connection, the SWD interface minimizes the pin count required compared to the traditional JTAG interface. This reduction is particularly beneficial for microcontrollers where pin availability is limited.
+
 
 
 
