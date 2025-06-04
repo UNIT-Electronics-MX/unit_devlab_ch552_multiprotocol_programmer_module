@@ -4,6 +4,8 @@ import re
 import subprocess
 import markdown2
 import yaml
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 def markdown_table_to_latex(md_table):
@@ -95,6 +97,12 @@ def format_images_with_titles(content):
     return code
 
 def parse_readme_md(path):
+
+        # Obtener fecha local en Ciudad de México
+    cdmx_now = datetime.now(ZoneInfo("America/Mexico_City"))
+    formatted_date = cdmx_now.strftime("%Y-%m-%d %H:%M")
+
+
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -114,11 +122,14 @@ def parse_readme_md(path):
     downloads = re.findall(r'- \[(.*?)\]\((.*?)\)', content)
     downloads_latex = "\\n".join([f"\\item \\href{{{link}}}{{{text}}}" for text, link in downloads])
 
+    date_used = frontmatter.get("modified", formatted_date)
+
     data = {
         "LOGO": frontmatter.get("logo", "images/logo_unit.png"),
         "TITLE": frontmatter.get("title", "Untitled"),
         "VERSION": frontmatter.get("version", "v1.0"),
-        "DATE": frontmatter.get("modified", "Unknown"),
+        "DATE": formatted_date,
+
         "SUBTITLE": frontmatter.get("subtitle", "Product Brief"),
         "INTRODUCTION": fix_paragraphs(extract_section("Introduction", content)),
 
@@ -139,6 +150,7 @@ def parse_readme_md(path):
         "IMAGE_PRODUCT": image_product,
         "OUTPUT_NAME": frontmatter.get("output", "generated_product_brief"),
     }
+    
 
     # Agregar tablas personalizadas después de definir 'data'
     custom_tables = {
