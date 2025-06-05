@@ -1,0 +1,17 @@
+RP2040: An Introduction
+========================
+
+The RP2040 is an efficient, cost-effective microcontroller developed by Raspberry Pi. It boasts a dual-core ARM Cortex-M0+ processor, versatile I/O options, and a comprehensive set of peripherals, making it perfect for both hobbyist and professional projects.
+
+.. note::
+
+    This documentation is continually updated and adapts key concepts from the official Raspberry Pi Pico SDK documentation.
+
+.. tip::
+
+    It is recommended to use a Linux operating system, as the Pico-SDK is primarily developed and tested on Linux. However, it can also be configured for Windows and macOS with some additional steps.
+
+Getting Started with RP2040 and Pico-SDK
+-------------------------------------------
+
+This guide provides an in-depth look at working with the RP2040 microcontroller using the Pico-SDK. It covers everything from setting up your development environment to installing the necessary software and writing your first RP2040-based projects.
