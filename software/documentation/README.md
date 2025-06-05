@@ -1,8 +1,8 @@
 ---
 title: "CH552 USB Multi-Protocol Programmer "
 version: "1.0"
-modified: "2025-04-30"
-output: " usb_multi_protocol_Programmer"
+modified: ""
+output: "usb_multi_protocol_Programmer"
 subtitle: "Universal Programmer for AVR, ARM (CMSIS-DAP), and CPLD (MAX II)
 "
 ---
