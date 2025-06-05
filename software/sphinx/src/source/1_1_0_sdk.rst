@@ -57,6 +57,9 @@ Windows
 Installation
 ------------
 
+Linux
+~~~~~
+
 Clone the repository:
 
 .. code-block:: bash
@@ -73,12 +76,31 @@ Clone the repository:
 
 Now you can run ``spkg`` from any location.
 
+Windows
+~~~~~~~
+
+Clone the repository:
+
+.. code-block:: bash
+
+    git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+    cd ch552-docker-sdk
+
+
 Building the Docker Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On Linux:
 
 .. code-block:: bash
 
     spkg compose
+
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat compose
 
 .. warning::
     Ensure Docker is running and that your user has permission to execute it.
@@ -91,31 +113,69 @@ Creating a New Project
 .. note::
     This command will create a new directory with the specified name.
 
+On Linux:    
+
 .. code-block:: bash
 
     ./spkg/spkg init template/project
 
+On Windows:    
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat init template/project
+
 
 Showing Help
 ~~~~~~~~~~~~
+
+On Linux:
+
 .. code-block:: bash
 
     spkg --help
 
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat --help
+
+
 Compiling a Project
 ~~~~~~~~~~~~~~~~~~~~
+
+On Linux:
+
 .. code-block:: bash
 
     spkg -p ./template/Blink
 
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat -p ./template/Blink
+
+
 Execute ``make clean``, ``all``, ``hex``, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On Linux:
+
 .. code-block:: bash
 
     spkg -p ./template/Blink clean
     spkg -p ./template/Blink all
     spkg -p ./template/Blink hex
 
+On Windows:
+
+.. code-block:: bash
+
+    spkg.bat -p ./template/Blink clean
+    spkg.bat -p ./template/Blink all
+    spkg.bat -p ./template/Blink hex
 
 Output
 ------
