@@ -1,0 +1,48 @@
+STM32: Getting Started
+=======================
+
+
+STMicontrollers is a family of 32-bit microcontrollers designed and manufactured by STMicroelectronics. They are widely used in embedded systems and IoT applications due to their low power consumption, high performance, and rich peripheral set. STM32 microcontrollers are based on the ARM Cortex-M architecture and are available in a wide range of series, each tailored to specific applications and requirements.
+
+
+Getting Started with STM32
+---------------------------
+
+This documentation provides a comprehensive guide to getting started with STM32 microcontrollers. It includes information on setting up the development environment, installing the necessary software, and writing code for STM32 microcontrollers.
+
+This technical documentation is a work in progress and is an adaptation of documentation from the STM32CubeIDE and STM32CubeMX software tools. It uses the `ARM-GCC <https://developer.arm.com/downloads/-/gnu-rm>`_ compiler and visual studio code as the IDE. 
+
+CH552 Multi-Protocol Programmer is a versatile tool that supports programming and debugging of STM32 microcontrollers. It provides a simple and efficient way to program STM32 devices using the SWD (Serial Wire Debug) interface.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+     <img src="./_static/hardware/swdio_avr.png" alt="SWD Pinout" style="width: 50%;">
+     <p>SWD Pinout</p>
+   </div>
+
+
+
+
+Programming STM32 with CH552 Multi-Protocol Programmer
+------------------------------------------------------
+
+Currently, the CH552 Multi-Protocol Programmer supports programming STM32 microcontrollers using the SWD interface. This allows for direct programming of the target microcontroller’s flash memory and debugging capabilities STM32f10x series and STM32f4xx series.
+
+
+.. raw:: html
+
+   <div style="text-align: center;">
+     <img src="./_static/stm/stm32_swdio.png" alt="STM32 Programmer" style="width: 100%;">
+        <p>STM32F4xx Connection </p>
+   </div>
+
+
+.. raw:: html
+
+   <div style="text-align: center;">
+     <img src="./_static/stm/103_swdio.png" alt="STM32 Programmer" style="width: 100%;">
+        <p>STM32f10x Connection</p>
+   </div>
+
+
