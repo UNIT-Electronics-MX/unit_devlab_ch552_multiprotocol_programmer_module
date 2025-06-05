@@ -53,7 +53,7 @@ In the upper left, you will find the File > New Project Wizard tab.
 
             <div style="text-align: center;">
                 <img src="./_static/intel_quartus_installer.png" alt="New Project Wizard" style="width: 100%;">
-                <p>New Prooject Wizard</p>
+                <p>New Project Wizard</p>
             </div>
 
 a. Select the folder where you will save your project.
@@ -63,7 +63,7 @@ b. Choose an appropriate name to start the project.
 
             <div style="text-align: center;">
                 <img src="./_static/intel_quartus_installer.png" alt="New Project Wizard" style="width: 50%;">
-                <p>New Prooject Wizard</p>
+                <p>New Project Wizard</p>
             </div>
 
 c. In the project type, select the option empty project as shown below:
