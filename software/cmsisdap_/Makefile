@@ -20,8 +20,8 @@ BUILD_DIR  = build
 
 # Configuración del microcontrolador
 FREQ_SYS   = 16000000
-XRAM_LOC   = 0x0100
-XRAM_SIZE  = 0x0300
+XRAM_LOC   = 0x0200
+XRAM_SIZE  = 0x0200
 CODE_SIZE  = 0x3800
 
 # Toolchain
