@@ -72,7 +72,7 @@ c. In the project type, select the option empty project as shown below:
 
             <div style="text-align: center;">
                 <img src="./_static/intel_quartus_installer.png" alt="Project Type" style="width: 50%;">
-                <p>Project Type</p>
+                <p>Project Type 1</p>
             </div>
 
 d. Afterwards, click Next.
@@ -82,6 +82,6 @@ e. For this example, it is not necessary to add additional files.
 
             <div style="text-align: center;">
                 <img src="./_static/intel_quartus_installer.png" alt="Project Type" style="width: 50%;">
-                <p>Project Type</p>
+                <p>Project Type 2</p>
             </div>    
 
