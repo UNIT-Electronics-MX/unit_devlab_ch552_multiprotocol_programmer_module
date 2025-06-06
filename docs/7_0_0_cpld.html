@@ -173,7 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1_1_0_sdk.html">CH55x Unit SDK Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_2_0_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_0_0_started.html">AVR: Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_2_0_started.html">AVR: Compile and Upload Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
@@ -456,29 +456,60 @@ document.write(`
 <p>Once installed the software and the driver for your CH552, we can create a new project. It’s necessary that you’ve conected your device to your computer.</p>
 <p>In the upper left, you will find the File &gt; New Project Wizard tab.</p>
 <div style="text-align: center;">
-    <img src="./_static/intel_quartus_installer.png" alt="New Project Wizard" style="width: 100%;">
+    <img src="./_static/cpld/new_project.png" alt="New Project Wizard" style="width: 80%;">
     <p>New Project Wizard</p>
 </div><ol class="loweralpha simple">
-<li><p>Select the folder where you will save your project.</p></li>
+<li><p>You will see the New Project Wizard window</p></li>
+</ol>
+<div style="text-align: center;">
+    <img src="./_static/cpld/introduction_new_p.png" alt="Introduction to New Project Wizard" style="width: 100%;">
+    <p>Introduction to the New Project Wizard</p>
+</div><ol class="loweralpha simple">
+<li><p>Select the option “Next”.</p></li>
 <li><p>Choose an appropriate name to start the project.</p></li>
+<li><p>Select the folder where you will save your project.</p></li>
 </ol>
 <div style="text-align: center;">
-    <img src="./_static/intel_quartus_installer.png" alt="New Project Wizard" style="width: 50%;">
-    <p>New Project Wizard</p>
-</div><ol class="loweralpha simple" start="3">
-<li><p>In the project type, select the option empty project as shown below:</p></li>
-</ol>
-<div style="text-align: center;">
-    <img src="./_static/intel_quartus_installer.png" alt="Project Type" style="width: 50%;">
-    <p>Project Type 1</p>
+    <img src="./_static/cpld/project_type.png" alt="Project Type" style="width: 100%;">
+    <p>Project Type</p>
 </div><ol class="loweralpha simple" start="4">
+<li><p>In the project type, select the option empty project as shown above:</p></li>
 <li><p>Afterwards, click Next.</p></li>
 <li><p>For this example, it is not necessary to add additional files.</p></li>
 </ol>
 <div style="text-align: center;">
-    <img src="./_static/intel_quartus_installer.png" alt="Project Type" style="width: 50%;">
-    <p>Project Type 2</p>
-</div></section>
+    <img src="./_static/cpld/add_files.png" alt="Add files" style="width: 100%;">
+    <p>How to add files (optional)</p>
+</div><ol class="loweralpha simple" start="7">
+<li><p>Afterwards, click Next.</p></li>
+<li><p>This is the where you can select your device, package, pin count, core speed grade.</p></li>
+</ol>
+<div style="text-align: center;">
+    <img src="./_static/cpld/devices.png" alt="Family, device and board settings" style="width: 100%;">
+    <p>Family, device and board settings</p>
+</div><ol class="lowerroman simple">
+<li><p>EDA Tools Settings.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These options do not define the device family (e.g., MAX II, Cyclone IV, etc.);
+rather, they specify how Quartus will connect to third-party tools (ModelSim, Synopsys, etc.).
+If you do not have any external EDA tools, you may leave all options set to &lt;None&gt;, and Quartus
+will use its internal functionality to compile and generate programming files.</p>
+</div>
+<div style="text-align: center;">
+    <img src="./_static/cpld/eda_settings.png" alt="EDA Tools Settings" style="width: 100%;">
+    <p>EDA Tools Settings </p>
+</div><ol class="loweralpha simple" start="10">
+<li><p>In this window, you will be able to see a summary of your settings.</p></li>
+</ol>
+<div style="text-align: center;">
+    <img src="./_static/cpld/summary.png" alt="Summary" style="width: 100%;">
+    <p>Summary</p>
+</div><ol class="loweralpha simple" start="11">
+<li><p>Afterwards, click Finish.</p></li>
+</ol>
+</section>
 </section>
 
 

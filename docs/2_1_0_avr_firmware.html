@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AVR Firmware &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
+    <title>AVR Firmware Overview &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
   
   
   
@@ -173,7 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1_1_0_sdk.html">CH55x Unit SDK Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_2_0_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_0_0_started.html">AVR: Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR Firmware</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR Firmware Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_2_0_started.html">AVR: Compile and Upload Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
@@ -376,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -387,11 +389,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AVR Firmware</h1>
+    <h1>AVR Firmware Overview</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,8 +411,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="avr-firmware">
-<h1>AVR Firmware<a class="headerlink" href="#avr-firmware" title="Link to this heading">#</a></h1>
+  <section id="avr-firmware-overview">
+<h1>AVR Firmware Overview<a class="headerlink" href="#avr-firmware-overview" title="Link to this heading">#</a></h1>
+<p>The CH552 Multi-Protocol Programmer relies on the PICO-AVR firmware to operate correctly. This firmware works with the CH552 USB-to-ISP bridge and is a critical part of the programmer’s functionality. The CH55x-based picoAVR acts as a combined ISP, TPI, and UPDI programmer for AVR microcontrollers. It is compatible with both USBasp and SerialUPDI interfaces and integrates seamlessly with the Arduino IDE (accessible via Tools → Programmer → USBasp or Tools → Programmer → SerialUPDI).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The PICO-AVR firmware is available under the
+<a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+<p>Additional resources:</p>
+<ul class="simple">
+<li><p>Github: <a class="reference external" href="https://github.com/wagiminator">wagiminator</a></p></li>
+<li><p>EasyEDA: <a class="reference external" href="https://easyeda.com/wagiminator">wagiminator at EasyEDA</a></p></li>
+<li><p>License details: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p></li>
+</ul>
+</div>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://oshwlab.com/wagiminator">EasyEDA Design Files</a></p></li>
+<li><p><a class="reference external" href="http://www.wch-ic.com/downloads/CH552DS1_PDF.html">WCH: CH552 Datasheet</a></p></li>
+<li><p><a class="reference external" href="https://sdcc.sourceforge.net/">SDCC Compiler</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Blinkinlabs/ch554_sdcc">Blinkinlabs: CH55x SDK for SDCC</a></p></li>
+<li><p><a class="reference external" href="https://www.fischl.de/usbasp/">Thomas Fischl: USBasp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nerdralph/usbasp">Ralph Doncaster: USBasp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/DeqingSun/ch55xduino">Deqing Sun: CH55xduino</a></p></li>
+</ol>
+</section>
 </section>
 
 
@@ -440,6 +474,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
