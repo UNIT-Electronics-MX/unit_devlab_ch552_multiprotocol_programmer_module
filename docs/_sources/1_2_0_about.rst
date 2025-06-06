@@ -103,16 +103,16 @@ Compatible with **AVR** microcontrollers, this protocol allows programming and d
      - I/O
    * - **MOSI**
      - 1.5
-     - I/O
+     - MOSI/PWM1
    * - **MISO**
      - 1.6
-     - I/O
+     - MISO/RXD1
    * - **CS**
      - 3.0
-     - I/O
+     - PWM1/TXD0
    * - **SCK**
      - 1.7
-     - I/O
+     - SCK/TXD1
 
 
 Protocol JTAG
@@ -148,16 +148,16 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - I/O
    * - **TCK**
      - 1.7
-     - I/O
+     - SCK/TXD1
    * - **TMS**
      - 3.2
-     - I/O
+     - TXD1_/INT0/VBUS1/AIN3
    * - **TDI**
      - 1.5
-     - I/O
+     - /MOSI/PWM1/TIN3/UCC2/AIN2
    * - **TDO**
      - 1.6
-     - I/O
+     - 6/MISO/RXD1/TIN4
 
 .. list-table:: Pinout NC - Not Connected
    :widths: 33 33 33
@@ -168,13 +168,13 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - I/O
    * - **NC 6**
      - 3.4
-     - I/O
+     - PWM2/RXD1_/T0 
    * - **NC 7**
      - 3.3
-     - I/O
+     - INT1
    * - **NC 8**
      - 1.4
-     - I/O
+     - T2_/CAP1_/SCS/TIN2/UCC1/AIN1 
 
 
 Protocol SWD
@@ -213,10 +213,10 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
      - I/O
    * - **SWCLK**
      - 1.7
-     - I/O
+     - SCK/TXD1/TIN5
    * - **SWDIO**
      - 1.6
-     - I/O
+     - MISO/RXD1/TIN4
 
 
 .. note::
