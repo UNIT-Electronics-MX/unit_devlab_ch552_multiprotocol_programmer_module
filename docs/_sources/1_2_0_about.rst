@@ -151,7 +151,7 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - SCK/TXD1
    * - **TMS**
      - 3.2
-     - TXD1_/INT0/VBUS1/AIN3
+     - TXD1/INT0/VBUS1/AIN3
    * - **TDI**
      - 1.5
      - /MOSI/PWM1/TIN3/UCC2/AIN2
@@ -168,13 +168,13 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - I/O
    * - **NC 6**
      - 3.4
-     - PWM2/RXD1_/T0 
+     - PWM2/RXD1/T0 
    * - **NC 7**
      - 3.3
      - INT1
    * - **NC 8**
      - 1.4
-     - T2_/CAP1_/SCS/TIN2/UCC1/AIN1 
+     - T2/CAP1/SCS/TIN2/UCC1/AIN1 
 
 
 Protocol SWD

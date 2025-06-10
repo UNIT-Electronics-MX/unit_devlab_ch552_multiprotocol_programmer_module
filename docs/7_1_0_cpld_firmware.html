@@ -403,6 +403,59 @@ document.write(`
                   
   <section id="cpld-firmware">
 <h1>CPLD Firmware<a class="headerlink" href="#cpld-firmware" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This firmware is a third-party implementation and <strong>is not affiliated with or endorsed by Altera or Intel</strong>. It is intended for educational, development, prototyping, and other lawful purposes only.</p>
+<p>Ensure that you comply with all applicable laws and regulations when using this firmware. <strong>Use is at your own risk.</strong> The user assumes all responsibility for any consequences, including potential legal implications. The author and distributor of this firmware <strong>are not liable</strong> for any damage, misuse, or legal issues arising from its use.</p>
+<p><strong>Proceed with caution and discretion.</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The contents of this chapter are hosted in the unit_ch55x_docker_sdk.git repository.</p>
+</div>
+<p>To start using your <strong>CH552 USB Multi-Protocol Programmer</strong> as a CPLD/FPGA programmer, follow these steps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples/USB/Prog/CPLD/src
+</pre></div>
+</div>
+<p>In that directory, open <strong>descriptor.h</strong> inside that file, change lines 13 and 14 of the code as shown below:</p>
+<div style="text-align: center;">
+    <img src="./_static/cpld/firmware_cpld.png" alt="Configuration" style="width: 80%;">
+    <p> Initial configuration</p>
+</div><p>Only change the <strong>zeros</strong> for <strong>ones</strong></p>
+<div style="text-align: center;">
+    <img src="./_static/cpld/new_descriptor.png" alt="Configuration" style="width: 75%;">
+    <p> New configuration</p>
+</div><p>Once you’ve changed this data, run the following command in your terminal:</p>
+<p>Linux:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/CPLD
+</pre></div>
+</div>
+<p>Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/CPLD
+</pre></div>
+</div>
+<p>The command creates a .bin file inside the <strong>build</strong> folder.
+Then open <strong>WCHIspStudio</strong> to upload the firmware</p>
+<div style="text-align: center;">
+    <img src="./_static/cpld/wchispstudio.png" alt="WchispStudio" style="width: 100%;">
+    <p>Settings WCHIspStudio</p>
+</div><ul class="simple">
+<li><p>In Object File 1 make sure to enter the correct path to the directory with the firmware.</p></li>
+<li><p>Make sure the “Automatic Download When Device Connect” option is enabled.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To add the path you have to click on this bottom “…” and check.</p>
+</div>
+<ul class="simple">
+<li><p>Push the Boot bottom and connect your <strong>Multi-Protocol Programmer</strong> to your computer.</p></li>
+<li><p>Wait until de firmware has finished updating your device.</p></li>
+</ul>
+<p><strong>Done!</strong> Now you can use your UNIT CH552 Multi-Protocol Programmer!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To program an FPGA and a CPLD, use the JTAG Protocol. For more information, check the pinout.</p>
+</div>
 </section>
 
 
