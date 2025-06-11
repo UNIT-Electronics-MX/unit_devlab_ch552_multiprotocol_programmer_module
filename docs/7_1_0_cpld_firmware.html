@@ -376,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -392,6 +394,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -403,6 +417,8 @@ document.write(`
                   
   <section id="cpld-firmware">
 <h1>CPLD Firmware<a class="headerlink" href="#cpld-firmware" title="Link to this heading">#</a></h1>
+<section id="firmware-update">
+<h2>Firmware update<a class="headerlink" href="#firmware-update" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This firmware is a third-party implementation and <strong>is not affiliated with or endorsed by Altera or Intel</strong>. It is intended for educational, development, prototyping, and other lawful purposes only.</p>
@@ -426,11 +442,14 @@ document.write(`
     <img src="./_static/cpld/new_descriptor.png" alt="Configuration" style="width: 75%;">
     <p> New configuration</p>
 </div><p>Once you’ve changed this data, run the following command in your terminal:</p>
-<p>Linux:</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/CPLD
 </pre></div>
 </div>
-<p>Windows:</p>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/CPLD
 </pre></div>
 </div>
@@ -442,10 +461,11 @@ Then open <strong>WCHIspStudio</strong> to upload the firmware</p>
 </div><ul class="simple">
 <li><p>In Object File 1 make sure to enter the correct path to the directory with the firmware.</p></li>
 <li><p>Make sure the “Automatic Download When Device Connect” option is enabled.</p></li>
+<li><p>To add the path you have to click on this bottom “…” and check.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To add the path you have to click on this bottom “…” and check.</p>
+<p>Before connecting your Multi-Protocol Programmer, make sure to power it with +5V. You can do this by setting your switch to +5V.</p>
 </div>
 <ul class="simple">
 <li><p>Push the Boot bottom and connect your <strong>Multi-Protocol Programmer</strong> to your computer.</p></li>
@@ -456,6 +476,8 @@ Then open <strong>WCHIspStudio</strong> to upload the firmware</p>
 <p class="admonition-title">Note</p>
 <p>To program an FPGA and a CPLD, use the JTAG Protocol. For more information, check the pinout.</p>
 </div>
+</section>
+</section>
 </section>
 
 
@@ -493,6 +515,25 @@ Then open <strong>WCHIspStudio</strong> to upload the firmware</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

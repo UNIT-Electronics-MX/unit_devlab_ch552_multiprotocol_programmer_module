@@ -376,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -392,6 +394,26 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wchispstudio">WCHIspStudio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-project-in-pico-sdk">Create a new project in Pico SDK</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing">Flashing</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -403,6 +425,203 @@ document.write(`
                   
   <section id="rp2040-firmware">
 <h1>RP2040 Firmware<a class="headerlink" href="#rp2040-firmware" title="Link to this heading">#</a></h1>
+<section id="firmware-update">
+<h2>Firmware update<a class="headerlink" href="#firmware-update" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The contents of this chapter are hosted in the unit_ch55x_docker_sdk.git repository.
+Always remember to keep Docker Desktop open in your computer; otherwise, the commands will not work properly.</p>
+</div>
+<p>To start using your <strong>CH552 USB Multi-Protocol Programmer</strong> as a PICO DAP, follow these steps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>unit_ch55x_docker_sdk
+</pre></div>
+</div>
+<p>Once you are at the main directory, open a terminal and enter the commands:</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/PICO-DAP
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>-p<span class="w"> </span>./examples/USB/Prog/PICO-DAP
+</pre></div>
+</div>
+<p>The command creates a .bin file inside the <strong>build</strong> folder.</p>
+</section>
+<section id="wchispstudio">
+<h3>WCHIspStudio<a class="headerlink" href="#wchispstudio" title="Link to this heading">#</a></h3>
+<p>Then open <strong>WCHIspStudio</strong> to upload the firmware</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/wchispstudio.png" alt="WchispStudio" style="width: 100%;">
+    <p>Settings WCHIspStudio</p>
+</div><ul class="simple">
+<li><p>In Object File 1 make sure to enter the correct path to the directory with the firmware.</p></li>
+<li><p>Make sure the “Automatic Download When Device Connect” option is enabled.</p></li>
+<li><p>To add the path you have to click on this bottom “…” and check.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before connecting your Multi-Protocol Programmer, make sure to power it with +5V. You can do this by setting your switch to +5V.</p>
+</div>
+<ul class="simple">
+<li><p>Push the Boot bottom and connect your <strong>Multi-Protocol Programmer</strong> to your computer.</p></li>
+<li><p>Wait until de firmware has finished updating your device.</p></li>
+</ul>
+<p><strong>Done!</strong> Now you can use your UNIT CH552 Multi-Protocol Programmer!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To program a Raspberry Pico, use the SWD protocol. For more information, check the pinout.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Raspberry Pi Pico operates at 3.3V. Switch to 3.3V before connecting your device.</p>
+</div>
+</section>
+</section>
+<section id="create-a-new-project-in-pico-sdk">
+<h2>Create a new project in Pico SDK<a class="headerlink" href="#create-a-new-project-in-pico-sdk" title="Link to this heading">#</a></h2>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
+<p>Open Visual Studio Code, in the extensions menu, search Raspeberry Pi Pico:</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/rp_sdk.png" alt="RP SDK" style="width:50%;">
+    <p>Extension menu</p>
+</div><p>And install the official version from Raspberry:</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/rp_extension.png" alt="RP SDK" style="width:90%;">
+    <p>Pico SDK</p>
+</div><p>In the Activity Bar, you will find the icon of your new extension in Visual Studio Code.</p>
+<p>In the general menu, click on “New C/C++ Project”</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/rp_menu.png" alt="RP SDK" style="width:50%;">
+    <p>General menu</p>
+</div><p>Once the project is created, you will need to configure it. For this example, we will use a Raspberry Pico, UART, SPI and Console over UART and USB</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/basic_config.png" alt="RP SDK" style="width:100%;">
+    <p>Basic configuration</p>
+</div></section>
+<section id="project">
+<h3>Project<a class="headerlink" href="#project" title="Link to this heading">#</a></h3>
+<p>Inside the generated project, you will find these files.</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/project_1.png" alt="RP SDK" style="width:50%;">
+    <p>Files generated</p>
+</div><p>Open the .c file, here we can change or modify the source code.</p>
+<div style="text-align: center;">
+    <img src="./_static/rp/project_2.png" alt="RP SDK" style="width:100%;">
+    <p>Source code</p>
+</div></section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>Here are some examples for a Raspeberry Pi Pico:</p>
+<ol class="arabic simple">
+<li><p>Hello, World! Open a serial monitor and see what’s happening!</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/uart.h&quot;</span>
+
+<span class="c1">// UART defines</span>
+<span class="c1">// By default the stdout UART is uart0, so we will use the second one</span>
+<span class="cp">#define UART_ID uart1</span>
+<span class="cp">#define BAUD_RATE 115200</span>
+
+<span class="c1">// Use pins 4 and 5 for UART1</span>
+<span class="c1">// Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments</span>
+<span class="cp">#define UART_TX_PIN 4</span>
+<span class="cp">#define UART_RX_PIN 5</span>
+
+
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Set up our UART</span>
+<span class="w">    </span><span class="n">uart_init</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="n">BAUD_RATE</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Set the TX and RX pins by using the function select on the GPIO</span>
+<span class="w">    </span><span class="c1">// Set datasheet for more information on function select</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">UART_TX_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_UART</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">UART_RX_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_UART</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use some the various UART functions to send out data</span>
+<span class="w">    </span><span class="c1">// In a default system, printf will also output via the default UART</span>
+
+<span class="w">    </span><span class="c1">// Send out a string, with CR/LF conversions</span>
+<span class="w">    </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; Hello, UART!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// For more examples of UART use see https://github.com/raspberrypi/pico-examples/tree/master/uart</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Blink</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/uart.h&quot;</span>
+
+<span class="c1">// UART configuration</span>
+<span class="cp">#define UART_ID uart1</span>
+<span class="cp">#define BAUD_RATE 115200</span>
+<span class="cp">#define UART_TX_PIN 4</span>
+<span class="cp">#define UART_RX_PIN 5</span>
+
+<span class="c1">// On-board LED pin (GPIO 25)</span>
+<span class="cp">#define LED_PIN 25</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize standard I/O (required for printf to work)</span>
+<span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize UART1 with the specified baud rate</span>
+<span class="w">    </span><span class="n">uart_init</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="n">BAUD_RATE</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Configure UART TX and RX GPIO functions</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">UART_TX_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_UART</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">UART_RX_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_UART</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initialize GPIO 25 for LED and set it as output</span>
+<span class="w">    </span><span class="n">gpio_init</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_set_dir</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_OUT</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Send a welcome message through UART1</span>
+<span class="w">    </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; Hello, UART!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Turn on the LED</span>
+<span class="w">        </span><span class="n">gpio_put</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LED ON</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Send status via UART</span>
+<span class="w">        </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span><span class="c1">// Wait 500 milliseconds</span>
+
+<span class="w">        </span><span class="c1">// Turn off the LED</span>
+<span class="w">        </span><span class="n">gpio_put</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">UART_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LED OFF</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Send status via UART</span>
+<span class="w">        </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span><span class="c1">// Wait another 500 milliseconds</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="flashing">
+<h3>Flashing<a class="headerlink" href="#flashing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Once you have your example ready to upload, just click on the Pico SDK icon on the Activity Bar.</p></li>
+<li><p>Select the “Flash Project (SWD)” option.</p></li>
+</ul>
+<div style="text-align: center;">
+    <img src="./_static/rp/flash.png" alt="RP SDK" style="width:50%;">
+    <p>Source code</p>
+</div></section>
+</section>
 </section>
 
 
@@ -440,6 +659,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wchispstudio">WCHIspStudio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-project-in-pico-sdk">Create a new project in Pico SDK</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing">Flashing</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
