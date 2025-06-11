@@ -13,7 +13,8 @@ Firmware update
     **Proceed with caution and discretion.**
 
 .. note ::
-    The contents of this chapter are hosted in the unit_ch55x_docker_sdk.git repository.
+    The contents of this chapter are hosted in the unit_ch55x_docker_sdk.git repository. 
+    Always remember to keep Docker Desktop open in your computer; otherwise, the commands will not work properly.
 
 
 To start using your **CH552 USB Multi-Protocol Programmer** as a CPLD/FPGA programmer, follow these steps:
