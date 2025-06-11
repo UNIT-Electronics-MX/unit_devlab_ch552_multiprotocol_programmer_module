@@ -50,19 +50,13 @@ Then open **WCHIspStudio** to upload the firmware
 
 - To add the path you have to click on this bottom "..." and check.
 
-.. note ::
+.. warning ::
     Before connecting your Multi-Protocol Programmer, make sure to power it with +5V. You can do this by setting your switch to +5V.
 
 - Push the Boot bottom and connect your **Multi-Protocol Programmer** to your computer.
 - Wait until de firmware has finished updating your device.
 
 **Done!** Now you can use your UNIT CH552 Multi-Protocol Programmer!
-
-.. note ::
-    To program a Raspberry Pico, use the SWD protocol. For more information, check the pinout.
-
-.. warning ::
-    The Raspberry Pi Pico operates at 3.3V. Switch to 3.3V before connecting your device.
 
 Create a new project in Pico SDK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,3 +236,9 @@ Flashing
             <img src="./_static/rp/flash.png" alt="RP SDK" style="width:50%;">
             <p>Source code</p>
         </div>
+
+.. note ::
+    To program a Raspberry Pico, use the SWD protocol. For more information, check the pinout.
+
+.. warning ::
+    The Raspberry Pi Pico operates at 3.3V. Switch to 3.3V before connecting your device.
