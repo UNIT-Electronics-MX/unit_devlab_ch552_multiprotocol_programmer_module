@@ -42,8 +42,23 @@
 | **SWCLK**      | 1.7   | I/O |
 | **SWDIO**      | 1.6   | I/O |
 
-
-
-
-
 # Board Topology
+
+<a href="#"><img src="./resources/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px"><br/>Topology</a>
+
+| Ref.  | Description                                                                 |
+|-------|-----------------------------------------------------------------------------|
+| IC1   | CH552 Microcontroller                                                       |
+| U1    | AP2112K 3.3V LDO Voltage Regulator                                          |
+| PB1   | Boot Push Button                                                            |
+| TP1   | Reset Test Point                                                            |
+| TP2   | P3.1 Test Point                                                             |
+| L1    | Built-In LED                                                                |
+| L2    | Power On LED                                                                |
+| SB1   | Solder bridge to enable VCC at JTAG                                         |
+| SB2   | Solder bridge to enable VCC at JST                                          |
+| J1    | USB Type-C Connector                                                        |
+| J2    | Low-power I2C JST Connector                                                 |
+| J3    | JTAG Connector                                                              |
+| JP1   | Header for SWD or ICSP programming                                          |
+| JP2   | Header to Select Operating Voltage Level                                    |
