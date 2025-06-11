@@ -1,6 +1,9 @@
 CPLD Firmware
 =============
 
+Firmware update
+~~~~~~~~~~~~~~~
+
 .. warning::
 
     This firmware is a third-party implementation and **is not affiliated with or endorsed by Altera or Intel**. It is intended for educational, development, prototyping, and other lawful purposes only.
@@ -39,13 +42,15 @@ Only change the **zeros** for **ones**
 
 Once you've changed this data, run the following command in your terminal:
 
-Linux:
+Linux
+-----
 
 .. code-block:: bash
 
    ./spkg/spkg -p ./examples/USB/Prog/CPLD
 
-Windows:
+Windows
+-------
 
 .. code-block:: bash
 
@@ -65,8 +70,10 @@ Then open **WCHIspStudio** to upload the firmware
 
 - Make sure the "Automatic Download When Device Connect" option is enabled.
 
+- To add the path you have to click on this bottom "..." and check.
+
 .. note ::
-    To add the path you have to click on this bottom "..." and check.
+    Before connecting your Multi-Protocol Programmer, make sure to power it with +5V. You can do this by setting your switch to +5V.
 
 - Push the Boot bottom and connect your **Multi-Protocol Programmer** to your computer.
 - Wait until de firmware has finished updating your device.
