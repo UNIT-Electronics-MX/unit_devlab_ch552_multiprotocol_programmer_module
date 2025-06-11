@@ -1,6 +1,6 @@
 # Hardware Design Files
 
-<a href=""><img src="resources/Schematics_icon.jpg?raw=false" width="500px"><br/> Schematics</a>
+<a href="/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf"><img src="resources/Schematics_icon.jpg?raw=false" width="500px"><br/> Schematics</a>
 
 # Pinout
 
@@ -41,6 +41,10 @@
 |----------------|-------|-----|
 | **SWCLK**      | 1.7   | I/O |
 | **SWDIO**      | 1.6   | I/O |
+
+# Board Dimensions
+
+<a href="#"><img src="./resources/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px"><br/>Topology</a>
 
 # Board Topology
 
