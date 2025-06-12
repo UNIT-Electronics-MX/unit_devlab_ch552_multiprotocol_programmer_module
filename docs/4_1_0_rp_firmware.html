@@ -461,8 +461,8 @@ Always remember to keep Docker Desktop open in your computer; otherwise, the com
 <li><p>Make sure the “Automatic Download When Device Connect” option is enabled.</p></li>
 <li><p>To add the path you have to click on this bottom “…” and check.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Before connecting your Multi-Protocol Programmer, make sure to power it with +5V. You can do this by setting your switch to +5V.</p>
 </div>
 <ul class="simple">
@@ -470,14 +470,6 @@ Always remember to keep Docker Desktop open in your computer; otherwise, the com
 <li><p>Wait until de firmware has finished updating your device.</p></li>
 </ul>
 <p><strong>Done!</strong> Now you can use your UNIT CH552 Multi-Protocol Programmer!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To program a Raspberry Pico, use the SWD protocol. For more information, check the pinout.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The Raspberry Pi Pico operates at 3.3V. Switch to 3.3V before connecting your device.</p>
-</div>
 </section>
 </section>
 <section id="create-a-new-project-in-pico-sdk">
@@ -620,7 +612,15 @@ Always remember to keep Docker Desktop open in your computer; otherwise, the com
 <div style="text-align: center;">
     <img src="./_static/rp/flash.png" alt="RP SDK" style="width:50%;">
     <p>Source code</p>
-</div></section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To program a Raspberry Pico, use the SWD protocol. For more information, check the pinout.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Raspberry Pi Pico operates at 3.3V. Switch to 3.3V before connecting your device.</p>
+</div>
+</section>
 </section>
 </section>
 

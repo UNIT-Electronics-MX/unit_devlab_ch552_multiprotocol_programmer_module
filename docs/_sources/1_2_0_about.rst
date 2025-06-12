@@ -230,18 +230,41 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
 
       Pinout diagram for CH552 Programmer
 
-.. only:: latex
 
-   .. raw:: latex
+.. list-table:: Board Reference Table
+  :widths: 10 60
+  :header-rows: 1
 
-      \clearpage
-      \thispagestyle{empty}
-      \onecolumn
-      \begin{center}
-      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{function-diagram.jpg}
-      \end{center}
-      \twocolumn
-
+  * - Ref.
+    - Description
+  * - IC1
+    - CH552 Microcontroller
+  * - U1
+    - AP2112K 3.3V LDO Voltage Regulator
+  * - PB1
+    - Boot Push Button
+  * - TP1
+    - Reset Test Point
+  * - TP2
+    - P3.1 Test Point
+  * - L1
+    - Built-In LED
+  * - L2
+    - Power On LED
+  * - SB1
+    - Solder bridge to enable VCC at JTAG
+  * - SB2
+    - Solder bridge to enable VCC at JST
+  * - J1
+    - USB Type-C Connector
+  * - J2
+    - Low-power I2C JST Connector
+  * - J3
+    - JTAG Connector
+  * - JP1
+    - Header for SWD or ICSP programming
+  * - JP2
+    - Header to Select Operating Voltage Level
 
 .. only:: html
 
