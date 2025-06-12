@@ -230,48 +230,6 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
 
       Pinout diagram for CH552 Programmer
 
-.. only:: latex
-
-   .. raw:: latex
-
-      \clearpage
-      \thispagestyle{empty}
-      \onecolumn
-      \begin{center}
-      \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{function-diagram.jpg}
-      \end{center}
-      \twocolumn
-.. only:: html
-
-  .. rubric:: Board Dimensions
-
-  .. figure:: ././_static/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png
-    :align: center
-    :width: 500px
-
-    Board Dimensions
-
-  .. rubric:: Board Topology
-
-  .. figure:: ././_static/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png
-    :align: center
-    :width: 500px
-
-    Board Topology
-
-.. only:: latex
-
-  .. raw:: latex
-
-    \section*{Board Dimensions}
-    \begin{center}
-    \includegraphics[width=0.8\linewidth]{./_static/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png}
-    \end{center}
-
-    \section*{Board Topology}
-    \begin{center}
-    \includegraphics[width=0.8\linewidth]{./_static/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png}
-    \end{center}
 
 .. list-table:: Board Reference Table
   :widths: 10 60
