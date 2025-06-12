@@ -241,7 +241,72 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
       \includegraphics[width=\textwidth,height=\paperheight,keepaspectratio]{function-diagram.jpg}
       \end{center}
       \twocolumn
+.. only:: html
 
+  .. rubric:: Board Dimensions
+
+  .. figure:: ././_static/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png
+    :align: center
+    :width: 500px
+
+    Board Dimensions
+
+  .. rubric:: Board Topology
+
+  .. figure:: ././_static/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png
+    :align: center
+    :width: 500px
+
+    Board Topology
+
+.. only:: latex
+
+  .. raw:: latex
+
+    \section*{Board Dimensions}
+    \begin{center}
+    \includegraphics[width=0.8\linewidth]{./_static/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png}
+    \end{center}
+
+    \section*{Board Topology}
+    \begin{center}
+    \includegraphics[width=0.8\linewidth]{./_static/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png}
+    \end{center}
+
+.. list-table:: Board Reference Table
+  :widths: 10 60
+  :header-rows: 1
+
+  * - Ref.
+    - Description
+  * - IC1
+    - CH552 Microcontroller
+  * - U1
+    - AP2112K 3.3V LDO Voltage Regulator
+  * - PB1
+    - Boot Push Button
+  * - TP1
+    - Reset Test Point
+  * - TP2
+    - P3.1 Test Point
+  * - L1
+    - Built-In LED
+  * - L2
+    - Power On LED
+  * - SB1
+    - Solder bridge to enable VCC at JTAG
+  * - SB2
+    - Solder bridge to enable VCC at JST
+  * - J1
+    - USB Type-C Connector
+  * - J2
+    - Low-power I2C JST Connector
+  * - J3
+    - JTAG Connector
+  * - JP1
+    - Header for SWD or ICSP programming
+  * - JP2
+    - Header to Select Operating Voltage Level
 
 .. only:: html
 
