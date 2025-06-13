@@ -179,13 +179,13 @@
 <li class="toctree-l1"><a class="reference internal" href="2_2_0_started.html">AVR: Compile and Upload Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_1_0_arm_firmware.html">ARM Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html">Using OpenOCD</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="4_1_0_rp_firmware.html">RP2040 Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_0_0_stm32.html">STM32: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_1_0_stm32_firmware.html">STM32 Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_0_0_open_ocd.html">Using OpenOCD</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="7_0_0_cpld.html">CPLD/FPGA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_1_0_cpld_firmware.html">CPLD Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a></li>
@@ -555,6 +555,7 @@ please visit the project’s GitHub repository.</p>
 <li class="toctree-l2"><a class="reference internal" href="2_2_0_started.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_2_0_started.html#example-compiling-a-blink-program">Example: Compiling a Blink Program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_2_0_started.html#uploading-with-avrdude">Uploading with AVRDUDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_2_0_started.html#installation-avrdude-linux">Installation AVRDUDE Linux</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a><ul>
@@ -573,9 +574,15 @@ please visit the project’s GitHub repository.</p>
 <li class="toctree-l2"><a class="reference internal" href="3_0_0_arm.html#swd-communication-protocols">SWD Communication Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="3_1_0_arm_firmware.html">ARM Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="4_0_0_rp2040.html#getting-started-with-rp2040-and-pico-sdk">Getting Started with RP2040 and Pico-SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html">Using OpenOCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_0_openocd.html#supported-microcontrollers">Supported Microcontrollers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html#pyocd">PyOCD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html#ch552-multi-protocol-programmer">CH552 Multi-Protocol Programmer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_0_0_rp2040.html#programming-rp2040-with-the-ch552-multi-protocol-programmer">Programming RP2040 with the CH552 Multi-Protocol Programmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_0_0_rp2040.html#dualmcu-rp2040-programming-with-ch552-multi-protocol-programmer">DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4_1_0_rp_firmware.html">RP2040 Firmware</a><ul>
@@ -593,11 +600,6 @@ please visit the project’s GitHub repository.</p>
 <li class="toctree-l2"><a class="reference internal" href="5_1_0_stm32_firmware.html#create-a-new-project-in-platformio">Create a new project in PlatformIO</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="6_0_0_open_ocd.html">Using OpenOCD</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="6_0_0_open_ocd.html#supported-microcontrollers">Supported Microcontrollers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="6_0_0_open_ocd.html#pyocd">PyOCD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_0_0_cpld.html">CPLD/FPGA</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="7_0_0_cpld.html#quick-installation">Quick installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_0_0_cpld.html#create-a-new-project-in-quartus">Create a new project in Quartus</a></li>

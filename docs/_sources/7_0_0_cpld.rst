@@ -11,13 +11,6 @@ This firmware is not an official programmer from Altera or Intel. Instead, it is
 
     **Proceed with caution and discretion.**
 
-It is also compatible with:
-
-- CPLD (MAX3000, MAX7000, MAX9000, and MAX II)
-- FPGA (Stratix, StratixII, Cyclone, CycloneII, ACEX 1K, APEX20K, and FLEX 10K)
-- Active configuration devices (EPCS1, EPCS4, EPCS16)
-
-The ALTERA CPLD/FPGA programmer includes a USB cable and a 2.10 Core JTAG data line.
 
 For programming Altera FPGA and CPLD devices, the Quartus software is used. A free version, Quartus Lite, is available. Quartus is the suite from Altera (now Intel) for programming, configuring, and using its products, and it fully supports the USB Blaster programmer and all its features.
 

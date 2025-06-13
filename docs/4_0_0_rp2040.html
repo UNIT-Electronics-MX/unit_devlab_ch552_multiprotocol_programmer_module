@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="RP2040 Firmware" href="4_1_0_rp_firmware.html" />
-    <link rel="prev" title="ARM Firmware" href="3_1_0_arm_firmware.html" />
+    <link rel="prev" title="Using OpenOCD" href="3_1_0_openocd.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
 
@@ -178,13 +178,13 @@
 <li class="toctree-l1"><a class="reference internal" href="2_2_0_started.html">AVR: Compile and Upload Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_1_0_arm_firmware.html">ARM Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html">Using OpenOCD</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">RP2040: An Introduction</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="4_1_0_rp_firmware.html">RP2040 Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_0_0_stm32.html">STM32: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_1_0_stm32_firmware.html">STM32 Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_0_0_open_ocd.html">Using OpenOCD</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="7_0_0_cpld.html">CPLD/FPGA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_1_0_cpld_firmware.html">CPLD Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a></li>
@@ -400,8 +400,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-rp2040-and-pico-sdk">Getting Started with RP2040 and Pico-SDK</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">RP2040: An Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ch552-multi-protocol-programmer">CH552 Multi-Protocol Programmer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-rp2040-with-the-ch552-multi-protocol-programmer">Programming RP2040 with the CH552 Multi-Protocol Programmer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dualmcu-rp2040-programming-with-ch552-multi-protocol-programmer">DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -414,18 +420,51 @@ document.write(`
                   
   <section id="rp2040-an-introduction">
 <h1>RP2040: An Introduction<a class="headerlink" href="#rp2040-an-introduction" title="Link to this heading">#</a></h1>
-<p>The RP2040 is an efficient, cost-effective microcontroller developed by Raspberry Pi. It boasts a dual-core ARM Cortex-M0+ processor, versatile I/O options, and a comprehensive set of peripherals, making it perfect for both hobbyist and professional projects.</p>
+<p>The RP2040 is an efficient and cost-effective microcontroller developed by Raspberry Pi. It features a dual-core ARM Cortex-M0+ processor, flexible I/O capabilities, and a wide range of peripherals, making it suitable for both hobbyist and professional applications.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This documentation is continually updated and adapts key concepts from the official Raspberry Pi Pico SDK documentation.</p>
+<p>This documentation is continuously updated and incorporates key concepts from the official Raspberry Pi Pico SDK documentation.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It is recommended to use a Linux operating system, as the Pico-SDK is primarily developed and tested on Linux. However, it can also be configured for Windows and macOS with some additional steps.</p>
+<p>A Linux operating system is recommended, as the Pico-SDK is primarily developed and tested on Linux. However, it can also be configured for Windows and macOS with additional steps.</p>
 </div>
-<section id="getting-started-with-rp2040-and-pico-sdk">
-<h2>Getting Started with RP2040 and Pico-SDK<a class="headerlink" href="#getting-started-with-rp2040-and-pico-sdk" title="Link to this heading">#</a></h2>
-<p>This guide provides an in-depth look at working with the RP2040 microcontroller using the Pico-SDK. It covers everything from setting up your development environment to installing the necessary software and writing your first RP2040-based projects.</p>
+<p>This guide provides a comprehensive introduction to working with RP2040 microcontrollers. It covers setting up the development environment, installing the required software, and writing code for RP2040-based projects.</p>
+</section>
+<section id="ch552-multi-protocol-programmer">
+<h1>CH552 Multi-Protocol Programmer<a class="headerlink" href="#ch552-multi-protocol-programmer" title="Link to this heading">#</a></h1>
+<p>The CH552 Multi-Protocol Programmer is a versatile tool for programming and debugging RP2040 microcontrollers. It enables straightforward and reliable programming using the SWD (Serial Wire Debug) interface.</p>
+<div style="text-align: center;">
+  <img src="./_static/hardware/swdio_avr.png" alt="SWD Pinout" style="width: 50%;">
+  <p>SWD Pinout</p>
+</div><section id="programming-rp2040-with-the-ch552-multi-protocol-programmer">
+<h2>Programming RP2040 with the CH552 Multi-Protocol Programmer<a class="headerlink" href="#programming-rp2040-with-the-ch552-multi-protocol-programmer" title="Link to this heading">#</a></h2>
+<p>The CH552 Multi-Protocol Programmer supports programming of RP2040 microcontrollers via the SWD interface. This interface allows direct access to the target microcontroller’s flash memory and supports debugging functionality. The programmer is compatible with RP2040f10x and RP2040f4xx series.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/swdio.png"><img alt="_images/swdio.png" src="_images/swdio.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">SWD Pinout</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="dualmcu-rp2040-programming-with-ch552-multi-protocol-programmer">
+<h2>DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer<a class="headerlink" href="#dualmcu-rp2040-programming-with-ch552-multi-protocol-programmer" title="Link to this heading">#</a></h2>
+<p>The Multi-Protocol Programmer uses the SWD interface to program RP2040 microcontrollers. Follow these steps to program your RP2040 device:</p>
+<ol class="arabic simple">
+<li><p><strong>Connect the CH552 Multi-Protocol Programmer</strong> to your computer via USB.</p></li>
+<li><p><strong>Open Visual Studio Code</strong> or another editor of your preference.</p></li>
+<li><p><strong>Install the required extensions</strong> for RP2040 development, such as “C/C++” and “CMake Tools”.</p></li>
+<li><p><strong>Create a new project</strong> or open an existing one.</p></li>
+<li><p><strong>Write your code</strong> in C or C++ using the RP2040 SDK.</p></li>
+<li><p><strong>Configure the build system</strong> to use the RP2040 SDK and integrate the CH552 Multi-Protocol Programmer.</p></li>
+<li><p><strong>Build the project</strong> to generate the binary firmware file.</p></li>
+</ol>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/dualmcu.png"><img alt="_images/dualmcu.png" src="_images/dualmcu.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">DualMCU RP2040 Connection</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -441,12 +480,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3_1_0_arm_firmware.html"
+       href="3_1_0_openocd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ARM Firmware</p>
+        <p class="prev-next-title">Using OpenOCD</p>
       </div>
     </a>
     <a class="right-next"
@@ -474,8 +513,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-rp2040-and-pico-sdk">Getting Started with RP2040 and Pico-SDK</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">RP2040: An Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ch552-multi-protocol-programmer">CH552 Multi-Protocol Programmer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-rp2040-with-the-ch552-multi-protocol-programmer">Programming RP2040 with the CH552 Multi-Protocol Programmer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dualmcu-rp2040-programming-with-ch552-multi-protocol-programmer">DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

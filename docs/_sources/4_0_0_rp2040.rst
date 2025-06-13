@@ -1,17 +1,69 @@
 RP2040: An Introduction
 ========================
 
-The RP2040 is an efficient, cost-effective microcontroller developed by Raspberry Pi. It boasts a dual-core ARM Cortex-M0+ processor, versatile I/O options, and a comprehensive set of peripherals, making it perfect for both hobbyist and professional projects.
+The RP2040 is an efficient and cost-effective microcontroller developed by Raspberry Pi. It features a dual-core ARM Cortex-M0+ processor, flexible I/O capabilities, and a wide range of peripherals, making it suitable for both hobbyist and professional applications.
 
 .. note::
 
-    This documentation is continually updated and adapts key concepts from the official Raspberry Pi Pico SDK documentation.
+    This documentation is continuously updated and incorporates key concepts from the official Raspberry Pi Pico SDK documentation.
 
 .. tip::
 
-    It is recommended to use a Linux operating system, as the Pico-SDK is primarily developed and tested on Linux. However, it can also be configured for Windows and macOS with some additional steps.
+    A Linux operating system is recommended, as the Pico-SDK is primarily developed and tested on Linux. However, it can also be configured for Windows and macOS with additional steps.
 
-Getting Started with RP2040 and Pico-SDK
--------------------------------------------
+This guide provides a comprehensive introduction to working with RP2040 microcontrollers. It covers setting up the development environment, installing the required software, and writing code for RP2040-based projects.
 
-This guide provides an in-depth look at working with the RP2040 microcontroller using the Pico-SDK. It covers everything from setting up your development environment to installing the necessary software and writing your first RP2040-based projects.
+
+CH552 Multi-Protocol Programmer
+===============================
+
+The CH552 Multi-Protocol Programmer is a versatile tool for programming and debugging RP2040 microcontrollers. It enables straightforward and reliable programming using the SWD (Serial Wire Debug) interface.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+     <img src="./_static/hardware/swdio_avr.png" alt="SWD Pinout" style="width: 50%;">
+     <p>SWD Pinout</p>
+   </div>
+
+
+Programming RP2040 with the CH552 Multi-Protocol Programmer
+-----------------------------------------------------------
+
+The CH552 Multi-Protocol Programmer supports programming of RP2040 microcontrollers via the SWD interface. This interface allows direct access to the target microcontroller's flash memory and supports debugging functionality. The programmer is compatible with RP2040f10x and RP2040f4xx series.
+
+.. only:: html
+
+   .. figure:: _static/rp/swdio.png
+      :align: center
+      :width: 100%
+
+      SWD Pinout
+
+.. only:: latex
+
+   .. figure:: _static/rp/swdio.png
+      :align: center
+      :width: 90%
+
+      Pinout diagram for RP2040
+
+
+DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer
+----------------------------------------------------------------
+
+The Multi-Protocol Programmer uses the SWD interface to program RP2040 microcontrollers. Follow these steps to program your RP2040 device:
+
+1. **Connect the CH552 Multi-Protocol Programmer** to your computer via USB.
+2. **Open Visual Studio Code** or another editor of your preference.
+3. **Install the required extensions** for RP2040 development, such as "C/C++" and "CMake Tools".
+4. **Create a new project** or open an existing one.
+5. **Write your code** in C or C++ using the RP2040 SDK.
+6. **Configure the build system** to use the RP2040 SDK and integrate the CH552 Multi-Protocol Programmer.
+7. **Build the project** to generate the binary firmware file.
+
+.. figure:: _static/rp/dualmcu.png
+   :align: center
+   :width: 100%
+
+   DualMCU RP2040 Connection

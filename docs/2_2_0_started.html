@@ -179,13 +179,13 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR: Compile and Upload Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_1_0_arm_firmware.html">ARM Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html">Using OpenOCD</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="4_1_0_rp_firmware.html">RP2040 Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_0_0_stm32.html">STM32: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_1_0_stm32_firmware.html">STM32 Firmware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_0_0_open_ocd.html">Using OpenOCD</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="7_0_0_cpld.html">CPLD/FPGA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_1_0_cpld_firmware.html">CPLD Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">How to Generate an Error Report</a></li>
@@ -408,7 +408,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-avrdude-linux">Installation AVRDUDE Linux</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
@@ -456,6 +457,24 @@ document.write(`
 <li><p><strong>ATtiny88</strong></p></li>
 <li><p><strong>ATmega328P</strong></p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">         </span>+-----------------+
+PC6<span class="w"> </span><span class="o">(</span>RST<span class="o">)</span><span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="w">  </span>ATmega328<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC5<span class="w"> </span><span class="o">(</span>A5<span class="o">)</span>
+PD0<span class="w"> </span><span class="o">(</span>RX<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w">            </span><span class="m">27</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC4<span class="w"> </span><span class="o">(</span>A4<span class="o">)</span>
+PD1<span class="w"> </span><span class="o">(</span>TX<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">3</span><span class="w">            </span><span class="m">26</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC3<span class="w"> </span><span class="o">(</span>A3<span class="o">)</span>
+<span class="w">     </span>PD2<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">4</span><span class="w">            </span><span class="m">25</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC2<span class="w"> </span><span class="o">(</span>A2<span class="o">)</span>
+PD3<span class="w"> </span><span class="o">(</span>PWM<span class="o">)</span><span class="p">|</span><span class="w"> </span><span class="m">5</span><span class="w">            </span><span class="m">24</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC1<span class="w"> </span><span class="o">(</span>A1<span class="o">)</span>
+<span class="w">     </span>PD4<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span><span class="w">            </span><span class="m">23</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PC0<span class="w"> </span><span class="o">(</span>A0<span class="o">)</span>
+<span class="w">    </span>VCC<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">7</span><span class="w">            </span><span class="m">22</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>GND
+<span class="w">    </span>GND<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">8</span><span class="w">            </span><span class="m">21</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>AREF
+<span class="w">     </span>PB6<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9</span><span class="w">            </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>AVCC
+<span class="w">     </span>PB7<span class="w"> </span><span class="p">|</span><span class="m">10</span><span class="w">            </span><span class="m">19</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PB5<span class="w"> </span><span class="o">(</span>D13<span class="o">)</span>
+PD5<span class="w"> </span><span class="o">(</span>D5<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="m">11</span><span class="w">            </span><span class="m">18</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PB4<span class="w"> </span><span class="o">(</span>D12<span class="o">)</span>
+PD6<span class="w"> </span><span class="o">(</span>D6<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="m">12</span><span class="w">            </span><span class="m">17</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PB3<span class="w"> </span><span class="o">(</span>D11/PWM<span class="o">)</span>
+PD7<span class="w"> </span><span class="o">(</span>D7<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="m">13</span><span class="w">            </span><span class="m">16</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PB2<span class="w"> </span><span class="o">(</span>D10/PWM<span class="o">)</span>
+PB0<span class="w"> </span><span class="o">(</span>D8<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="m">14</span><span class="w">            </span><span class="m">15</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>PB1<span class="w"> </span><span class="o">(</span>D9/PWM<span class="o">)</span>
+<span class="w">         </span>+-----------------+
+</pre></div>
+</div>
 <p>The program toggles an LED connected to <strong>pin PB0</strong> every second.</p>
 <section id="source-file">
 <h3>Source File<a class="headerlink" href="#source-file" title="Link to this heading">#</a></h3>
@@ -496,6 +515,13 @@ document.write(`
 <section id="uploading-with-avrdude">
 <h2>Uploading with AVRDUDE<a class="headerlink" href="#uploading-with-avrdude" title="Link to this heading">#</a></h2>
 <p>Once the <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file is generated, you can upload it to the AVR microcontroller using <strong>AVRDUDE</strong>.</p>
+</section>
+<section id="installation-avrdude-linux">
+<h2>Installation AVRDUDE Linux<a class="headerlink" href="#installation-avrdude-linux" title="Link to this heading">#</a></h2>
+<p>You can install AVRDUDE on Linux using your package manager. For example, on Ubuntu:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>avrdude
+</pre></div>
+</div>
 <section id="upload-command">
 <h3>Upload Command<a class="headerlink" href="#upload-command" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">avrdude</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">m328p</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">usbasp</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">flash</span><span class="o">:</span><span class="n">w</span><span class="o">:</span><span class="n">blink</span><span class="p">.</span><span class="n">hex</span>
@@ -568,7 +594,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-commands">Compilation Commands</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-with-avrdude">Uploading with AVRDUDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-avrdude-linux">Installation AVRDUDE Linux</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-command">Upload Command</a></li>
 </ul>
 </li>
