@@ -23,7 +23,8 @@ Required Materials
 .. raw:: html
 
     <div style="text-align: center;">
-      <img src="./_static/duino/uno_rev3.jpg" alt="ATMEGA328P" style="width: 40%;">
+        <button class="btn btn-primary" style="margin: 10px; padding: 5px 10px; background-color: #007bff; border: none; border-radius: 4px; cursor: pointer;" onclick="window.open('./_static/duino/programador2.png', '_blank')">View Options</button>
+      <img src="./_static/duino/programador2.png" alt="AVR Programmer" style="width: 100%;">
       <p>ATMEGA328P Microcontroller</p>
     </div>
 
@@ -65,6 +66,7 @@ Launch Zadig. You should see a window like the following:
 Click **Options** → **List All Devices** to display all USB interfaces:
 
 .. raw:: html
+
 
     <div style="text-align: center;">
       <img src="./_static/duino/options.png" alt="Zadig List All Devices" />

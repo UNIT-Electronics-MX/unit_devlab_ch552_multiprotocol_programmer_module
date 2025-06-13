@@ -47,6 +47,9 @@ This example demonstrates how to compile a basic blink program for two common AV
 * **ATtiny88**
 * **ATmega328P**
 
+
+
+
 The program toggles an LED connected to **pin PB0** every second.
 
 Source File 
@@ -94,9 +97,11 @@ Once the ``.hex`` file is generated, you can upload it to the AVR microcontrolle
 
 Upload Command
 ~~~~~~~~~~~~~~~
+
 .. code-block:: c
 
     avrdude -p m328p -c usbasp -U flash:w:blink.hex
+
 
 Explanation:
 
@@ -106,3 +111,12 @@ Explanation:
 
 Replace ``m328p`` with the appropriate identifier for your specific AVR device (e.g., ``t88`` for ATtiny88). A full list of supported devices is available in the `AVRDUDE user manual <http://www.nongnu.org/avrdude/user-manual/avrdude.html#Device-Options>`_.
 
+
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <button class="btn btn-primary" style="margin: 10px; padding: 5px 10px; background-color: #007bff; border: none; border-radius: 4px; cursor: pointer;" onclick="window.open('./_static/duino/programador2.png', '_blank')">View Options</button>
+      <img src="./_static/duino/programador2.png" alt="AVR Programmer" style="width: 100%;">
+      <p>ATMEGA328P Microcontroller</p>
+    </div>

@@ -37,18 +37,22 @@ Common (All Platforms)
 
 - `Docker Desktop <https://www.docker.com/products/docker-desktop>`_
 
-Linux/macOS
-~~~~~~~~~~~
-- Git
-- Python 3
-- Bash shell
-- Superuser privileges required to run Docker
 
-Windows
-~~~~~~~
-- `Git Bash <https://gitforwindows.org/>`_
-- Docker Desktop with WSL2 or Hyper-V backend enabled
-- MinGW64 (included with Git Bash) for the ``make`` command
+.. tabs::
+
+    .. tab:: Linux/macOS
+
+        - Git
+        - Python 3
+        - Bash shell
+        - Superuser privileges required to run Docker
+
+    .. tab:: Windows
+
+        - `Docker Desktop <https://docs.docker.com/desktop/windows/install/>`_
+        - `Git Bash <https://gitforwindows.org/>`_
+        - Docker Desktop with WSL2 or Hyper-V backend enabled
+        - MinGW64 (included with Git Bash) for the ``make`` command
 
 .. note::
     Running ``spkg`` on Linux might require ``sudo`` if the user is not part of the ``docker`` group. You can add your user with:  
@@ -56,55 +60,59 @@ Windows
 
 Installation
 ------------
+.. tabs::
 
-Linux
-~~~~~
+    .. tab:: Linux/macOS
 
-Clone the repository:
+        Clone the repository:
 
-.. code-block:: bash
+        .. code-block:: bash
 
-    git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
-    cd ch552-docker-sdk/spkg
-    chmod +x spkg
+            git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+            cd ch552-docker-sdk/spkg
+            chmod +x spkg
 
-(Optional) Install it globally:
+        (Optional) Install it globally:
 
-.. code-block:: bash
 
-    sudo ln -s "$(pwd)/spkg" /usr/local/bin/spkg
 
-Now you can run ``spkg`` from any location.
+    .. tab:: Windows
 
-Windows
-~~~~~~~
+        Clone the repository:
 
-Clone the repository:
+        .. code-block:: bash
 
-.. code-block:: bash
+            git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+            cd ch552-docker-sdk
 
-    git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
-    cd ch552-docker-sdk
+        .. note::
+            
+            Require use command ./spkg/spkg.bat to run the spkg command.
 
 
 Building the Docker Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On Linux:
 
-.. code-block:: bash
+.. tabs::
 
-    spkg compose
+    .. tab:: Linux/macOS
 
-On Windows:
+        Build the Docker image:
 
-.. code-block:: bash
+        .. code-block:: bash
 
-    ./spkg/spkg.bat compose
+            spkg compose
 
-.. warning::
-    Ensure Docker is running and that your user has permission to execute it.
-    You can verify by running ``docker ps``. If no errors appear, Docker is running correctly.
+    .. tab:: Windows
+
+        .. code-block:: bash
+
+            ./spkg/spkg.bat compose
+
+        .. warning::
+            Ensure Docker is running and that your user has permission to execute it.
+            You can verify by running ``docker ps``. If no errors appear, Docker is running correctly.
 
 
 Creating a New Project
@@ -113,17 +121,25 @@ Creating a New Project
 .. note::
     This command will create a new directory with the specified name.
 
-On Linux:    
+.. tabs::
 
-.. code-block:: bash
+    .. tab:: Linux/macOS
 
-    ./spkg/spkg init template/project
+        To create a new project, run:
 
-On Windows:    
+        .. code-block:: bash
 
-.. code-block:: bash
+            spkg init template/project
 
-    ./spkg/spkg.bat init template/project
+    .. tab:: Windows
+
+        To create a new project, run:
+
+        .. code-block:: bash
+
+            ./spkg/spkg.bat init template/project
+
+
 
 
 Showing Help

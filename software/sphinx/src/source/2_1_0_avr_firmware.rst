@@ -1,7 +1,10 @@
 AVR Firmware Overview
 =====================
 
-The CH552 Multi-Protocol Programmer relies on the PICO-AVR firmware to operate correctly. This firmware works with the CH552 USB-to-ISP bridge and is a critical part of the programmer's functionality. The CH55x-based picoAVR acts as a combined ISP, TPI, and UPDI programmer for AVR microcontrollers. It is compatible with both USBasp and SerialUPDI interfaces and integrates seamlessly with the Arduino IDE (accessible via Tools → Programmer → USBasp or Tools → Programmer → SerialUPDI).
+The CH552 Multi-Protocol Programmer relies on the PICO-AVR firmware for correct operation. This firmware, designed to run on CH55x microcontrollers, transforms the CH552 into a versatile USB-to-ISP bridge. It supports ISP AVR programming protocol,  making it compatible with a wide range of AVR devices.
+
+The programmer integrates seamlessly with development environments such as the Arduino IDE. It can be selected under Tools → Programmer as either USBasp or a custom driver name, allowing for easy bootloader installation and firmware updates on AVR microcontrollers like the ATmega328P.
+
 
 .. warning::
 
@@ -13,6 +16,68 @@ The CH552 Multi-Protocol Programmer relies on the PICO-AVR firmware to operate c
     - Github: `wagiminator <https://github.com/wagiminator>`_
     - EasyEDA: `wagiminator at EasyEDA <https://easyeda.com/wagiminator>`_
     - License details: `Creative Commons Attribution-ShareAlike 3.0 Unported License <http://creativecommons.org/licenses/by-sa/3.0/>`_
+
+
+
+
+Firmware Update Procedure
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    The following procedure assumes that the `unit_ch55x_docker_sdk` repository is already cloned on your system.
+    Ensure that **Docker Desktop** is running before executing the build commands, as they rely on Docker containers for compilation.
+
+
+To commence the utilization of the **CH552 USB Multi-Protocol Programmer** in PICO AVR mode, execute the following procedures:
+
+1. Navigate to the SDK Root Directory
+
+
+.. code-block:: bash
+
+    cd unit_ch55x_docker_sdk
+
+2. Compile the Firmware
+
+On Linux 
+
+.. code-block:: bash
+
+    ./spkg/spkg -p ./examples/usb/prog/avr
+
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat -p ./examples/usb/prog/avr
+
+The execution of this command will generate a .bin file within the **build** directory.
+
+WCHIspStudio Interface
+----------------------
+
+Launch **WCHIspStudio** to upload the firmware.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+         <img src="./_static/rp/wchispstudio.png" alt="WCHIspStudio" style="width: 100%;">
+         <p>WCHIspStudio Configuration</p>
+    </div>
+
+- In the Object File 1 field, select the path to the generated .bin firmware file.
+- Enable the option "Automatic Download When Device Connect".
+- Click the ... button to browse and confirm the correct firmware path.
+
+.. warning::
+
+    Before connecting the CH552 programmer, **ensure the device is powered with +5V**. Use the onboard switch to select the appropriate voltage.
+
+- Press the Boot button and connect your **Multi-Protocol Programmer** to the computer.
+- Await the completion of the firmware update process.
+
+**Completion Notice:** The firmware has been successfully updated, and the **UNIT CH552 Multi-Protocol Programmer** is now ready for use.
 
 Resources
 ---------

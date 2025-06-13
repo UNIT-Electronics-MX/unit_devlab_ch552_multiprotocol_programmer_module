@@ -77,21 +77,15 @@ Protocol ISP – In-System Programming
 
 Compatible with **AVR** microcontrollers, this protocol allows programming and debugging via the SPI interface. The programmer can be used to flash firmware directly into the target device's memory.
 
-.. only:: html
 
-   .. figure:: _static/hardware/swdio_avr.png
-      :align: center
-      :width: 60%
 
-      Pinout diagram for CH552 Programmer
+.. figure:: _static/duino/jtag_avr.png
+  :align: center
+  :width: 80%
 
-.. only:: latex
+  Pinout diagram for CH552 Programmer
 
-   .. raw:: latex
 
-      \begin{center}
-      \includegraphics[width=\linewidth,keepaspectratio]{swdio_avr.png}
-      \end{center}
 
 
 .. list-table:: Pinout
@@ -103,16 +97,16 @@ Compatible with **AVR** microcontrollers, this protocol allows programming and d
      - I/O
    * - **MOSI**
      - 1.5
-     - MOSI/PWM1
+     - MOSI, PWM1
    * - **MISO**
      - 1.6
-     - MISO/RXD1
+     - MISO, RXD1
    * - **CS**
-     - 3.0
-     - PWM1/TXD0
+     - 3.3
+     - PWM1, TXD0
    * - **SCK**
      - 1.7
-     - SCK/TXD1
+     - SCK, TXD1
 
 
 Protocol JTAG
@@ -148,16 +142,16 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - I/O
    * - **TCK**
      - 1.7
-     - SCK/TXD1
+     - SCK, TXD1
    * - **TMS**
      - 3.2
-     - TXD1/INT0/VBUS1/AIN3
+     - TXD1, INT0, VBUS1, AIN3
    * - **TDI**
      - 1.5
-     - /MOSI/PWM1/TIN3/UCC2/AIN2
+     - MOSI, PWM1, TIN3, UCC2, AIN2
    * - **TDO**
      - 1.6
-     - 6/MISO/RXD1/TIN4
+     - MISO, RXD1, TIN4
 
 .. list-table:: Pinout NC - Not Connected
    :widths: 33 33 33
@@ -168,13 +162,13 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - I/O
    * - **NC 6**
      - 3.4
-     - PWM2/RXD1/T0 
+     - PWM2, RXD1, T0 
    * - **NC 7**
      - 3.3
      - INT1
    * - **NC 8**
      - 1.4
-     - T2/CAP1/SCS/TIN2/UCC1/AIN1 
+     - T2, CAP1, SCS, TIN2, UCC1, AIN1 
 
 
 Protocol SWD
@@ -188,7 +182,7 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
 
    .. figure:: _static/hardware/swdio_jst.png
       :align: center
-      :width: 60%
+      :width: 40%
 
       SWD Pinout
 
@@ -213,10 +207,10 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
      - I/O
    * - **SWCLK**
      - 1.7
-     - SCK/TXD1/TIN5
+     - SCK, TXD1, TIN5
    * - **SWDIO**
      - 1.6
-     - MISO/RXD1/TIN4
+     - MISO, RXD1, TIN4
 
 
 .. note::
