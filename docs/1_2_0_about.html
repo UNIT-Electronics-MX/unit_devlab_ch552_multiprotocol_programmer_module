@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="AVR: Getting Started" href="2_0_0_started.html" />
-    <link rel="prev" title="CH55x Unit SDK Docker" href="1_1_0_sdk.html" />
+    <link rel="prev" title="Docker Configuration for Non-Privileged Users on Linux" href="1_1_2_docker.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
 
@@ -171,6 +171,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_0_0_terms.html">Terms, Acknowledgments, and Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_1_0_sdk.html">CH55x Unit SDK Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_1_2_docker.html">Docker Configuration for Non-Privileged Users on Linux</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_0_0_started.html">AVR: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware Overview</a></li>
@@ -501,7 +502,7 @@ document.write(`
 <h3>Protocol ISP – In-System Programming<a class="headerlink" href="#protocol-isp-in-system-programming" title="Link to this heading">#</a></h3>
 <p>Compatible with <strong>AVR</strong> microcontrollers, this protocol allows programming and debugging via the SPI interface. The programmer can be used to flash firmware directly into the target device’s memory.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/swdio_avr.png"><img alt="_images/swdio_avr.png" src="_images/swdio_avr.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="_images/jtag_avr.png"><img alt="_images/jtag_avr.png" src="_images/jtag_avr.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Pinout diagram for CH552 Programmer</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
@@ -522,19 +523,19 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><strong>MOSI</strong></p></td>
 <td><p>1.5</p></td>
-<td><p>MOSI/PWM1</p></td>
+<td><p>MOSI, PWM1</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>MISO</strong></p></td>
 <td><p>1.6</p></td>
-<td><p>MISO/RXD1</p></td>
+<td><p>MISO, RXD1</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>CS</strong></p></td>
-<td><p>3.0</p></td>
-<td><p>PWM1/TXD0</p></td>
+<td><p>3.3</p></td>
+<td><p>PWM1, TXD0</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SCK</strong></p></td>
 <td><p>1.7</p></td>
-<td><p>SCK/TXD1</p></td>
+<td><p>SCK, TXD1</p></td>
 </tr>
 </tbody>
 </table>
@@ -566,19 +567,19 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><strong>TCK</strong></p></td>
 <td><p>1.7</p></td>
-<td><p>SCK/TXD1</p></td>
+<td><p>SCK, TXD1</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>TMS</strong></p></td>
 <td><p>3.2</p></td>
-<td><p>TXD1/INT0/VBUS1/AIN3</p></td>
+<td><p>TXD1, INT0, VBUS1, AIN3</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>TDI</strong></p></td>
 <td><p>1.5</p></td>
-<td><p>/MOSI/PWM1/TIN3/UCC2/AIN2</p></td>
+<td><p>MOSI, PWM1, TIN3, UCC2, AIN2</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>TDO</strong></p></td>
 <td><p>1.6</p></td>
-<td><p>6/MISO/RXD1/TIN4</p></td>
+<td><p>MISO, RXD1, TIN4</p></td>
 </tr>
 </tbody>
 </table>
@@ -599,7 +600,7 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><strong>NC 6</strong></p></td>
 <td><p>3.4</p></td>
-<td><p>PWM2/RXD1/T0</p></td>
+<td><p>PWM2, RXD1, T0</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>NC 7</strong></p></td>
 <td><p>3.3</p></td>
@@ -607,7 +608,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><strong>NC 8</strong></p></td>
 <td><p>1.4</p></td>
-<td><p>T2/CAP1/SCS/TIN2/UCC1/AIN1</p></td>
+<td><p>T2, CAP1, SCS, TIN2, UCC1, AIN1</p></td>
 </tr>
 </tbody>
 </table>
@@ -617,7 +618,7 @@ document.write(`
 <h2>Protocol SWD<a class="headerlink" href="#protocol-swd" title="Link to this heading">#</a></h2>
 <p>Compatible with <strong>ARM Cortex-M</strong> microcontrollers, this protocol allows programming and debugging via the SWD interface. The programmer can be used to flash firmware directly into the target device’s memory.</p>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="_images/swdio_jst.png"><img alt="_images/swdio_jst.png" src="_images/swdio_jst.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="_images/swdio_jst.png"><img alt="_images/swdio_jst.png" src="_images/swdio_jst.png" style="width: 40%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">SWD Pinout</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
@@ -638,11 +639,11 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><strong>SWCLK</strong></p></td>
 <td><p>1.7</p></td>
-<td><p>SCK/TXD1/TIN5</p></td>
+<td><p>SCK, TXD1, TIN5</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SWDIO</strong></p></td>
 <td><p>1.6</p></td>
-<td><p>MISO/RXD1/TIN4</p></td>
+<td><p>MISO, RXD1, TIN4</p></td>
 </tr>
 </tbody>
 </table>
@@ -737,12 +738,12 @@ Download Schematics (PDF)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_1_0_sdk.html"
+       href="1_1_2_docker.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CH55x Unit SDK Docker</p>
+        <p class="prev-next-title">Docker Configuration for Non-Privileged Users on Linux</p>
       </div>
     </a>
     <a class="right-next"

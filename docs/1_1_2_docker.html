@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AVR: Arduino IDE Bootloader &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
+    <title>Docker Configuration for Non-Privileged Users on Linux &#8212; CH552 USB Multi-Protocol Programmer  User Guide and Technical Reference 0.0.1 documentation</title>
   
   
   
@@ -49,14 +49,15 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '2_3_0_ide';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_1_2_docker';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ARM Cortex-M" href="3_0_0_arm.html" />
-    <link rel="prev" title="AVR: Compile and Upload Code" href="2_2_0_started.html" />
+    <link rel="next" title="General Information" href="1_2_0_about.html" />
+    <link rel="prev" title="CH55x Unit SDK Docker" href="1_1_0_sdk.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
 
@@ -171,12 +172,12 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_0_0_terms.html">Terms, Acknowledgments, and Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_1_0_sdk.html">CH55x Unit SDK Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_1_2_docker.html">Docker Configuration for Non-Privileged Users on Linux</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Docker Configuration for Non-Privileged Users on Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_2_0_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_0_0_started.html">AVR: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_2_0_started.html">AVR: Compile and Upload Code</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR: Arduino IDE Bootloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_3_0_ide.html">AVR: Arduino IDE Bootloader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_0_0_arm.html">ARM Cortex-M</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_1_0_arm_firmware.html">ARM Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a></li>
@@ -259,7 +260,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/edit/main/docs/2_3_0_ide.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/edit/main/docs/1_1_2_docker.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -276,7 +277,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/issues/new?title=Issue%20on%20page%20%2F2_3_0_ide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/issues/new?title=Issue%20on%20page%20%2F1_1_2_docker.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +307,7 @@
       
       
       
-      <li><a href="_sources/2_3_0_ide.rst" target="_blank"
+      <li><a href="_sources/1_1_2_docker.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AVR: Arduino IDE Bootloader</h1>
+    <h1>Docker Configuration for Non-Privileged Users on Linux</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,16 +401,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-bootloader-on-atmega328p">Installing the Bootloader on ATMEGA328P</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-materials">Required Materials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-connection">Hardware Connection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver-setup-with-zadig">Driver Setup with Zadig</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-identify-the-com-port">Step 1: Identify the COM Port</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-open-zadig">Step 2: Open Zadig</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-install-drivers">Step 3: Install Drivers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootloader-installation-using-arduino-ide">Bootloader Installation Using Arduino IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-docker-engine">1. Install Docker Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-docker-operation">2. Verify Docker Operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-user-access-to-docker">3. Configure User Access to Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-non-privileged-docker-usage">4. Validate Non-Privileged Docker Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-docker-compose-plugin-installation">5. Verify Docker-Compose Plugin Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-spkg-without-sudo">6. Running spkg Without sudo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-verify-docker-socket-permissions">Optional: Verify Docker Socket Permissions</a></li>
 </ul>
             </nav>
         </div>
@@ -421,102 +419,111 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="avr-arduino-ide-bootloader">
-<h1>AVR: Arduino IDE Bootloader<a class="headerlink" href="#avr-arduino-ide-bootloader" title="Link to this heading">#</a></h1>
-<section id="installing-the-bootloader-on-atmega328p">
-<h2>Installing the Bootloader on ATMEGA328P<a class="headerlink" href="#installing-the-bootloader-on-atmega328p" title="Link to this heading">#</a></h2>
-<p>This guide explains how to flash the Arduino-compatible bootloader onto an <strong>ATMEGA328</strong> microcontroller using the <strong>UNIT USB Multi-Protocol Programmer</strong>. By following these steps, your ATMEGA328 can function as an <strong>ATMEGA328P</strong>, fully compatible with the Arduino IDE.</p>
+  <section id="docker-configuration-for-non-privileged-users-on-linux">
+<h1>Docker Configuration for Non-Privileged Users on Linux<a class="headerlink" href="#docker-configuration-for-non-privileged-users-on-linux" title="Link to this heading">#</a></h1>
+<p>This document details the procedure for configuring Docker so that containers, including the spkg container, may be built and executed without requiring superuser privileges.</p>
+<section id="install-docker-engine">
+<h2>1. Install Docker Engine<a class="headerlink" href="#install-docker-engine" title="Link to this heading">#</a></h2>
+<p>There are two installation approaches. Select Option A for a simpler installation using the docker.io package, or Option B for the most current official release.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">1.1 Option A – Using the docker.io Package</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">1.2 Option B – Installing the Latest Official Version</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Update the package index and install docker.io:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>docker.io
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>The following steps remove any old installations and install the latest Docker components.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>docker<span class="w"> </span>docker-engine<span class="w"> </span>docker.io<span class="w"> </span>containerd<span class="w"> </span>runc
+
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ca-certificates<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gnupg
+
+sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>-d<span class="w"> </span>/etc/apt/keyrings
+
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/docker.gpg
+
+<span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
+<span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.gpg] \</span>
+<span class="s2">https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-compose-plugin
+</pre></div>
+</div>
+</div></div>
 </section>
-<section id="required-materials">
-<h2>Required Materials<a class="headerlink" href="#required-materials" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>UNIT Multi-Protocol Programmer</strong></p></li>
-</ol>
-<div style="text-align: center;">
-  <img src="./_static/programmer.png" alt="Multi-Protocol Programmer" style="width: 50%;">
-  <p>UNIT Multi-Protocol Programmer</p>
-</div><ol class="arabic simple" start="2">
-<li><p><strong>ATMEGA328P Microcontroller</strong></p></li>
-</ol>
-<div style="text-align: center;">
-    <button class="btn btn-primary" style="margin: 10px; padding: 5px 10px; background-color: #007bff; border: none; border-radius: 4px; cursor: pointer;" onclick="window.open('./_static/duino/programador2.png', '_blank')">View Options</button>
-  <img src="./_static/duino/programador2.png" alt="AVR Programmer" style="width: 100%;">
-  <p>ATMEGA328P Microcontroller</p>
-</div></section>
-<section id="hardware-connection">
-<h2>Hardware Connection<a class="headerlink" href="#hardware-connection" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Use the FC cable to connect one end to the UNIT Multi-Protocol Programmer and the other to the ICSP interface of the ATMEGA328P.</p></li>
-<li><p>Make sure the <strong>MISO</strong> pin of the programmer is aligned with <strong>pin 1</strong> of the ICSP header on the ATMEGA328P.</p></li>
-</ol>
-<div style="text-align: center;">
-  <img src="./_static/duino/conexion_1.png" alt="ISP Connection" style="width: 50%;">
-  <p>ICSP Connection Overview</p>
-</div></section>
-<section id="driver-setup-with-zadig">
-<h2>Driver Setup with Zadig<a class="headerlink" href="#driver-setup-with-zadig" title="Link to this heading">#</a></h2>
-<p>To allow USB communication between your PC and the programmer, install the required drivers using <strong>Zadig</strong>.</p>
-<section id="step-1-identify-the-com-port">
-<h3>Step 1: Identify the COM Port<a class="headerlink" href="#step-1-identify-the-com-port" title="Link to this heading">#</a></h3>
-<p>Connect the programmer to your PC and open the <strong>Device Manager</strong>. Under <strong>Ports (COM &amp; LPT)</strong>, identify the COM port assigned to the device.</p>
+<section id="verify-docker-operation">
+<h2>2. Verify Docker Operation<a class="headerlink" href="#verify-docker-operation" title="Link to this heading">#</a></h2>
+<p>Ensure the Docker daemon is active and verify the installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+docker<span class="w"> </span>version
+</pre></div>
+</div>
 </section>
-<section id="step-2-open-zadig">
-<h3>Step 2: Open Zadig<a class="headerlink" href="#step-2-open-zadig" title="Link to this heading">#</a></h3>
-<p>Launch Zadig. You should see a window like the following:</p>
-<div style="text-align: center;">
-  <img src="./_static/duino/interfaz.png" alt="Zadig Interface" />
-</div><p>Click <strong>Options</strong> → <strong>List All Devices</strong> to display all USB interfaces:</p>
-<div style="text-align: center;">
-  <img src="./_static/duino/options.png" alt="Zadig List All Devices" />
-</div></section>
-<section id="step-3-install-drivers">
-<h3>Step 3: Install Drivers<a class="headerlink" href="#step-3-install-drivers" title="Link to this heading">#</a></h3>
-<p>Install the following two drivers:</p>
-<ul class="simple">
-<li><p><strong>picoASP Interface 0</strong>: Install the <strong>libusbK</strong> driver by clicking <strong>Replace Driver</strong>.</p></li>
-</ul>
-<div style="text-align: center;">
-  <img src="./_static/duino/interfaz_0.png" alt="picoASP Interface 0" />
-</div><ul class="simple">
-<li><p><strong>SerialUPDI Interface 1</strong>: Install the <strong>USB Serial (CDC)</strong> driver by clicking <strong>Upgrade Driver</strong>.</p></li>
-</ul>
-<div style="text-align: center;">
-  <img src="./_static/duino/inferfaz_1.png" alt="SerialUPDI Interface 1" style="display: block; margin-left: auto; margin-right: auto;" />
-</div><p>Once both drivers are installed, your UNIT Multi-Protocol Programmer is ready to flash the bootloader.</p>
+<section id="configure-user-access-to-docker">
+<h2>3. Configure User Access to Docker<a class="headerlink" href="#configure-user-access-to-docker" title="Link to this heading">#</a></h2>
+<p>Add your user account to the docker group to allow Docker execution without root privileges:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>After executing this command, re-authenticate by logging out and back in or by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>newgrp<span class="w"> </span>docker
+</pre></div>
+</div>
 </section>
+<section id="validate-non-privileged-docker-usage">
+<h2>4. Validate Non-Privileged Docker Usage<a class="headerlink" href="#validate-non-privileged-docker-usage" title="Link to this heading">#</a></h2>
+<p>Confirm that Docker commands work without using sudo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>ps
+</pre></div>
+</div>
+<p>The command should return either an empty list or the column headers.</p>
 </section>
-<section id="bootloader-installation-using-arduino-ide">
-<h2>Bootloader Installation Using Arduino IDE<a class="headerlink" href="#bootloader-installation-using-arduino-ide" title="Link to this heading">#</a></h2>
-<p>Open the <strong>Arduino IDE</strong> and follow these steps to burn the bootloader onto your ATMEGA328P.</p>
-<ol class="arabic">
-<li><p><strong>Select the Target Board</strong></p>
-<p>Navigate to <strong>Tools → Board</strong> and choose <strong>ATMEGA328P</strong>.</p>
-</li>
-</ol>
-<div style="text-align: center;">
-    <img src="./_static/duino/tools_board.png" alt="Select Board" />
-</div><ol class="arabic" start="2">
-<li><p><strong>Choose the Correct Port</strong></p>
-<p>Under <strong>Tools → Port</strong>, select the COM port corresponding to your programmer.</p>
-</li>
-</ol>
-<div style="text-align: center;">
-   <img src="./_static/duino/Port.png" alt="Select COM Port" />
-</div><ol class="arabic" start="3">
-<li><p><strong>Select the Programmer</strong></p>
-<p>Under <strong>Tools → Programmer</strong>, select the programmer (e.g., <strong>USBasp</strong> or your custom driver name).</p>
-</li>
-</ol>
-<div style="text-align: center;">
-    <img src="./_static/duino/program_usbasp.png" alt="Select Programmer" />
-</div><ol class="arabic" start="4">
-<li><p><strong>Burn the Bootloader</strong></p>
-<p>Finally, go to <strong>Tools → Burn Bootloader</strong>.</p>
-</li>
-</ol>
-<div style="text-align: center;">
-    <img src="./_static/duino/burn_bootloader.png" alt="Burn Bootloader" />
-</div><p>Success! Your ATMEGA328P now has a compatible Arduino bootloader installed and is ready for development.</p>
+<section id="verify-docker-compose-plugin-installation">
+<h2>5. Verify Docker-Compose Plugin Installation<a class="headerlink" href="#verify-docker-compose-plugin-installation" title="Link to this heading">#</a></h2>
+<p>Check the installation of docker-compose, whether using the legacy version or the modern plugin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose<span class="w"> </span>version<span class="w">     </span><span class="c1"># For the classic (v1) version</span>
+<span class="c1"># or</span>
+docker<span class="w"> </span>compose<span class="w"> </span>version<span class="w">     </span><span class="c1"># For the modern (v2) plugin</span>
+</pre></div>
+</div>
+<p>If docker-compose is not available, install the required package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-compose
+</pre></div>
+</div>
+<p>Or for the modern plugin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-compose-plugin
+</pre></div>
+</div>
+</section>
+<section id="running-spkg-without-sudo">
+<h2>6. Running spkg Without sudo<a class="headerlink" href="#running-spkg-without-sudo" title="Link to this heading">#</a></h2>
+<p>Once the configuration is complete, you may build images and compile projects with the spkg tool without requiring sudo privileges.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>compose<span class="w">        </span><span class="c1"># To build the Docker image</span>
+./spkg/spkg<span class="w"> </span>-p<span class="w"> </span>./my_project<span class="w"> </span>bin<span class="w">    </span><span class="c1"># To compile your project</span>
+</pre></div>
+</div>
+</section>
+<section id="optional-verify-docker-socket-permissions">
+<h2>Optional: Verify Docker Socket Permissions<a class="headerlink" href="#optional-verify-docker-socket-permissions" title="Link to this heading">#</a></h2>
+<p>Ensure that the Docker socket is correctly configured with the proper group ownership and permissions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/var/run/docker.sock
+</pre></div>
+</div>
+<p>The expected output should resemble:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>srw-rw---- 1 root docker ...
+</pre></div>
+</div>
+<p>If the permissions are not as specified, adjust them with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chown<span class="w"> </span>root:docker<span class="w"> </span>/var/run/docker.sock
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">660</span><span class="w"> </span>/var/run/docker.sock
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -532,20 +539,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_2_0_started.html"
+       href="1_1_0_sdk.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AVR: Compile and Upload Code</p>
+        <p class="prev-next-title">CH55x Unit SDK Docker</p>
       </div>
     </a>
     <a class="right-next"
-       href="3_0_0_arm.html"
+       href="1_2_0_about.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ARM Cortex-M</p>
+        <p class="prev-next-title">General Information</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -565,16 +572,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-bootloader-on-atmega328p">Installing the Bootloader on ATMEGA328P</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-materials">Required Materials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-connection">Hardware Connection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver-setup-with-zadig">Driver Setup with Zadig</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-identify-the-com-port">Step 1: Identify the COM Port</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-open-zadig">Step 2: Open Zadig</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-install-drivers">Step 3: Install Drivers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootloader-installation-using-arduino-ide">Bootloader Installation Using Arduino IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-docker-engine">1. Install Docker Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-docker-operation">2. Verify Docker Operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-user-access-to-docker">3. Configure User Access to Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-non-privileged-docker-usage">4. Validate Non-Privileged Docker Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-docker-compose-plugin-installation">5. Verify Docker-Compose Plugin Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-spkg-without-sudo">6. Running spkg Without sudo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-verify-docker-socket-permissions">Optional: Verify Docker Socket Permissions</a></li>
 </ul>
   </nav></div>
 

@@ -171,6 +171,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_0_0_terms.html">Terms, Acknowledgments, and Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_1_0_sdk.html">CH55x Unit SDK Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_1_2_docker.html">Docker Configuration for Non-Privileged Users on Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_2_0_about.html">General Information</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">AVR: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware Overview</a></li>
@@ -406,7 +407,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-operations">Supported Operations:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 </ul>
             </nav>
         </div>
@@ -432,10 +432,46 @@ document.write(`
 </section>
 <section id="programming-with-the-ch552-multi-protocol-programmer">
 <h2>Programming with the CH552 Multi-Protocol Programmer<a class="headerlink" href="#programming-with-the-ch552-multi-protocol-programmer" title="Link to this heading">#</a></h2>
-<div style="text-align: center;">
-  <img src="./_static/hardware/swdio_avr.png" alt="ISP Pinout" style="width: 50%;">
-  <p>ISP Pinout</p>
-</div><p>The <strong>CH552 USB Multi-Protocol Programmer</strong> provides robust support for AVR microcontrollers via the <strong>In-System Programming (ISP)</strong> interface. This method enables direct programming of the target microcontroller’s <strong>flash memory</strong> and <strong>EEPROM</strong> without removing it from the circuit.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/jtag_avr.png"><img alt="_images/jtag_avr.png" src="_images/jtag_avr.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Pinout diagram for CH552 Programmer</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Pinout</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>PIN</p></th>
+<th class="head"><p>GPIO</p></th>
+<th class="head"><p>I/O</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MOSI</strong></p></td>
+<td><p>1.5</p></td>
+<td><p>MOSI, PWM1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MISO</strong></p></td>
+<td><p>1.6</p></td>
+<td><p>MISO, RXD1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CS</strong></p></td>
+<td><p>3.3</p></td>
+<td><p>PWM1, TXD0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SCK</strong></p></td>
+<td><p>1.7</p></td>
+<td><p>SCK, TXD1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <strong>CH552 USB Multi-Protocol Programmer</strong> provides robust support for AVR microcontrollers via the <strong>In-System Programming (ISP)</strong> interface. This method enables direct programming of the target microcontroller’s <strong>flash memory</strong> and <strong>EEPROM</strong> without removing it from the circuit.</p>
 <div style="text-align: center;">
   <img src="./_static/docs/iscp.png" alt="AVR Programmer" style="width: 50%;">
   <p>AVR Programmer Pinout</p>
@@ -456,19 +492,6 @@ document.write(`
 <li><p>Signature verification</p></li>
 </ul>
 </section>
-</section>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<p>To program AVR microcontrollers using the CH552 programmer:</p>
-<ol class="arabic simple">
-<li><p>Connect the ISP header to the target board (MISO, MOSI, SCK, RESET, VCC, GND).</p></li>
-<li><p>Use compatible software such as <code class="docutils literal notranslate"><span class="pre">avrdude</span></code> or the Arduino IDE with custom programmer settings.</p></li>
-<li><p>Ensure proper voltage levels (typically 5V or 3.3V depending on the target device).</p></li>
-<li><p>Run the programming command to flash the firmware or configure the device.</p></li>
-</ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">avrdude -p m328p -c ch552 -U flash:w:firmware.hex</span>
-</pre></div>
-</div>
 </section>
 </section>
 
@@ -524,7 +547,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-operations">Supported Operations:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 </ul>
   </nav></div>
 
