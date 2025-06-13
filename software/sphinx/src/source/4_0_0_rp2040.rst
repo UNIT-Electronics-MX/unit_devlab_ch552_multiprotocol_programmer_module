@@ -13,9 +13,8 @@ The RP2040 is an efficient and cost-effective microcontroller developed by Raspb
 
 This guide provides a comprehensive introduction to working with RP2040 microcontrollers. It covers setting up the development environment, installing the required software, and writing code for RP2040-based projects.
 
-
-CH552 Multi-Protocol Programmer
-===============================
+CH552 Multi-Protocol Programmer for RP2040
+-----------------------------------------
 
 The CH552 Multi-Protocol Programmer is a versatile tool for programming and debugging RP2040 microcontrollers. It enables straightforward and reliable programming using the SWD (Serial Wire Debug) interface.
 
