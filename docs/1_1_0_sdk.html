@@ -49,13 +49,14 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_1_0_sdk';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="General Information" href="1_2_0_about.html" />
+    <link rel="next" title="Docker Configuration for Non-Privileged Users on Linux" href="1_1_2_docker.html" />
     <link rel="prev" title="Terms, Acknowledgments, and Licenses" href="1_0_0_terms.html" />
     <link rel="icon" href="_static/icon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="_static/icon.svg" type="image/x-icon">
@@ -171,6 +172,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_0_0_terms.html">Terms, Acknowledgments, and Licenses</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">CH55x Unit SDK Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_1_2_docker.html">Docker Configuration for Non-Privileged Users on Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_2_0_about.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_0_0_started.html">AVR: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_1_0_avr_firmware.html">AVR Firmware Overview</a></li>
@@ -403,13 +405,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-features">Main Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-all-platforms">Common (All Platforms)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docker-image">Building the Docker Image</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-project">Creating a New Project</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-help">Showing Help</a></li>
@@ -465,23 +463,20 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></p></li>
 </ul>
-</section>
-<section id="linux-macos">
-<h3>Linux/macOS<a class="headerlink" href="#linux-macos" title="Link to this heading">#</a></h3>
-<ul class="simple">
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Linux/macOS</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ul class="simple">
 <li><p>Git</p></li>
 <li><p>Python 3</p></li>
 <li><p>Bash shell</p></li>
 <li><p>Superuser privileges required to run Docker</p></li>
 </ul>
-</section>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<ul class="simple">
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a></p></li>
 <li><p><a class="reference external" href="https://gitforwindows.org/">Git Bash</a></p></li>
 <li><p>Docker Desktop with WSL2 or Hyper-V backend enabled</p></li>
 <li><p>MinGW64 (included with Git Bash) for the <code class="docutils literal notranslate"><span class="pre">make</span></code> command</p></li>
 </ul>
+</div></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">spkg</span></code> on Linux might require <code class="docutils literal notranslate"><span class="pre">sudo</span></code> if the user is not part of the <code class="docutils literal notranslate"><span class="pre">docker</span></code> group. You can add your user with:
@@ -491,36 +486,32 @@ document.write(`
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
-<p>Clone the repository:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Linux/macOS</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><p>Clone the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
 <span class="nb">cd</span><span class="w"> </span>ch552-docker-sdk/spkg
 chmod<span class="w"> </span>+x<span class="w"> </span>spkg
 </pre></div>
 </div>
 <p>(Optional) Install it globally:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/spkg&quot;</span><span class="w"> </span>/usr/local/bin/spkg
-</pre></div>
-</div>
-<p>Now you can run <code class="docutils literal notranslate"><span class="pre">spkg</span></code> from any location.</p>
-</section>
-<section id="id1">
-<h3>Windows<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Clone the repository:</p>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><p>Clone the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
 <span class="nb">cd</span><span class="w"> </span>ch552-docker-sdk
 </pre></div>
 </div>
-</section>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Require use command ./spkg/spkg.bat to run the spkg command.</p>
+</div>
+</div></div>
 <section id="building-the-docker-image">
 <h3>Building the Docker Image<a class="headerlink" href="#building-the-docker-image" title="Link to this heading">#</a></h3>
-<p>On Linux:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Linux/macOS</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><p>Build the Docker image:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>compose
 </pre></div>
 </div>
-<p>On Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>compose
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>compose
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -528,6 +519,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>spkg
 <p>Ensure Docker is running and that your user has permission to execute it.
 You can verify by running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. If no errors appear, Docker is running correctly.</p>
 </div>
+</div></div>
 </section>
 <section id="creating-a-new-project">
 <h3>Creating a New Project<a class="headerlink" href="#creating-a-new-project" title="Link to this heading">#</a></h3>
@@ -535,14 +527,16 @@ You can verify by running <code class="docutils literal notranslate"><span class
 <p class="admonition-title">Note</p>
 <p>This command will create a new directory with the specified name.</p>
 </div>
-<p>On Linux:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>init<span class="w"> </span>template/project
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Linux/macOS</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><p>To create a new project, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>init<span class="w"> </span>template/project
 </pre></div>
 </div>
-<p>On Windows:</p>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><p>To create a new project, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg.bat<span class="w"> </span>init<span class="w"> </span>template/project
 </pre></div>
 </div>
+</div></div>
 </section>
 <section id="showing-help">
 <h3>Showing Help<a class="headerlink" href="#showing-help" title="Link to this heading">#</a></h3>
@@ -617,11 +611,11 @@ spkg.bat<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span 
       </div>
     </a>
     <a class="right-next"
-       href="1_2_0_about.html"
+       href="1_1_2_docker.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">General Information</p>
+        <p class="prev-next-title">Docker Configuration for Non-Privileged Users on Linux</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -645,13 +639,9 @@ spkg.bat<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-features">Main Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-all-platforms">Common (All Platforms)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docker-image">Building the Docker Image</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-project">Creating a New Project</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-help">Showing Help</a></li>
