@@ -124,12 +124,11 @@ The programmer integrates a **CH552 microcontroller** with the following charact
    2_2_0_started
    2_3_0_ide
    3_0_0_arm
-   3_1_0_arm_firmware
+   3_1_0_openocd 
    4_0_0_rp2040
    4_1_0_rp_firmware
    5_0_0_stm32
    5_1_0_stm32_firmware
-   6_0_0_open_ocd
    7_0_0_cpld
    7_1_0_cpld_firmware
    
