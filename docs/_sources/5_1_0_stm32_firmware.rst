@@ -9,7 +9,7 @@ Firmware update
     Always remember to keep Docker Desktop open in your computer; otherwise, the commands will not work properly.
 
 
-To start using your **CH552 USB Multi-Protocol Programmer** as a PICO DAP, follow these steps:
+To start using your **Multi-Protocol Programmer** as a PICO DAP, follow these steps:
 
 .. code-block:: bash
 

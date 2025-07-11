@@ -29,7 +29,7 @@ Firmware Update Procedure
     Ensure that **Docker Desktop** is running before executing the build commands, as they rely on Docker containers for compilation.
 
 
-To commence the utilization of the **CH552 USB Multi-Protocol Programmer** in PICO ASP mode, execute the following procedures:
+To commence the utilization of the **Multi-Protocol Programmer** in PICO ASP mode, execute the following procedures:
 
 1. Navigate to the SDK Root Directory
 

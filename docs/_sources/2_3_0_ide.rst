@@ -9,13 +9,13 @@ This guide explains how to flash the Arduino-compatible bootloader onto an **ATM
 Required Materials
 ------------------
 
-1. **UNIT Multi-Protocol Programmer**
+1. **Multi-Protocol Programmer**
 
 .. raw:: html
 
     <div style="text-align: center;">
       <img src="./_static/programmer.png" alt="Multi-Protocol Programmer" style="width: 50%;">
-      <p>UNIT Multi-Protocol Programmer</p>
+      <p>Multi-Protocol Programmer</p>
     </div>
 
 2. **ATMEGA328P Microcontroller**
