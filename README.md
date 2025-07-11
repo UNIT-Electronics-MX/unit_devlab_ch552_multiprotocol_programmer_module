@@ -58,8 +58,7 @@ This project provides firmware for a USB-based programmer built on the **CH552 m
 - **Target Devices:** ARM Cortex-M (e.g., STM32, SAM, nRF52)
 - **Tool Compatibility:**  
   - [OpenOCD](http://openocd.org/)
-  - PyOCD
-  - Keil µVision, SEGGER Ozone
+  - [PyOCD](https://pyocd.io/)
 - **USB Interface:**
   - CMSIS-DAP via HID
   - CDC UART (optional, for logging or VCP)
