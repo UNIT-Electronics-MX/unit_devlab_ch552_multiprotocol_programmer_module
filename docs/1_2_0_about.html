@@ -181,7 +181,6 @@
 <li class="toctree-l1"><a class="reference internal" href="3_1_0_openocd.html">Using OpenOCD</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="4_0_0_rp2040.html">RP2040: An Introduction</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="4_1_0_rp_firmware.html">RP2040 Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_0_0_stm32.html">STM32: Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_1_0_stm32_firmware.html">STM32 Firmware</a></li>
@@ -421,14 +420,13 @@ document.write(`
                   
   <section id="general-information">
 <h1>General Information<a class="headerlink" href="#general-information" title="Link to this heading">#</a></h1>
-<p>The <strong>CH552 USB Multi-Protocol Programmer</strong> is a compact and versatile development tool designed for high-precision embedded system applications. It supports a broad range of protocols and device architectures, including <strong>AVR</strong>, <strong>ARM (CMSIS-DAP)</strong>, and <strong>CPLD (MAX II)</strong>. Its USB connectivity enables direct interfacing with standard development environments, enabling:</p>
+<p>The <strong>CH552  Multi-Protocol Programmer</strong> is a compact and versatile development tool designed for high-precision embedded system applications. It supports a broad range of protocols and device architectures, including <strong>AVR</strong>, <strong>ARM (CMSIS-DAP)</strong>, and <strong>CPLD (MAX II)</strong>. Its USB connectivity enables direct interfacing with standard development environments, enabling:</p>
 <ul class="simple">
 <li><p>In-system programming (ISP)</p></li>
 <li><p>Step-through debugging</p></li>
 <li><p>Boundary-scan testing (JTAG)</p></li>
 <li><p>Flash memory operations</p></li>
 </ul>
-<p>Compatible with popular platforms such as <strong>STM32</strong>, <strong>RP2040</strong>, and <strong>PY32</strong>, this programmer integrates configurable GPIO lines, multi-protocol headers, and streamlined power delivery—making it ideal for rapid prototyping and field diagnostics.</p>
 <section id="supported-architectures">
 <h2>Supported Architectures<a class="headerlink" href="#supported-architectures" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -496,7 +494,7 @@ document.write(`
 </section>
 <section id="sections-gpio-pin-distribution">
 <h2>Sections GPIO Pin Distribution<a class="headerlink" href="#sections-gpio-pin-distribution" title="Link to this heading">#</a></h2>
-<p>The CH552 USB Multi-Protocol Programmer features a set of GPIO pins that can be configured for various protocols, including JTAG, SWD, and ISP. These GPIOs are mapped to specific functions in the firmware, allowing users to adapt the programmer for different applications.</p>
+<p>The Multi-Protocol Programmer features a set of GPIO pins that can be configured for various protocols, including JTAG, SWD, and ISP. These GPIOs are mapped to specific functions in the firmware, allowing users to adapt the programmer for different applications.</p>
 <p>The GPIO pin distribution is defined within the CH552 firmware, supporting flexible assignment for various protocols. The firmware configures the specific mapping of GPIOs to protocols, such as SPI, JTAG, or SWD, based on the loaded configuration. Users can alter the pin distribution by modifying the firmware source code to suit their application requirements.</p>
 <section id="protocol-isp-in-system-programming">
 <h3>Protocol ISP – In-System Programming<a class="headerlink" href="#protocol-isp-in-system-programming" title="Link to this heading">#</a></h3>

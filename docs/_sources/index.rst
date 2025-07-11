@@ -1,7 +1,7 @@
 .. STM32 Getting Started documentation master file, created by
    sphinx-quickstart on Thu Mar 13 11:22:00 2025.
 
-CH552 USB Multi-Protocol Programmer  
+Multi-Protocol Programmer  
 =============================================
 
 .. note::
@@ -10,9 +10,9 @@ CH552 USB Multi-Protocol Programmer
    please visit the project's GitHub repository.
 
 
-**CH552 USB Multi-Protocol Programmer**
+**Multi-Protocol Programmer**
 
-The **CH552 USB Multi-Protocol Programmer** is a compact and cost-effective device designed for embedded systems development, testing, and debugging. It supports multiple hardware architectures including **AVR**, **ARM Cortex-M (CMSIS-DAP)**, and **CPLD (MAX II)**, making it ideal for a wide range of applications such as firmware development, educational labs, and low-volume production environments.
+The ** USB Multi-Protocol Programmer** is a compact and cost-effective device designed for embedded systems development, testing, and debugging. It supports multiple hardware architectures including **AVR**, **ARM Cortex-M (CMSIS-DAP)**, and **CPLD (MAX II)**, making it ideal for a wide range of applications such as firmware development, educational labs, and low-volume production environments.
 
 This programmer is built around the **CH552 microcontroller**, which is based on the enhanced **8051 architecture**. It offers native USB support and a range of digital interfaces (GPIO, SPI, I2C, UART), enabling seamless communication between the host system and the target hardware.
 
@@ -60,7 +60,7 @@ The programmer integrates a **CH552 microcontroller** with the following charact
 
 **CMSIS-DAP (ARM Cortex-M)**
 
-* Fully compatible with CMSIS-DAP v2.0 protocol.
+* Compatible with CMSIS-DAP v2.0 protocol.
 * Supported by OpenOCD and PyOCD.
 * Tested with:
 
@@ -104,7 +104,7 @@ The programmer integrates a **CH552 microcontroller** with the following charact
 
   * OpenOCD, PyOCD
   * avrdude
-  * urJTAG, openFPGALoader
+
 * Community support: GitHub issues, Reddit, Hackaday, forums.
 
 
