@@ -133,7 +133,7 @@ Upload Command
 Explanation:
 
 * ``-p m328p`` specifies the target device (ATmega328P).
-* ``-c usbasp`` sets the programmer to the CH552 USB Multi-Protocol Programmer.
+* ``-c usbasp`` sets the programmer to the Multi-Protocol Programmer.
 * ``-U flash:w:blink.hex`` uploads the hex file to flash memory.
 
 Replace ``m328p`` with the appropriate identifier for your specific AVR device (e.g., ``t88`` for ATtiny88). A full list of supported devices is available in the `AVRDUDE user manual <http://www.nongnu.org/avrdude/user-manual/avrdude.html#Device-Options>`_.

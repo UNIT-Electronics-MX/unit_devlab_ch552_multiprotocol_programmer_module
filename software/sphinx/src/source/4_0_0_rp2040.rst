@@ -13,10 +13,10 @@ The RP2040 is an efficient and cost-effective microcontroller developed by Raspb
 
 This guide provides a comprehensive introduction to working with RP2040 microcontrollers. It covers setting up the development environment, installing the required software, and writing code for RP2040-based projects.
 
-CH552 Multi-Protocol Programmer for RP2040
+Multi-Protocol Programmer for RP2040
 -----------------------------------------
 
-The CH552 Multi-Protocol Programmer is a versatile tool for programming and debugging RP2040 microcontrollers. It enables straightforward and reliable programming using the SWD (Serial Wire Debug) interface.
+The Multi-Protocol Programmer is a versatile tool for programming and debugging RP2040 microcontrollers. It enables straightforward and reliable programming using the SWD (Serial Wire Debug) interface.
 
 .. raw:: html
 
@@ -26,10 +26,10 @@ The CH552 Multi-Protocol Programmer is a versatile tool for programming and debu
    </div>
 
 
-Programming RP2040 with the CH552 Multi-Protocol Programmer
+Programming RP2040 with the Multi-Protocol Programmer
 -----------------------------------------------------------
 
-The CH552 Multi-Protocol Programmer supports programming of RP2040 microcontrollers via the SWD interface. This interface allows direct access to the target microcontroller's flash memory and supports debugging functionality. The programmer is compatible with RP2040f10x and RP2040f4xx series.
+The Multi-Protocol Programmer supports programming of RP2040 microcontrollers via the SWD interface. This interface allows direct access to the target microcontroller's flash memory and supports debugging functionality. The programmer is compatible with RP2040f10x and RP2040f4xx series.
 
 .. only:: html
 
@@ -48,12 +48,12 @@ The CH552 Multi-Protocol Programmer supports programming of RP2040 microcontroll
       Pinout diagram for RP2040
 
 
-DualMCU RP2040 Programming with CH552 Multi-Protocol Programmer
+DualMCU RP2040 Programming with Multi-Protocol Programmer
 ----------------------------------------------------------------
 
 The Multi-Protocol Programmer uses the SWD interface to program RP2040 microcontrollers. Follow these steps to program your RP2040 device:
 
-1. **Connect the CH552 Multi-Protocol Programmer** to your computer via USB.
+1. **Connect the Multi-Protocol Programmer** to your computer via USB.
 2. **Open Visual Studio Code** or another editor of your preference.
 3. **Install the required extensions** for RP2040 development, such as "C/C++" and "CMake Tools".
 4. **Create a new project** or open an existing one.
