@@ -1,143 +1,106 @@
-
-# CH552 USB Multi-Protocol Programmer  
+# Multi-Protocol Programmer
 
 <div align="center">
-    <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
-    <a href="#"><img src="https://img.shields.io/badge/language-Python-lightgrey.svg" alt="Language"></a>
-    <a href="#"><img src="https://img.shields.io/badge/language-C-lightgrey.svg" alt="Language"></a>
-    <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-    <br>
+  <img src="https://img.shields.io/badge/version-1.0-blue.svg" />
+  <img src="https://img.shields.io/badge/language-C-lightgrey.svg" />
+  <img src="https://img.shields.io/badge/language-Python-lightgrey.svg" />
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" />
 </div>
 
 <div align="center">
-    <p href="./docs/unit_product_brief.pdf">  <img src="hardware/resources/programmer.png?raw=false" width="500px"></p>
-  <br/>   
-  </div>
+  <img src="https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/refs/heads/main/hardware/resources/programmer.png" width="480" alt="Multi-Protocol Programmer" />
+</div>
+
+## ⚠️ Firmware Required
+
+This programmer **requires specific firmware** depending on the protocol:
+
+* **AVR**: USBasp & UPDI
+* **ARM**: CMSIS-DAP (SWD/JTAG)
+* **CPLD**: USB-Blaster (JTAG)
+
+👉 Load the correct `.bin` before use. Without it, the device won’t function properly.
+
+## 🔍 Overview
+
+The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcontroller. It supports flashing and debugging of:
+
+* **AVR microcontrollers** (ATmega, ATtiny, AVR-DA)
+* **ARM Cortex-M** devices (STM32, nRF52, SAM, etc.)
+* **Intel/Altera MAX II CPLDs** (EPM240, EPM570, etc.)
+
+### ✅ Features
+
+* USB Full-Speed (CDC/HID)
+* Voltage selector: 3.3V / 5V
+* SWD / JTAG / UPDI / USBasp support
+* Works with popular tools (avrdude, OpenOCD, Quartus, etc.)
 
 
-**Supports AVR, ARM (CMSIS-DAP), and CPLD (MAX II)**
+## 🔌 Supported Protocols
 
-This project provides firmware for a USB-based programmer built on the **CH552 microcontroller**, supporting multiple programming targets and protocols, including **AVR**, **ARM Cortex-M**, and **CPLD** devices. The device includes **target voltage selection (3.3V / 5V)** and can be configured with different firmware to suit specific microcontroller families.
+| Firmware      | Protocols    | Target Devices         | Interface | Tools                |
+| ------------- | ------------ | ---------------------- | --------- | -------------------- |
+| **AVR**       | USBasp, UPDI | ATmega, ATtiny         | CDC/HID   | avrdude, Arduino IDE |
+| **CMSIS-DAP** | SWD, JTAG    | STM32, nRF52, ESP32-C3 | HID+CDC   | OpenOCD, PyOCD, Keil |
+| **CPLD**      | USB-Blaster  | EPM240, EPM570, MAX II | HID       | Quartus Prime        |
+
+## 🚀 Flashing Firmware
+
+1. **Enter Bootloader Mode:**
+
+   * Hold `BOOT`, plug USB, release.
+2. **Flash Firmware:**
+
+   ```bash
+   python3 tools/chprog.py firmware/firmware_name.bin
+   ```
+
+   Or use WCHISPTool on Windows.
 
 
-## 🔌 Hardware Overview
+## 📦 Resources
 
-- Microcontroller: **CH552G / CH552E / CH552P**
-- USB Full-Speed Interface (CDC / HID depending on firmware)
-- Voltage Selector: **3.3V / 5V** target supply switch
-- Programmable firmware profiles:
-  - **AVR Programmer** (USBasp or Serial UPDI)
-  - **ARM CMSIS-DAP Debugger** (picoDAP firmware)
-  - **CPLD JTAG Programmer** (Quartus-compatible)
+| Resource           | Link                                                                                                                       |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| 🧾 Documentation   | [unit\_multiprotocol\_programmer\_platform](https://unit-electronics-mx.github.io/unit_multiprotocol_programmer_platform/) |
+| 🚀 Getting Started | [Initial Setup](https://unit-electronics-mx.github.io/unit_ch552_multiprotocol_programmer/index.html)                      |
+| 📐 Schematic & PCB | [Hardware Files](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/tree/main/hardware)            |
+| 💾 Firmware & SDK  | [SDK & Firmware](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk)                                             |
+| 🧰 Main Repository | [GitHub Repo](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer)                                  |
+| 📖 Wiki            | [Development Boards Wiki](https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/devlab/multiprotocol/) |
 
 
-## 🔧 Firmware Profiles
 
-### 🔹 AVR Programmer Firmware
-
-- **Protocols:** USBasp, SerialUPDI
-- **Target Devices:** ATmega, ATtiny, and other AVR MCUs
-- **USB Interface:** libusb-compatible
-- **Tool Compatibility:** 
-  - `avrdude`
-  - PlatformIO
-  - Windows (Zadig/libusb)
-- **Voltage:** Selectable 3.3V or 5V
-
-**Build Options:**
-- Compile with [SDCC](https://sdcc.sourceforge.net/)
-- Or flash precompiled binaries using `tools/chprog.py`
-
-> *USBasp mode enumerates as USB HID device; Serial UPDI uses CDC port.*
-
----
-
-### 🔹 CMSIS-DAP Debugger Firmware (picoDAP)
-
-- **Protocols:** SWD, JTAG (CMSIS-DAP)
-- **Target Devices:** ARM Cortex-M (e.g., STM32, SAM, nRF52)
-- **Tool Compatibility:**  
-  - [OpenOCD](http://openocd.org/)
-  - [PyOCD](https://pyocd.io/)
-- **USB Interface:**
-  - CMSIS-DAP via HID
-  - CDC UART (optional, for logging or VCP)
-- **Drivers:**
-  - Linux/macOS: Native
-
-> *Device appears as HID with optional serial COM port.*
-
----
-
-### 🔹 CPLD Programmer Firmware (JTAG, Quartus-Compatible)
-
-- **Target Devices:** Intel/Altera **MAX II (e.g., EPM240)**
-- **Protocol:** JTAG via USB-Blaster protocol
-- **Tool Compatibility:**  
-  - Intel Quartus Programmer (via USB-Blaster emulation)
-- **USB VID/PID Options:**
-  - Safe distribution mode (default): `0x16C0:0x05DC`
-  - Compatibility mode: `0x09FB:0x6001` *(for full Quartus support)*
-- **Voltage Selection:** 3.3V / 5V via hardware switch
-- **Build System:**  
-  - Compile with SDCC
-  - Flash via WCH bootloader or `chprog.py`
-
----
-
-## 🛠️ Toolchain & Flashing
-
-### Dependencies
-
-- [SDCC Compiler](https://sdcc.sourceforge.net/)
-- Python 3 with [`pyusb`](https://github.com/pyusb/pyusb)
+## 🛠️ Install Requirements
 
 ```bash
-sudo apt install build-essential sdcc python3 python3-pip
+# Linux (Debian/Ubuntu)
+sudo apt install build-essential sdcc python3-pip git
 pip3 install pyusb
 ```
 
-### Flashing Firmware (Linux/Windows/macOS)
-
-```bash
-# For bootloader mode
-python3 tools/chprog.py <firmware.bin>
-```
-
-Or use **WCHISPTool** for Windows.
+For Windows:
+Download [SDCC](https://sdcc.sourceforge.net/), [Python 3](https://python.org/), and [Git](https://git-scm.com/).
 
 ---
 
-## 📌 Bootloader Mode (CH552)
+## 🧩 Troubleshooting
 
-To enter USB bootloader mode:
+* **Device not recognized?**
+  ➤ Check firmware & USB drivers (use Zadig on Windows)
 
-1. Disconnect all power.
-2. Hold **BOOT** button.
-3. Reconnect USB while holding BOOT.
-4. Release button — the device enters bootloader mode.
+* **Programming error?**
+  ➤ Verify voltage level (3.3V/5V), connections & cable quality
 
-Linux users: set proper udev rules if needed.
-
-```bash
-echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="4348", ATTR{idProduct}=="55e0", MODE="666"' | sudo tee /etc/udev/rules.d/99-ch55x.rules
-sudo udevadm control --reload
-sudo udevadm trigger
-```
+* **Slow upload?**
+  ➤ Reduce SWD/JTAG frequency or use shorter cables
 
 ---
 
-## ✅ Summary of Firmware Capabilities
+## 📄 License
 
-| Firmware       | Protocols         | Targets            | USB Mode      | Tools Supported     |
-|----------------|-------------------|---------------------|---------------|----------------------|
-| AVR Programmer | USBasp / UPDI     | AVR (ATmega, ATtiny) | CDC / HID     | `avrdude`, PlatformIO |
-| CMSIS-DAP      | SWD, JTAG         | ARM Cortex-M        | HID + CDC     | OpenOCD, PyOCD       |
-| CPLD Programmer| JTAG (Blaster)    | EPM240 / MAX II     | HID           | Quartus Programmer   |
-
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License** or **Creative Commons Attribution-ShareAlike 3.0**, depending on the firmware base used. Refer to each firmware subproject for license specifics.
+* Hardware: CC BY-SA 4.0
+* Firmware & Software: MIT License
+* Third-party components: see individual `LICENSE` files
 
