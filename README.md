@@ -11,7 +11,20 @@
   <img src="https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/refs/heads/main/hardware/resources/programmer.png" width="480" alt="Multi-Protocol Programmer" />
 </div>
 
-## ⚠️ Firmware Required
+
+## Resources
+
+| Resource           | Link                                                                                                                       |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| Wiki               | [Development Boards Wiki](https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/devlab/multiprotocol/) |
+| Documentation      | [unit\_multiprotocol\_programmer\_platform](https://unit-electronics-mx.github.io/unit_multiprotocol_programmer_platform/) |
+| Getting Started    | [Initial Setup](https://unit-electronics-mx.github.io/unit_ch552_multiprotocol_programmer/index.html)                      |
+| Schematic & PCB    | [Hardware Files](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/tree/main/hardware)            |
+| Firmware & SDK     | [SDK & Firmware](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk)                                             |
+| Main Repository    | [GitHub Repo](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer)                                  |
+
+
+## Firmware Required
 
 This programmer **requires specific firmware** depending on the protocol:
 
@@ -19,9 +32,9 @@ This programmer **requires specific firmware** depending on the protocol:
 * **ARM**: CMSIS-DAP (SWD/JTAG)
 * **CPLD**: USB-Blaster (JTAG)
 
-👉 Load the correct `.bin` before use. Without it, the device won’t function properly.
+Load the correct `.bin` before use. Without it, the device won’t function properly.
 
-## 🔍 Overview
+## Overview
 
 The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcontroller. It supports flashing and debugging of:
 
@@ -29,7 +42,7 @@ The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcont
 * **ARM Cortex-M** devices (STM32, nRF52, SAM, etc.)
 * **Intel/Altera MAX II CPLDs** (EPM240, EPM570, etc.)
 
-### ✅ Features
+### Features
 
 * USB Full-Speed (CDC/HID)
 * Voltage selector: 3.3V / 5V
@@ -37,7 +50,7 @@ The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcont
 * Works with popular tools (avrdude, OpenOCD, Quartus, etc.)
 
 
-## 🔌 Supported Protocols
+## Supported Protocols
 
 | Firmware      | Protocols    | Target Devices         | Interface | Tools                |
 | ------------- | ------------ | ---------------------- | --------- | -------------------- |
@@ -45,7 +58,7 @@ The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcont
 | **CMSIS-DAP** | SWD, JTAG    | STM32, nRF52, ESP32-C3 | HID+CDC   | OpenOCD, PyOCD, Keil |
 | **CPLD**      | USB-Blaster  | EPM240, EPM570, MAX II | HID       | Quartus Prime        |
 
-## 🚀 Flashing Firmware
+## Flashing Firmware
 
 1. **Enter Bootloader Mode:**
 
@@ -59,20 +72,9 @@ The **Multi-Protocol Programmer** is a USB tool based on the **CH552** microcont
    Or use WCHISPTool on Windows.
 
 
-## 📦 Resources
-
-| Resource           | Link                                                                                                                       |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| 🧾 Documentation   | [unit\_multiprotocol\_programmer\_platform](https://unit-electronics-mx.github.io/unit_multiprotocol_programmer_platform/) |
-| 🚀 Getting Started | [Initial Setup](https://unit-electronics-mx.github.io/unit_ch552_multiprotocol_programmer/index.html)                      |
-| 📐 Schematic & PCB | [Hardware Files](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/tree/main/hardware)            |
-| 💾 Firmware & SDK  | [SDK & Firmware](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk)                                             |
-| 🧰 Main Repository | [GitHub Repo](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer)                                  |
-| 📖 Wiki            | [Development Boards Wiki](https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/devlab/multiprotocol/) |
 
 
-
-## 🛠️ Install Requirements
+## Install Requirements
 
 ```bash
 # Linux (Debian/Ubuntu)
@@ -85,7 +87,7 @@ Download [SDCC](https://sdcc.sourceforge.net/), [Python 3](https://python.org/),
 
 ---
 
-## 🧩 Troubleshooting
+## Troubleshooting
 
 * **Device not recognized?**
   ➤ Check firmware & USB drivers (use Zadig on Windows)
@@ -98,9 +100,8 @@ Download [SDCC](https://sdcc.sourceforge.net/), [Python 3](https://python.org/),
 
 ---
 
-## 📄 License
+## License
 
 * Hardware: CC BY-SA 4.0
 * Firmware & Software: MIT License
 * Third-party components: see individual `LICENSE` files
-
