@@ -9,6 +9,10 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/refs/heads/main/hardware/resources/programmer.png" width="480" alt="Multi-Protocol Programmer" />
+
+  </div>
+
+
 <div align="center">
 
 ## Resources
@@ -112,7 +116,7 @@ pip3 install pyusb
 For Windows:
 Download [SDCC](https://sdcc.sourceforge.net/), [Python 3](https://python.org/), and [Git](https://git-scm.com/).
 
----
+
 
 ## Troubleshooting
 
@@ -124,8 +128,6 @@ Download [SDCC](https://sdcc.sourceforge.net/), [Python 3](https://python.org/),
 
 * **Slow upload?**
   ➤ Reduce SWD/JTAG frequency or use shorter cables
-
----
 
 ## License
 
