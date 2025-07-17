@@ -9,19 +9,46 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/refs/heads/main/hardware/resources/programmer.png" width="480" alt="Multi-Protocol Programmer" />
-</div>
-
+<div align="center">
 
 ## Resources
 
-| Resource           | Link                                                                                                                       |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| Wiki               | [Development Boards Wiki](https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/devlab/multiprotocol/) |
-| Documentation      | [unit\_multiprotocol\_programmer\_platform](https://unit-electronics-mx.github.io/unit_multiprotocol_programmer_platform/) |
-| Getting Started    | [Initial Setup](https://unit-electronics-mx.github.io/unit_ch552_multiprotocol_programmer/index.html)                      |
-| Schematic & PCB    | [Hardware Files](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/tree/main/hardware)            |
-| Firmware & SDK     | [SDK & Firmware](https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk)                                             |
-| Main Repository    | [GitHub Repo](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer)                                  |
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wiki</td>
+      <td><a href="https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/devlab/multiprotocol/">Development Boards Wiki</a></td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td><a href="https://unit-electronics-mx.github.io/unit_multiprotocol_programmer_platform/">unit_multiprotocol_programmer_platform</a></td>
+    </tr>
+    <tr>
+      <td>Getting Started</td>
+      <td><a href="https://unit-electronics-mx.github.io/unit_ch552_multiprotocol_programmer/index.html">Initial Setup</a></td>
+    </tr>
+    <tr>
+      <td>Schematic & PCB</td>
+      <td><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/tree/main/hardware">Hardware Files</a></td>
+    </tr>
+    <tr>
+      <td>Firmware & SDK</td>
+      <td><a href="https://github.com/UNIT-Electronics-MX/unit_ch55x_docker_sdk">SDK & Firmware</a></td>
+    </tr>
+    <tr>
+      <td>Main Repository</td>
+      <td><a href="https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer">GitHub Repo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 
 ## Firmware Required
