@@ -146,7 +146,7 @@ Works with:
 
 ## Downloads
 
-- [Schematic PDF](docs/schematic.pdf)
+- [Schematic PDF](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/blob/main/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf)
 
 
 ## Purchase
