@@ -6,7 +6,6 @@
   <img src="https://img.shields.io/badge/license-MIT-green.svg" />
 </div>
 
-## Introduction
 
 The **CH552 Multi-Protocol Programmer Module** is a versatile and compact programming tool designed for developers and hobbyists working with various microcontroller architectures. It supports multiple programming protocols, including SWD, JTAG, UPDI, and USBasp, making it an ideal choice for programming AVR, ARM, and CPLD devices.
 
@@ -19,7 +18,6 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 <div align="center">
 
 ### Quick Setup
-
 
 [<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](#)
 [<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](#)

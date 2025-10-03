@@ -1,10 +1,9 @@
 ---
-title: "CH552 USB Multi-Protocol Programmer "
+title: "DevLab: CH552 Multi-Protocol Programmer Module"
 version: "1.0"
 modified: ""
-output: "usb_multi_protocol_Programmer"
-subtitle: "Universal Programmer for AVR, ARM (CMSIS-DAP), and CPLD (MAX II)
-"
+output: "unit_devlab_ch552_multiprotocol_programmer_module"
+subtitle: "USB tool for flashing/debugging via SWD, JTAG, ISP or UART. Compact, open-source, and versatile."
 ---
 
 <!--
@@ -146,7 +145,7 @@ Works with:
 
 ## Downloads
 
-- [Schematic PDF](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/blob/main/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf)
+- [Schematic PDF](https://github.com/UNIT-Electronics-MX/unit_ch552_multiprotocol_programmer/blob/main/hardware/unit_sch_v_0_0_2_ue0090_devlab_ch552_multi_protocol_programmer.pdf)
 
 
 ## Purchase
