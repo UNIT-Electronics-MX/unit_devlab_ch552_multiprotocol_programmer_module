@@ -5,7 +5,7 @@
 <a href="/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf">
   <img src="resources/Schematics_icon.jpg?raw=false" width="500px">
   <br/> 
-  **Schematics**
+  Schematics
 </a>
 
 
@@ -18,10 +18,10 @@
 | **JST Header**   | Compact connector for power + single-wire debug signals  | SWC (SWCLK), SWD (SWDIO), VCC, GND    | Quick-connect to target board for SWD and power    |
 # Pinout
 
-<a href="">
-  <img src="resources/blaster_pinout.jpg" width="500px">
+<a href="unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.pdf">
+  <img src="resources/unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.jpg" width="500px">
   <br/> 
-  **Pinout**
+  Pinout
 </a>
 
 </div>
@@ -31,8 +31,6 @@
 
 
 </div>
-
----
 
 ---
 
@@ -78,7 +76,7 @@
 <a href="#">
   <img src="./resources/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
   <br/>
-  **Dimensions**
+  Dimensions
 </a>
 
 # Board Topology
@@ -86,7 +84,7 @@
 <a href="#">
   <img src="./resources/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
   <br/>
-  **Topology**
+  Topology
 </a>
 
 </div>

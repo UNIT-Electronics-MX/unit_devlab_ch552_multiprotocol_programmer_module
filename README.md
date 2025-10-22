@@ -57,6 +57,7 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 
 - [Schematics](hardware/unit_schematic_v_0_0_1_ue0102_PY32f003L24D6TR_devlab.pdf)
 - [Datasheet](hardware/resources/PY32F003L24_datasheet.pdf)
+- [Pinout](hardware/unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.pdf)
 
 ## License
 
