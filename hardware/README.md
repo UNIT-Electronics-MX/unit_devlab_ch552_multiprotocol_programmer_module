@@ -117,17 +117,6 @@
 
 </div>
 
-# Board Dimensions
-
-<div align="center">
-
-<a href="#">
-  <img src="./resources/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
-  <br/>
-  Dimensions
-</a>
-</div>
-
 # Board Topology
 
 <div align="center">
@@ -157,3 +146,15 @@
 | JP2   | Header to Select Operating Voltage Level                                    |
 
 </div>
+
+# Board Dimensions
+
+<div align="center">
+
+<a href="#">
+  <img src="./resources/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
+  <br/>
+  Dimensions
+</a>
+</div>
+
