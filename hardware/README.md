@@ -1,6 +1,6 @@
-<div align="center">
-
 # Hardware Design Files
+
+<div align="center">
 
 <a href="/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf">
   <img src="resources/Schematics_icon.jpg?raw=false" width="500px">
@@ -8,7 +8,11 @@
   Schematics
 </a>
 
+</div>
 
+## Key Technical Specifications
+
+<div align="center">
 
 | Interface        | Description                                              | Signals / Pins                        | Typical Use                                        |
 |:----------------:|:--------------------------------------------------------:|:-------------------------------------:|:--------------------------------------------------:|
@@ -16,7 +20,60 @@
 | **AVR-ISP**          | High-speed serial peripheral interface                   | MOSI, MISO, SCK, CS                   |  Commonly used for programming AVR microcontrollers |
 | **SWD**          | ARM's two-wire serial debug and programming interface    | SWCLK, SWDIO                          | Cortex-M programming & step-through debugging      |
 | **JST Header**   | Compact connector for power + single-wire debug signals  | SWC (SWCLK), SWD (SWDIO), VCC, GND    | Quick-connect to target board for SWD and power    |
+
+</div>
+
+### Electrical characteristics when the microcontroller is powered with 5V
+
+<div align="center">
+
+| **Parameter** |                     **Description**                      | **Min** | **Typ** | **Max** | **Unit** |
+|:-------------:|:--------------------------------------------------------:|:-------:|:-------:|:-------:|:--------:|
+|      Vin      |           Input voltage to power on the module           |   3.7   |    -    |   5.5   |    V     |
+|      Vil      |                 Input low level voltage                  |  -0.4   |    -    |   1.2   |    V     |
+|      Vih      |                 Input high level voltage                 |   2.4   |    -    | Vin+0.4 |    V     |
+|      Vol      |                 Low level output voltage                 |    -    |    -    |   0.4   |    V     |
+|      Voh      |                High level output voltage                 | VCC-0.4 |    -    |    -    |    V     |
+|    Icc24M*    |           Total supply current when Fsys=24MHz           |    8    |   11    |    -    |    mA    |
+|     Icc6M     |           Total supply current when Fsys=6MHz            |    4    |    6    |    -    |    mA    |
+|    Icc750K    |          Total supply current when Fsys=750KHz           |    2    |    3    |    -    |    mA    |
+|      Iin      |       The input current without pull-down resistor       |   -5    |    0    |    5    |    uA    |
+|     Idn5      |        The input current with pull-down resistor         |   -35   |   -70   |  -140   |    uA    |
+|     Iup5      |         The input current with pull-up resistor          |   35    |   70    |   140   |    uA    |
+|     IUP5X     | The input current with pull-up resistor from low to high |   250   |   400   |   600   |    uA    |
+|     Vpot      |                 Power on reset threshold                 |   2.1   |   2.3   |   2.5   |    V     |
+
+</div>
+
+*24MHz Fsys only can be used when the microcontroller is working with 5V.
+
+### Electrical characteristics when the microcontroller is powered with 3.3V
+
+<div align="center">
+
+| **Parameter** |                     **Description**                      | **Min** | **Typ** | **Max** | **Unit** |
+|:-------------:|:--------------------------------------------------------:|:-------:|:-------:|:-------:|:--------:|
+|      Vin      |           Input voltage to power on the module           |   2.8   |   3.3   |   3.6   |    V     |
+|      Vil      |                 Input low level voltage                  |  -0.4   |    -    |   0.8   |    V     |
+|      Vih      |                 Input high level voltage                 |   1.9   |    -    | Vin+0.4 |    V     |
+|      Vol      |                 Low level output voltage                 |    -    |    -    |   0.4   |    V     |
+|      Voh      |                High level output voltage                 | VCC-0.4 |    -    |    -    |    V     |
+|    Icc12M*    |           Total supply current when Fsys=12MHz           |    3    |    5    |    -    |    mA    |
+|     Icc6M     |           Total supply current when Fsys=6MHz            |    2    |    4    |    -    |    mA    |
+|    Icc750K    |          Total supply current when Fsys=750KHz           |    1    |    2    |    -    |    mA    |
+|      Iin      |       The input current without pull-down resistor       |   -5    |    0    |    5    |    uA    |
+|     Idn5      |        The input current with pull-down resistor         |   -15   |   -30   |   -60   |    uA    |
+|     Iup5      |         The input current with pull-up resistor          |   15    |   30    |   60    |    uA    |
+|     IUP5X     | The input current with pull-up resistor from low to high |   100   |   170   |   250   |    uA    |
+|     Vpot      |                 Power on reset threshold                 |   2.1   |   2.3   |   2.5   |    V     |
+
+</div>
+
+*Use the jumper bridge to select the microcontroller's operating voltage.
+
 # Pinout
+
+<div align="center">
 
 <a href="unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.pdf">
   <img src="resources/unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.jpg" width="500px">
@@ -26,19 +83,10 @@
 
 </div>
 
-<div align="center">
-
-
-
-</div>
-
 ---
-
-<div align="center">
 
 ## GPIO Pins
 
-</div>
 
 <div align="center">
 
@@ -69,17 +117,20 @@
 
 </div>
 
-<div align="center">
-
 # Board Dimensions
+
+<div align="center">
 
 <a href="#">
   <img src="./resources/unit_dimension_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
   <br/>
   Dimensions
 </a>
+</div>
 
 # Board Topology
+
+<div align="center">
 
 <a href="#">
   <img src="./resources/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
@@ -87,9 +138,6 @@
   Topology
 </a>
 
-</div>
-
-<div align="center">
 
 | Ref.  | Description                                                                 |
 |:-----:|:---------------------------------------------------------------------------:|
