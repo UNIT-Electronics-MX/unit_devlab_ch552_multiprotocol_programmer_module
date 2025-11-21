@@ -75,8 +75,8 @@
 
 <div align="center">
 
-<a href="unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.pdf">
-  <img src="resources/unit_pinout_v_0_0_2_ue0090_multi_protocol_programmer_en.jpg" width="500px">
+<a href="unit_pinout_v_0_0_3_ue0090_multi_protocol_programmer_en.pdf">
+  <img src="resources/unit_pinout_v_0_0_3_ue0090_multi_protocol_programmer_en.jpg" width="500px">
   <br/> 
   Pinout
 </a>
