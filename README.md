@@ -19,7 +19,7 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 
 ### Quick Setup
 
-[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](#)
+[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](https://wiki.uelectronics.com/wiki/devlab-ch552-multi-protocol-programmer-module)
 [<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](#)
 [<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now">](https://uelectronics.com/)
 [<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started">](#)
@@ -41,7 +41,7 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 > - **ARM**: CMSIS-DAP (SWD/JTAG)  
 > - **CPLD**: USB-Blaster (JTAG)
 > - **FTDI**: Bitbang mode (GPIO)
-> - Please refer to the [Product Wiki](#) for detailed instructions on flashing the appropriate firmware.
+> - Please refer to the [Product Wiki](https://wiki.uelectronics.com/wiki/devlab-ch552-multi-protocol-programmer-module) for detailed instructions on flashing the appropriate firmware.
 
 
 
@@ -55,9 +55,9 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 
 ##  Resources
 
-- [Schematics](hardware/unit_schematic_v_0_0_1_ue0102_PY32f003L24D6TR_devlab.pdf)
-- [Datasheet](hardware/resources/PY32F003L24_datasheet.pdf)
-- [Pinout](hardware/unit_pinout_v_0_0_3_ue0090_multi_protocol_programmer_en.pdf)
+- [Schematics](hardware/unit_sch_v_0_0_2_ue0090_devlab_ch552_multi_protocol_programmer.pdf)
+- [Datasheet](#)
+- [Pinout](hardware/unit_pinout_v_0_0_4_ue0090_multi_protocol_programmer_en.pdf)
 
 ## License
 
