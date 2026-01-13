@@ -3,8 +3,17 @@ name: Build and Deploy Documentation
 on:
   push:
     branches: [main]
+    paths:
+      - 'software/documentation/**'
+      - 'software/sphinx/**'
+      - 'README.md'
+      - '.github/workflows/build_pdf.yml'
   pull_request:
     branches: [main]
+    paths:
+      - 'software/documentation/**'
+      - 'software/sphinx/**'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:
