@@ -59,7 +59,7 @@ jobs:
         fi
         
         # Commit changes
-        git commit -m "Auto-update hardware documentation [skip ci]"
+        git commit -m "docs: Auto-update hardware documentation"
         
         # Try to push, if fails pull and retry
         max_retries=3
@@ -77,7 +77,7 @@ jobs:
             echo "Pull failed, forcing merge with ours strategy for docs/"
             git checkout --ours docs/
             git add docs/
-            git commit -m "Merge: Resolve conflicts keeping our docs/ [skip ci]" || true
+            git commit -m "docs: Merge conflicts keeping our docs/" || true
           }
         done
         

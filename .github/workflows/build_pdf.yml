@@ -94,5 +94,5 @@ jobs:
         git config --global user.email "actions@github.com"
         git pull origin main
         git add docs/
-        git commit -m "Deploy full documentation and product brief [skip ci]" || echo "No changes"
+        git commit -m "docs: Deploy documentation (auto-generated)" || echo "No changes"
         git push origin main
