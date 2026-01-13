@@ -84,7 +84,7 @@ Commands
 --------
 
 erase
-^^^^^
+~~~~~
 
 Erase flash memory of the target device.
 
@@ -105,7 +105,7 @@ Example:
     pyocd erase -t py32f003x6 --chip --config ./Misc/pyocd.yaml
 
 flash
-^^^^^
+~~~~~
 
 Flash a binary, hex, or ELF file to the target.
 
@@ -128,7 +128,7 @@ Example:
     pyocd flash firmware.hex -t py32f003x6 --erase=chip --verify
 
 gdbserver
-^^^^^^^^^
+~~~~~~~~~
 
 Start a GDB server for remote debugging.
 
@@ -144,7 +144,7 @@ Options:
 - ``--config <file.yaml>``: Load YAML config.
 
 reset
-^^^^^
+~~~~~
 
 Reset the target microcontroller.
 
@@ -158,7 +158,7 @@ Options:
 - ``--config <file.yaml>``: Load YAML config.
 
 list
-^^^^
+~~~~
 
 List connected debug probes and supported targets.
 
@@ -167,7 +167,7 @@ List connected debug probes and supported targets.
     pyocd list
 
 read / write
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Read and write memory directly.
 

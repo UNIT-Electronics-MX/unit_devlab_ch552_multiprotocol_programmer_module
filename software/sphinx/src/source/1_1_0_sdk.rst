@@ -49,7 +49,7 @@ Common (All Platforms)
 
     .. tab:: Windows
 
-        - `Docker Desktop <https://docs.docker.com/desktop/windows/install/>`_
+        - `Docker Desktop for Windows <https://docs.docker.com/desktop/windows/install/>`_
         - `Git Bash <https://gitforwindows.org/>`_
         - Docker Desktop with WSL2 or Hyper-V backend enabled
         - MinGW64 (included with Git Bash) for the ``make`` command
