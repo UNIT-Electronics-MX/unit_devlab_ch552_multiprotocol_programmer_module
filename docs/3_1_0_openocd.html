@@ -409,7 +409,15 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd">PyOCD</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erase">erase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flash">flash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdbserver">gdbserver</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">reset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-write">read / write</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cmsis-pack-targets">CMSIS-Pack Targets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -518,6 +526,8 @@ document.write(`
 </section>
 <section id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h2>
+<section id="erase">
+<h3>erase<a class="headerlink" href="#erase" title="Link to this heading">#</a></h3>
 <p>Erase flash memory of the target device.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>erase<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
@@ -532,6 +542,9 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>erase<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span>--chip<span class="w"> </span>--config<span class="w"> </span>./Misc/pyocd.yaml
 </pre></div>
 </div>
+</section>
+<section id="flash">
+<h3>flash<a class="headerlink" href="#flash" title="Link to this heading">#</a></h3>
 <p>Flash a binary, hex, or ELF file to the target.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>flash<span class="w"> </span>&lt;file&gt;<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
@@ -548,6 +561,9 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>flash<span class="w"> </span>firmware.hex<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span>--erase<span class="o">=</span>chip<span class="w"> </span>--verify
 </pre></div>
 </div>
+</section>
+<section id="gdbserver">
+<h3>gdbserver<a class="headerlink" href="#gdbserver" title="Link to this heading">#</a></h3>
 <p>Start a GDB server for remote debugging.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>gdbserver<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
@@ -559,6 +575,9 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">--persist</span></code>: Keep the server alive after GDB disconnects.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file.yaml&gt;</span></code>: Load YAML config.</p></li>
 </ul>
+</section>
+<section id="reset">
+<h3>reset<a class="headerlink" href="#reset" title="Link to this heading">#</a></h3>
 <p>Reset the target microcontroller.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>reset<span class="w"> </span>-t<span class="w"> </span>py32f003x6<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
@@ -568,15 +587,22 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">--halt</span></code>: Halt the CPU after reset.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file.yaml&gt;</span></code>: Load YAML config.</p></li>
 </ul>
+</section>
+<section id="list">
+<h3>list<a class="headerlink" href="#list" title="Link to this heading">#</a></h3>
 <p>List connected debug probes and supported targets.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>list
 </pre></div>
 </div>
+</section>
+<section id="read-write">
+<h3>read / write<a class="headerlink" href="#read-write" title="Link to this heading">#</a></h3>
 <p>Read and write memory directly.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyocd<span class="w"> </span>read32<span class="w"> </span>0x08000000<span class="w"> </span><span class="m">4</span>
 pyocd<span class="w"> </span>write32<span class="w"> </span>0x20000000<span class="w"> </span>0x12345678
 </pre></div>
 </div>
+</section>
 </section>
 <section id="cmsis-pack-targets">
 <h2>CMSIS-Pack Targets<a class="headerlink" href="#cmsis-pack-targets" title="Link to this heading">#</a></h2>
@@ -671,7 +697,15 @@ pyocd<span class="w"> </span>erase<span class="w"> </span>--help
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocd">PyOCD</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erase">erase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flash">flash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdbserver">gdbserver</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">reset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-write">read / write</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cmsis-pack-targets">CMSIS-Pack Targets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
