@@ -36,16 +36,22 @@ Programming with the CH552 Multi-Protocol Programmer
      - I/O
    * - **MOSI**
      - 1.5
-     - MOSI, PWM1
+     - MOSI
    * - **MISO**
      - 1.6
-     - MISO, RXD1
+     - MISO
    * - **CS**
-     - 3.3
-     - PWM1, TXD0
+     - 3.2
+     - Reset
    * - **SCK**
      - 1.7
-     - SCK, TXD1
+     - SCK
+   * - **TXD**
+     - 3.1
+     - TXD
+   * - **RXD**
+     - 3.0
+     - RXD
 
 
 

@@ -18,6 +18,12 @@ You can download and install the AVR-GCC toolchain from the official Microchip w
         Download the installer from the Microchip website and follow the installation instructions.
 
         - `AVR-GCC Compiler for Microchip Studio <https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers>`_
+        
+        AVR-DUDE is often included with the AVR-GCC toolchain on Windows. If not, you can download it separately:
+
+        - `AVRDUDE for Windows <https://github.com/avrdudes/avrdude/releases/tag/v8.1>`_    
+
+        Version 8.1 or later is recommended (check compatibility with your architecture).
 
     .. tab:: Linux
 
@@ -25,16 +31,10 @@ You can download and install the AVR-GCC toolchain from the official Microchip w
 
         .. code-block:: console
 
-            sudo apt-get install avr-gcc avr-binutils avr-libc
+            sudo apt update
+            sudo apt install gcc-avr binutils-avr avr-libc avrdude
 
-    .. tab:: macOS
 
-        You can use Homebrew to install the AVR-GCC toolchain:
-
-        .. code-block:: console
-
-            brew tap osx-cross/avr
-            brew install avr-gcc
 
 
 Ensure the toolchain is added to your system’s ``PATH`` environment variable for global access.

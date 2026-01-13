@@ -87,6 +87,7 @@ Compatible with **AVR** microcontrollers, this protocol allows programming and d
 
 
 
+
 .. list-table:: Pinout
    :widths: 33 33 33
    :header-rows: 1
@@ -96,16 +97,22 @@ Compatible with **AVR** microcontrollers, this protocol allows programming and d
      - I/O
    * - **MOSI**
      - 1.5
-     - MOSI, PWM1
+     - MOSI
    * - **MISO**
      - 1.6
-     - MISO, RXD1
+     - MISO
    * - **CS**
-     - 3.3
-     - PWM1, TXD0
+     - 3.2
+     - Reset
    * - **SCK**
      - 1.7
-     - SCK, TXD1
+     - SCK
+   * - **TXD**
+     - 3.1
+     - TXD
+   * - **RXD**
+     - 3.0
+     - RXD
 
 
 Protocol JTAG
@@ -160,11 +167,11 @@ Compatible with **CPLD** and **FPGA** devices, this protocol allows programming 
      - GPIO
      - I/O
    * - **NC 6**
-     - 3.4
-     - PWM2, RXD1, T0 
+     - 3.1
+     - TXD - CH552
    * - **NC 7**
-     - 3.3
-     - INT1
+     - 3.0
+     - RXD - CH552
    * - **NC 8**
      - 1.4
      - T2, CAP1, SCS, TIN2, UCC1, AIN1 
@@ -205,11 +212,11 @@ Compatible with **ARM Cortex-M** microcontrollers, this protocol allows programm
      - GPIO
      - I/O
    * - **SWCLK**
-     - 1.7
-     - SCK, TXD1, TIN5
+     - 1.5
+     - SCK
    * - **SWDIO**
      - 1.6
-     - MISO, RXD1, TIN4
+     - MISO
 
 
 .. note::
