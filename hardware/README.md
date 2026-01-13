@@ -117,6 +117,21 @@
 
 </div>
 
+### IDC-10 JST Header Pinout
+
+| PIN | GPIO | Signal | Description |
+|:---:|:----:|:------:|:-----------|
+| 1   | 1.7  | SWCLK  | SWD Clock / MOSI |
+| 2   | -    | GND    | Ground |
+| 3   | 1.6  | SWDIO  | SWD Data / MISO |
+| 4   | -    | VCC    | Target Voltage Supply |
+| 5   | 3.2  | Reset  | Reset (Optional) |
+| 6   | 1.4  | CS     | Chip Select (Optional) |
+| 7   | 3.1  | TXD    | TXD (Optional) |
+| 8   | 3.0  | RXD    | RXD (Optional) |
+| 9   | 1.5  | MOSI   | MOSI (Optional) |
+
+
 # Board Topology
 
 <div align="center">
