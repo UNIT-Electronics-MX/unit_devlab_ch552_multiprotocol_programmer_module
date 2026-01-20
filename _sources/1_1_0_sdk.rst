@@ -1,0 +1,208 @@
+CH55x Unit SDK Docker
+=====================
+
+.. note::
+    Portable SDK for CH552 firmware development using SDCC in Docker containers. Includes a cross-platform command-line tool (`spkg`) to simplify compilation on both Linux and Windows.
+
+
+Project Structure
+-----------------
+
+.. code-block:: none
+
+    ch552-docker-sdk/
+    ├── spkg/                   # Standalone CLI build system
+    │   ├── spkg                # CLI launcher (bash script)
+    │   ├── Dockerfile          # SDCC-based build environment
+    │   └── docker-compose.yml  # Container configuration
+    ├── template/               # CH552 example projects
+    │   └── Blink/              # Blink example (main.c, src/, tools/, Makefile)
+    └── README.md
+
+
+Main Features
+-------------
+
+- Unified command-line tool: "spkg" available on Linux and Windows (using Git Bash).
+- No manual installation of SDCC or other toolchains required.
+- Uses Docker containers to provide a completely isolated build environment.
+- Based on a project system with a Makefile, compatible with CH552/CH55x microcontrollers.
+- Includes an example project located in the ``template/`` directory.
+
+Requirements
+------------
+
+Common (All Platforms)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `Docker Desktop <https://www.docker.com/products/docker-desktop>`_
+
+
+.. tabs::
+
+    .. tab:: Linux/macOS
+
+        - Git
+        - Python 3
+        - Bash shell
+        - Superuser privileges required to run Docker
+
+    .. tab:: Windows
+
+        - `Docker Desktop for Windows <https://docs.docker.com/desktop/windows/install/>`_
+        - `Git Bash <https://gitforwindows.org/>`_
+        - Docker Desktop with WSL2 or Hyper-V backend enabled
+        - MinGW64 (included with Git Bash) for the ``make`` command
+
+.. note::
+    Running ``spkg`` on Linux might require ``sudo`` if the user is not part of the ``docker`` group. You can add your user with:  
+    ``sudo usermod -aG docker $USER && newgrp docker``
+
+Installation
+------------
+.. tabs::
+
+    .. tab:: Linux/macOS
+
+        Clone the repository:
+
+        .. code-block:: bash
+
+            git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+            cd ch552-docker-sdk/spkg
+            chmod +x spkg
+
+        (Optional) Install it globally:
+
+
+
+    .. tab:: Windows
+
+        Clone the repository:
+
+        .. code-block:: bash
+
+            git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+            cd ch552-docker-sdk
+
+        .. note::
+            
+            Require use command ./spkg/spkg.bat to run the spkg command.
+
+
+Building the Docker Image
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. tabs::
+
+    .. tab:: Linux/macOS
+
+        Build the Docker image:
+
+        .. code-block:: bash
+
+            spkg compose
+
+    .. tab:: Windows
+
+        .. code-block:: bash
+
+            ./spkg/spkg.bat compose
+
+        .. warning::
+            Ensure Docker is running and that your user has permission to execute it.
+            You can verify by running ``docker ps``. If no errors appear, Docker is running correctly.
+
+
+Creating a New Project
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    This command will create a new directory with the specified name.
+
+.. tabs::
+
+    .. tab:: Linux/macOS
+
+        To create a new project, run:
+
+        .. code-block:: bash
+
+            spkg init template/project
+
+    .. tab:: Windows
+
+        To create a new project, run:
+
+        .. code-block:: bash
+
+            ./spkg/spkg.bat init template/project
+
+
+
+
+Showing Help
+~~~~~~~~~~~~
+
+On Linux:
+
+.. code-block:: bash
+
+    spkg --help
+
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat --help
+
+
+Compiling a Project
+~~~~~~~~~~~~~~~~~~~~
+
+On Linux:
+
+.. code-block:: bash
+
+    spkg -p ./template/Blink
+
+On Windows:
+
+.. code-block:: bash
+
+    ./spkg/spkg.bat -p ./template/Blink
+
+
+Execute ``make clean``, ``all``, ``hex``, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On Linux:
+
+.. code-block:: bash
+
+    spkg -p ./template/Blink clean
+    spkg -p ./template/Blink all
+    spkg -p ./template/Blink hex
+
+On Windows:
+
+.. code-block:: bash
+
+    spkg.bat -p ./template/Blink clean
+    spkg.bat -p ./template/Blink all
+    spkg.bat -p ./template/Blink hex
+
+Output
+------
+
+The compiled binary will be generated at:
+
+.. code-block:: none
+
+    template/Blink/build/main.bin
+
+You can flash it using:
+
+- ``tools/chprog.py``
+- `WCHISPTool <https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html>`_
