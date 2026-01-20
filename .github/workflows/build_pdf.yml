@@ -7,6 +7,7 @@ on:
       - 'software/documentation/**'
       - 'software/sphinx/**'
       - 'README.md'
+      - 'hardware/**'
       - '.github/workflows/build_pdf.yml'
   pull_request:
     branches: [main]
@@ -14,6 +15,7 @@ on:
       - 'software/documentation/**'
       - 'software/sphinx/**'
       - 'README.md'
+      - 'hardware/**'
   workflow_dispatch:
 
 permissions:
@@ -38,6 +40,7 @@ jobs:
         sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-lang-english ghostscript latexmk
         pip install -r software/documentation/requirements.txt
         pip install -r software/sphinx/requirements.txt
+        pip install Jinja2
 
     #################################################
     # Generar PDF del Product Brief con nombre del repo
@@ -54,6 +57,19 @@ jobs:
            -sOutputFile=build/${REPO_NAME}_product_brief.pdf build/*.pdf
 
     #################################################
+    # Procesar Documentación de Hardware
+    #################################################
+    - name: Clean previous hardware documentation
+      run: |
+        chmod +x .github/workflows/scripts/clean_docs.sh
+        .github/workflows/scripts/clean_docs.sh
+
+    - name: Copy hardware files and generate HTML
+      run: |
+        chmod +x .github/workflows/scripts/build_docs.sh
+        .github/workflows/scripts/build_docs.sh
+
+    #################################################
     # Generar Documentación Sphinx (HTML + PDF)
     #################################################
     - name: Build Sphinx Documentation
@@ -62,6 +78,11 @@ jobs:
         make clean
         make pdfx
 
+    - name: Add hardware link to Sphinx docs
+      run: |
+        chmod +x .github/workflows/scripts/add_hardware_link.sh
+        .github/workflows/scripts/add_hardware_link.sh
+
     #################################################
     # Preparar contenido para docs/
     #################################################
@@ -69,7 +90,7 @@ jobs:
       env:
         REPO_NAME: ${{ github.event.repository.name }}
       run: |
-        rm -rf docs
+        # Crear directorio docs si no existe (pero no eliminar hardware/)
         mkdir -p docs
 
         # PDF generado desde LaTeX
@@ -78,8 +99,8 @@ jobs:
         # PDF generado por Sphinx
         cp software/sphinx/pdf/programmer.pdf docs/${REPO_NAME}_sphinx.pdf
 
-        # HTML generado por Sphinx
-        cp -r software/sphinx/docs/* docs/
+        # HTML generado por Sphinx (copiar archivos, no sobrescribir hardware/)
+        rsync -av --exclude='hardware' --exclude='hardware.html' software/sphinx/docs/ docs/
 
         # Permitir archivos especiales en GitHub Pages
         touch docs/.nojekyll

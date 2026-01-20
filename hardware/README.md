@@ -3,7 +3,7 @@
 <div align="center">
 
 <a href="/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf">
-  <img src="resources/Schematics_icon.jpg?raw=false" width="500px">
+  <img src="resources/Schematics_icon.jpg?raw=false" width="300px">
   <br/> 
   Schematics
 </a>
@@ -119,6 +119,9 @@
 
 ### IDC-10 JST Header Pinout
 
+<div align="center">
+
+
 | PIN | GPIO | Signal | Description |
 |:---:|:----:|:------:|:-----------|
 | 1   | 1.7  | SWCLK  | SWD Clock / MOSI |
@@ -131,13 +134,14 @@
 | 8   | 3.0  | RXD    | RXD (Optional) |
 | 9   | 1.5  | MOSI   | MOSI (Optional) |
 
+</div >
 
 # Board Topology
 
 <div align="center">
 
 <a href="#">
-  <img src="./resources/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="500px">
+  <img src="./resources/unit_topology_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.png" width="900px">
   <br/>
   Topology
 </a>
