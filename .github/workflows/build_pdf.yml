@@ -102,24 +102,8 @@ jobs:
         # HTML generado por Sphinx (copiar archivos, no sobrescribir hardware/)
         rsync -av --exclude='hardware' --exclude='hardware.html' software/sphinx/docs/ docs/
 
-        # Permitir archivos especiales en GitHub Pages
-        touch docs/.nojekyll
-
     #################################################
-    # Commit and push docs/ to main
-    #################################################
-    - name: Commit and push docs/ to main
-      if: github.ref == 'refs/heads/main'
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add docs/
-        git diff --staged --quiet || git commit -m "docs: Deploy documentation (auto-generated) [skip ci]"
-        git pull --rebase origin main
-        git push origin main
-
-    #################################################
-    # Deploy to GitHub Pages (faster deployment)
+    # Deploy to GitHub Pages (direct and fast)
     #################################################
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
@@ -131,3 +115,5 @@ jobs:
         force_orphan: false
         keep_files: false
         enable_jekyll: false
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
