@@ -117,3 +117,17 @@ jobs:
         git diff --staged --quiet || git commit -m "docs: Deploy documentation (auto-generated) [skip ci]"
         git pull --rebase origin main
         git push origin main
+
+    #################################################
+    # Deploy to GitHub Pages (faster deployment)
+    #################################################
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+        publish_branch: gh-pages
+        force_orphan: false
+        keep_files: false
+        enable_jekyll: false
