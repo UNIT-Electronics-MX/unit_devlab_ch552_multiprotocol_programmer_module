@@ -1,5 +1,7 @@
 # Hardware Design Files
 
+This document provides comprehensive hardware specifications and design files for the CH552 Multi-Protocol Programmer Module.
+
 <div align="center">
 
 <a href="/hardware/unit_sch_V_0_0_1_ue0090_CH552_USB_Multi-Protocol-Programmer.pdf">
