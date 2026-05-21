@@ -20,8 +20,8 @@ The **CH552 Multi-Protocol Programmer Module** is a versatile and compact progra
 ### Quick Setup
 
 [<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](https://wiki.uelectronics.com/wiki/devlab-ch552-multi-protocol-programmer-module)
-[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](#)
-[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now">](https://uelectronics.com/)
+[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](https://unit-electronics-mx.github.io/unit_devlab_ch552_multiprotocol_programmer_module/hardware/unit_datasheet_v_1_0_0_ue0090_devlab_ch552_multi_protocol_programmer.pdf)
+[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now">](https://uelectronics.com/producto/ch552-usb-modulo-programador-multiprotocolo-swd-jtag-updi-usbasp-unit-devlab/)
 [<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started">](#)
 
 </div>
